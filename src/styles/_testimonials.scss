@@ -1,0 +1,173 @@
+@import 'variables';
+@import 'mixins';
+
+.testimonials {
+  background-color: $main-color;
+  color: $neutral-color3;
+  text-align: center;
+  padding: 40px 20px;
+
+  h2 {
+    font-family: $primary-font-family;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    @include responsive-font-size(28px, ('mobile': 0.75, 'tablet': 0.875, 'small-screen': 1, 'standard-screen': 1.125, 'large-screen': 1.25));
+  }
+
+  p {
+    font-family: $primary-font-family;
+    font-size: 16px;
+    margin-bottom: 30px;
+    @include responsive-font-size(16px, ('mobile': 0.875, 'tablet': 1, 'small-screen': 1.125, 'standard-screen': 1.25, 'large-screen': 1.375));
+  }
+
+  .testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .testimonial {
+      background-color: $main-color;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      width: 180px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+
+      .testimonial-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        .play-button {
+          background-color: $secondary-color;
+          color: $neutral-color3;
+          border: none;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: $secondary-color;
+          }
+
+          i {
+            margin: 0;
+          }
+        }
+
+        p {
+          font-family: $primary-font-family;
+          font-size: 14px;
+          color: $neutral-color2;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: map-get($breakpoints, 'mobile')) {
+    .testimonial:nth-child(1) img {
+      content: url('../img/progreso_hombre1-480px.jpg');
+    }
+    .testimonial:nth-child(2) img {
+      content: url('../img/progreso_mujer1-480px.jpg');
+    }
+    .testimonial:nth-child(3) img {
+      content: url('../img/progreso_hombre2-480px.jpg');
+    }
+    .testimonial:nth-child(4) img {
+      content: url('../img/progreso_mujer2-480px.jpg');
+    }
+  }
+
+  @media (max-width: map-get($breakpoints, 'tablet')) {
+    .testimonial:nth-child(1) img {
+      content: url('../img/progreso_hombre1-768px.jpg');
+    }
+    .testimonial:nth-child(2) img {
+      content: url('../img/progreso_mujer1-768px.jpg');
+    }
+    .testimonial:nth-child(3) img {
+      content: url('../img/progreso_hombre2-768px.jpg');
+    }
+    .testimonial:nth-child(4) img {
+      content: url('../img/progreso_mujer2-768px.jpg');
+    }
+  }
+
+  @media (max-width: map-get($breakpoints, 'small-screen')) {
+    .testimonial:nth-child(1) img {
+      content: url('../img/progreso_hombre1-1200px.jpg');
+    }
+    .testimonial:nth-child(2) img {
+      content: url('../img/progreso_mujer1-1200px.jpg');
+    }
+    .testimonial:nth-child(3) img {
+      content: url('../img/progreso_hombre2-1200px.jpg');
+    }
+    .testimonial:nth-child(4) img {
+      content: url('../img/progreso_mujer2-1200px.jpg');
+    }
+  }
+
+  @media (max-width: map-get($breakpoints, 'standard-screen')) {
+    .testimonial:nth-child(1) img {
+      content: url('../img/progreso_hombre1-1920px.jpg');
+    }
+    .testimonial:nth-child(2) img {
+      content: url('../img/progreso_mujer1-1920px.jpg');
+    }
+    .testimonial:nth-child(3) img {
+      content: url('../img/progreso_hombre2-1920px.jpg');
+    }
+    .testimonial:nth-child(4) img {
+      content: url('../img/progreso_mujer2-1920px.jpg');
+    }
+  }
+
+  @media (max-width: map-get($breakpoints, 'large-screen')) {
+    .testimonial:nth-child(1) img {
+      content: url('../img/progreso_hombre1-2560px.jpg');
+    }
+    .testimonial:nth-child(2) img {
+      content: url('../img/progreso_mujer1-2560px.jpg');
+    }
+    .testimonial:nth-child(3) img {
+      content: url('../img/progreso_hombre2-2560px.jpg');
+    }
+    .testimonial:nth-child(4) img {
+      content: url('../img/progreso_mujer2-2560px.jpg');
+    }
+  }
+
+  @media (min-width: map-get($breakpoints, 'extra-large-screen')) {
+    .testimonial:nth-child(1) img {
+      content: url('../img/progreso_hombre1-3820px.jpg');
+    }
+    .testimonial:nth-child(2) img {
+      content: url('../img/progreso_mujer1-3820px.jpg');
+    }
+    .testimonial:nth-child(3) img {
+      content: url('../img/progreso_hombre2-3820px.jpg');
+    }
+    .testimonial:nth-child(4) img {
+      content: url('../img/progreso_mujer2-3820px.jpg');
+    }
+  }
+}

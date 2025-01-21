@@ -1,0 +1,932 @@
+@charset "UTF-8";
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: white;
+  height: 70px;
+}
+.header .logo {
+  height: 40px;
+  margin-left: 15px;
+}
+.header .nav {
+  display: flex;
+  gap: 50px;
+}
+.header .nav ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+.header .nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+.header .nav ul li a:hover {
+  color: #0277BD;
+}
+.header .profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.header .profile-icon:hover {
+  background-color: white;
+}
+.header .profile-icon i {
+  font-size: 24px;
+  margin-right: 0;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .hero {
+    background-image: url("../img/hero_image-480px.jpg");
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("../img/hero_image-768px.jpg");
+  }
+}
+@media (max-width: 1200px) {
+  .hero {
+    background-image: url("../img/hero_image-1200px.jpg");
+  }
+}
+@media (max-width: 1920px) {
+  .hero {
+    background-image: url("../img/hero_image-1920px.jpg");
+  }
+}
+@media (max-width: 2560px) {
+  .hero {
+    background-image: url("../img/hero_image-2560px.jpg");
+  }
+}
+@media (min-width: 2561px) {
+  .hero {
+    background-image: url("../img/hero_image-3820px.jpg");
+  }
+}
+.hero .hero-content {
+  max-width: 600px;
+  padding: 20px;
+}
+.hero .hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+@media (max-width: 480px) {
+  .hero .hero-content h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+.hero .hero-content p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+@media (max-width: 480px) {
+  .hero .hero-content p {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-content p {
+    font-size: 1rem;
+  }
+}
+.hero .hero-content .hero-button {
+  display: inline-block;
+  background-color: #0277BD;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  font-family: "Oswald", sans-serif;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+@media (max-width: 480px) {
+  .hero .hero-content .hero-button {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-content .hero-button {
+    font-size: 1rem;
+  }
+}
+.hero .hero-content .hero-button:hover {
+  background-color: #0056b3;
+}
+
+.why-fitessence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+.why-fitessence .why-content {
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+.why-fitessence .why-content h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  color: #0277BD;
+  margin-bottom: 15px;
+}
+@media (max-width: 480px) {
+  .why-fitessence .why-content h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .why-fitessence .why-content h2 {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 1200px) {
+  .why-fitessence .why-content h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1920px) {
+  .why-fitessence .why-content h2 {
+    font-size: 2.25rem;
+  }
+}
+@media (max-width: 2560px) {
+  .why-fitessence .why-content h2 {
+    font-size: 2.5rem;
+  }
+}
+.why-fitessence .why-content p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3B4A60;
+}
+@media (max-width: 480px) {
+  .why-fitessence .why-content p {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 768px) {
+  .why-fitessence .why-content p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1200px) {
+  .why-fitessence .why-content p {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 1920px) {
+  .why-fitessence .why-content p {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 2560px) {
+  .why-fitessence .why-content p {
+    font-size: 1.375rem;
+  }
+}
+.why-fitessence .why-image {
+  width: 100%;
+  max-width: 800px;
+}
+.why-fitessence .why-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 480px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-480px.jpg");
+  }
+}
+@media (max-width: 768px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-768px.jpg");
+  }
+}
+@media (max-width: 1200px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-1200px.jpg");
+  }
+}
+@media (max-width: 1920px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-1920px.jpg");
+  }
+}
+@media (max-width: 2560px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-2560px.jpg");
+  }
+}
+@media (min-width: 2561px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-3820px.jpg");
+  }
+}
+
+.testimonials {
+  background-color: #3B4A60;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+.testimonials h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+@media (max-width: 480px) {
+  .testimonials h2 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 768px) {
+  .testimonials h2 {
+    font-size: 24.5px;
+  }
+}
+@media (max-width: 1200px) {
+  .testimonials h2 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 1920px) {
+  .testimonials h2 {
+    font-size: 31.5px;
+  }
+}
+@media (max-width: 2560px) {
+  .testimonials h2 {
+    font-size: 35px;
+  }
+}
+.testimonials p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+@media (max-width: 480px) {
+  .testimonials p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .testimonials p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1200px) {
+  .testimonials p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1920px) {
+  .testimonials p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 2560px) {
+  .testimonials p {
+    font-size: 22px;
+  }
+}
+.testimonials .testimonials-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.testimonials .testimonials-grid .testimonial {
+  background-color: #3B4A60;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 180px;
+}
+.testimonials .testimonials-grid .testimonial img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info .play-button {
+  background-color: #0277BD;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info .play-button:hover {
+  background-color: #0277BD;
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info .play-button i {
+  margin: 0;
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #E3E4E8;
+  margin: 0;
+}
+@media (max-width: 480px) {
+  .testimonials .testimonial:nth-child(1) img {
+    content: url("../img/progreso_hombre1-480px.jpg");
+  }
+  .testimonials .testimonial:nth-child(2) img {
+    content: url("../img/progreso_mujer1-480px.jpg");
+  }
+  .testimonials .testimonial:nth-child(3) img {
+    content: url("../img/progreso_hombre2-480px.jpg");
+  }
+  .testimonials .testimonial:nth-child(4) img {
+    content: url("../img/progreso_mujer2-480px.jpg");
+  }
+}
+@media (max-width: 768px) {
+  .testimonials .testimonial:nth-child(1) img {
+    content: url("../img/progreso_hombre1-768px.jpg");
+  }
+  .testimonials .testimonial:nth-child(2) img {
+    content: url("../img/progreso_mujer1-768px.jpg");
+  }
+  .testimonials .testimonial:nth-child(3) img {
+    content: url("../img/progreso_hombre2-768px.jpg");
+  }
+  .testimonials .testimonial:nth-child(4) img {
+    content: url("../img/progreso_mujer2-768px.jpg");
+  }
+}
+@media (max-width: 1200px) {
+  .testimonials .testimonial:nth-child(1) img {
+    content: url("../img/progreso_hombre1-1200px.jpg");
+  }
+  .testimonials .testimonial:nth-child(2) img {
+    content: url("../img/progreso_mujer1-1200px.jpg");
+  }
+  .testimonials .testimonial:nth-child(3) img {
+    content: url("../img/progreso_hombre2-1200px.jpg");
+  }
+  .testimonials .testimonial:nth-child(4) img {
+    content: url("../img/progreso_mujer2-1200px.jpg");
+  }
+}
+@media (max-width: 1920px) {
+  .testimonials .testimonial:nth-child(1) img {
+    content: url("../img/progreso_hombre1-1920px.jpg");
+  }
+  .testimonials .testimonial:nth-child(2) img {
+    content: url("../img/progreso_mujer1-1920px.jpg");
+  }
+  .testimonials .testimonial:nth-child(3) img {
+    content: url("../img/progreso_hombre2-1920px.jpg");
+  }
+  .testimonials .testimonial:nth-child(4) img {
+    content: url("../img/progreso_mujer2-1920px.jpg");
+  }
+}
+@media (max-width: 2560px) {
+  .testimonials .testimonial:nth-child(1) img {
+    content: url("../img/progreso_hombre1-2560px.jpg");
+  }
+  .testimonials .testimonial:nth-child(2) img {
+    content: url("../img/progreso_mujer1-2560px.jpg");
+  }
+  .testimonials .testimonial:nth-child(3) img {
+    content: url("../img/progreso_hombre2-2560px.jpg");
+  }
+  .testimonials .testimonial:nth-child(4) img {
+    content: url("../img/progreso_mujer2-2560px.jpg");
+  }
+}
+@media (min-width: 2561px) {
+  .testimonials .testimonial:nth-child(1) img {
+    content: url("../img/progreso_hombre1-3820px.jpg");
+  }
+  .testimonials .testimonial:nth-child(2) img {
+    content: url("../img/progreso_mujer1-3820px.jpg");
+  }
+  .testimonials .testimonial:nth-child(3) img {
+    content: url("../img/progreso_hombre2-3820px.jpg");
+  }
+  .testimonials .testimonial:nth-child(4) img {
+    content: url("../img/progreso_mujer2-3820px.jpg");
+  }
+}
+
+.user-reviews {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 600px;
+}
+.user-reviews h2 {
+  font-size: 1.8rem;
+  color: #3B4A60;
+  margin-bottom: 20px;
+}
+@media (max-width: 480px) {
+  .user-reviews h2 {
+    font-size: 1.4994rem;
+  }
+}
+@media (max-width: 768px) {
+  .user-reviews h2 {
+    font-size: 1.7496rem;
+  }
+}
+@media (max-width: 1200px) {
+  .user-reviews h2 {
+    font-size: 1.9998rem;
+  }
+}
+@media (max-width: 1920px) {
+  .user-reviews h2 {
+    font-size: 2.25rem;
+  }
+}
+@media (max-width: 2560px) {
+  .user-reviews h2 {
+    font-size: 2.5002rem;
+  }
+}
+.user-reviews .reviews-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+.user-reviews .reviews-container .nav-button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #3B4A60;
+  z-index: 10;
+}
+.user-reviews .reviews-container .nav-button.left {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.user-reviews .reviews-container .nav-button.right {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.user-reviews .reviews-container .reviews {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  gap: 20px;
+}
+.user-reviews .reviews-container .reviews .review {
+  flex: 0 0 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+.user-reviews .reviews-container .reviews .review .review-title {
+  font-weight: bold;
+  color: #3B4A60;
+  margin-bottom: 10px;
+}
+.user-reviews .reviews-container .reviews .review .review-text {
+  font-size: 0.9rem;
+  color: #B0B4BC;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  font-family: "Nunito", sans-serif;
+}
+.user-reviews .reviews-container .reviews .review .review-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.user-reviews .reviews-container .reviews .review .review-author img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.user-reviews .reviews-container .reviews .review .review-author p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #3B4A60;
+}
+@media (max-width: 480px) {
+  .user-reviews h2 {
+    font-size: 1.5rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1rem;
+  }
+  .user-reviews .review-text {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 768px) {
+  .user-reviews h2 {
+    font-size: 1.75rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1.125rem;
+  }
+  .user-reviews .review-text {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1200px) {
+  .user-reviews h2 {
+    font-size: 2rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1.25rem;
+  }
+  .user-reviews .review-text {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 1920px) {
+  .user-reviews h2 {
+    font-size: 2.25rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1.375rem;
+  }
+  .user-reviews .review-text {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 2560px) {
+  .user-reviews h2 {
+    font-size: 2.5rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1.5rem;
+  }
+  .user-reviews .review-text {
+    font-size: 1.375rem;
+  }
+}
+
+.footer {
+  font-family: "Montserrat", sans-serif;
+  background-color: #3B4A60;
+  color: #B0B4BC;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer .footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer .footer-logo img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+.footer .footer-logo nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer .footer-logo nav ul li .social-icon {
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3B4A60;
+  transition: background-color 0.3s ease;
+}
+.footer .footer-logo nav ul li .social-icon.instagram {
+  background-color: #e4405f;
+}
+.footer .footer-logo nav ul li .social-icon.facebook {
+  background-color: #3b5998;
+}
+.footer .footer-logo nav ul li .social-icon.linkedin {
+  background-color: #0077b5;
+}
+.footer .footer-logo nav ul li .social-icon.twitter {
+  background-color: #1da1f2;
+}
+.footer .footer-logo nav ul li .social-icon:hover {
+  opacity: 0.8;
+}
+.footer .footer-links h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+.footer .footer-links ul li a {
+  text-decoration: none;
+  color: #B0B4BC;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+.footer .footer-links ul li a:hover {
+  color: #0277BD;
+}
+.footer .footer-contact h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+.footer .footer-contact ul li p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+.footer .footer-contact ul li p a {
+  text-decoration: none;
+  color: #B0B4BC;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+.footer .footer-contact ul li p a:hover {
+  color: #0277BD;
+}
+.footer .footer-legal h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+.footer .footer-legal ul li a {
+  text-decoration: none;
+  color: #B0B4BC;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+.footer .footer-legal ul li a:hover {
+  color: #0277BD;
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer .footer-logo,
+  .footer .footer-links,
+  .footer .footer-contact,
+  .footer .footer-legal {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .footer .footer-logo img {
+    width: 60px;
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1rem;
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 768px) {
+  .footer .footer-logo img {
+    width: 70px;
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1.125rem;
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1200px) {
+  .footer .footer-logo img {
+    width: 80px;
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1.25rem;
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 1920px) {
+  .footer .footer-logo img {
+    width: 90px;
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1.375rem;
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 2560px) {
+  .footer .footer-logo img {
+    width: 100px;
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1.5rem;
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 1.375rem;
+  }
+}
+
+/* Login Page */
+#login-page {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #3B4A60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  text-align: center;
+  background-color: #3B4A60;
+  padding: 20px;
+}
+.login-container .login-content {
+  color: white;
+}
+.login-container .login-content .logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+.login-container .login-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.login-container .login-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.login-container .login-content p .signup-link {
+  color: #0277BD;
+  text-decoration: none;
+}
+.login-container .login-content p .signup-link:hover {
+  text-decoration: underline;
+}
+.login-container .login-content .login-buttons {
+  margin-bottom: 20px;
+}
+.login-container .login-content .login-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: #3B4A60 0.3s ease;
+}
+.login-container .login-content .login-buttons button i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  /* Espaciado entre ícono y texto */
+}
+.login-container .login-content .login-buttons button.google-login {
+  background-color: white;
+  color: black;
+  border: 1px solid #ddd;
+}
+.login-container .login-content .login-buttons button.google-login img {
+  width: 20px;
+  margin-right: 10px;
+}
+.login-container .login-content .login-buttons button.google-login:hover {
+  background-color: white;
+}
+.login-container .login-content .login-buttons button.apple-login {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+.login-container .login-content .login-buttons button.apple-login img {
+  width: 20px;
+  margin-right: 10px;
+}
+.login-container .login-content .login-buttons button.apple-login:hover {
+  background-color: black;
+}
+.login-container .login-content .email-login {
+  color: #0277BD;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.login-container .login-content .email-login:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */

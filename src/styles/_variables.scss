@@ -1,0 +1,16 @@
+$main-color: #3B4A60;
+$neutral-color1: #B0B4BC;
+$neutral-color3: #ffff;
+$neutral-color2: #E3E4E8; 
+$secondary-color: #0277BD; 
+$primary-font-family: 'Montserrat', sans-serif;
+$secondary-font-family: 'Nunito', sans-serif;
+$important-font-family: 'Oswald', sans-serif;
+$breakpoints: (
+  'mobile': 480px,
+  'tablet': 768px,
+  'small-screen': 1200px,
+  'standard-screen': 1920px,
+  'large-screen': 2560px,
+  'extra-large-screen': 2561px
+);

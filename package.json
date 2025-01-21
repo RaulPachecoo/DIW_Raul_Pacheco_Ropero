@@ -1,0 +1,22 @@
+{
+  "name": "tailwindcss",
+  "version": "1.0.0",
+  "description": "Proyecto página web de FitEssence",
+  "main": "index.js",
+  "scripts": {
+    "compilar-sass": "sass --watch src/styles/style.scss src/styles/style.css"
+  },
+  "keywords": [
+    "FitEssence"
+  ],
+  "author": "Raúl Pacheco",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "sass": "^1.83.4"
+  }
+}
