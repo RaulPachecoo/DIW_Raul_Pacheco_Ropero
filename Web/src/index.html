@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FitEssence</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/all.min.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+        <!-- Encabezado -->
+        <header class="header">
+            <!-- Botón del menú hamburguesa -->
+            <div class="menu-toggle" aria-label="Abrir menú" tabindex="0">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Logo centrado -->
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="img/fitEssence2.png"
+                    alt="FitEssence Logo">
+            </a>
+
+            <!-- Menú de navegación -->
+            <nav class="nav" aria-label="Menú principal">
+                <ul class="nav-list">
+                    <li><a href="#">Entrenamientos</a></li>
+                    <li><a href="#">Seguimiento</a></li>
+                    <li><a href="#">Resultados</a></li>
+                    <li><a href="#">Logros</a></li>
+                </ul>
+            </nav>
+
+            <!-- Icono de perfil -->
+            <a href="#" class="profile-icon" aria-label="Perfil">
+                <i class="fa-solid fa-user fa-xl" style="color: black;"></i>
+            </a>
+        </header>
+
+        <!-- Contenido principal -->
+        <main>
+            <!-- Sección Hero -->
+            <section class="hero">
+                <article class="hero-content">
+                    <h1>Mantente constante.<br>Obtén resultados.</h1>
+                    <p>FitEssence te ayuda a conseguir tus objetivos. ¡Elige el
+                        mejor plan para ti!</p>
+                    <a href="#" class="hero-button">Empezar</a>
+                </article>
+            </section>
+
+            <!-- Sección "¿Por qué FitEssence?" -->
+            <section class="why-fitessence">
+                <article class="why-content">
+                    <h2>¿Por qué FitEssence?</h2>
+                    <p>Con tu propio entrenador personal FitEssence a tu
+                        disposición, puedes seguir esforzándote más y más. Tanto
+                        si estás empezando como si quieres llevar tu forma
+                        física al siguiente nivel, FitEssence te ayudará a
+                        conseguirlo.</p>
+                </article>
+                <figure class="why-image">
+                    <img
+                        src="img/abdomen_equipo2-1920px.jpg"
+                        srcset="
+                        img/abdomen_equipo2-480px.jpg 480w,
+                        img/abdomen_equipo2-768px.jpg 768w,
+                        img/abdomen_equipo2-1200px.jpg 1200w,
+                        img/abdomen_equipo2-1920px.jpg 1920w,
+                        img/abdomen_equipo2-2560px.jpg 2560w,
+                        img/abdomen_equipo2-3820px.jpg 3820w"
+                        sizes="(max-width: 480px) 100vw,
+                           (max-width: 768px) 100vw,
+                           (max-width: 1200px) 100vw,
+                           (max-width: 1920px) 100vw,
+                           100vw"
+                        alt="Entrenamiento en equipo">
+                </figure>
+            </section>
+
+            <!-- Testimonios -->
+            <section class="testimonials">
+                <h2>Atrévete a ser tú</h2>
+                <p>Sin excusas, solo resultados. Estos Atletas Libres lo han
+                    conseguido.</p>
+                <div class="testimonials-grid">
+                    <!-- Testimonios individuales -->
+                    <article class="testimonial">
+                        <img
+                            src="img/progreso_hombre2-1920px.jpg"
+                            srcset="
+                            img/progreso_hombre2-480px.jpg 480w,
+                            img/progreso_hombre2-768px.jpg 768w,
+                            img/progreso_hombre2-1200px.jpg 1200w,
+                            img/progreso_hombre2-1920px.jpg 1920w,
+                            img/progreso_hombre2-2560px.jpg 2560w,
+                            img/progreso_hombre2-3820px.jpg 3820w"
+                            sizes="(max-width: 480px) 50vw,
+                               (max-width: 768px) 33vw,
+                               (max-width: 1200px) 25vw,
+                               20vw"
+                            alt="Foto de Marcos">
+                        <section class="testimonial-info">
+                            <button class="play-button"
+                                aria-label="Reproducir testimonio de Marcos"
+                                data-audio="../audio/testimonio_hombre1-44,1khz.mp3">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <p>Marcos</p>
+                        </section>
+                    </article>
+                    <article class="testimonial">
+                        <img
+                            src="img/progreso_mujer1-1920px.jpg"
+                            srcset="
+                            img/progreso_mujer1-480px.jpg 480w,
+                            img/progreso_mujer1-768px.jpg 768w,
+                            img/progreso_mujer1-1200px.jpg 1200w,
+                            img/progreso_mujer1-1920px.jpg 1920w,
+                            img/progreso_mujer1-2560px.jpg 2560w,
+                            img/progreso_mujer1-3820px.jpg 3820w"
+                            sizes="(max-width: 480px) 50vw,
+                               (max-width: 768px) 33vw,
+                               (max-width: 1200px) 25vw,
+                               20vw"
+                            alt="Foto de Laura">
+                        <section class="testimonial-info">
+                            <button class="play-button"
+                                aria-label="Reproducir testimonio de Laura"
+                                data-audio="../audio/testimonio_mujer1-44,1khz.mp3">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <p>Laura</p>
+                        </section>
+                    </article>
+                    <article class="testimonial">
+                        <img
+                            src="img/progreso_hombre1-1920px.jpg"
+                            srcset="
+                            img/progreso_hombre1-480px.jpg 480w,
+                            img/progreso_hombre1-768px.jpg 768w,
+                            img/progreso_hombre1-1200px.jpg 1200w,
+                            img/progreso_hombre1-1920px.jpg 1920w,
+                            img/progreso_hombre1-2560px.jpg 2560w,
+                            img/progreso_hombre1-3820px.jpg 3820w"
+                            sizes="(max-width: 480px) 50vw,
+                               (max-width: 768px) 33vw,
+                               (max-width: 1200px) 25vw,
+                               20vw"
+                            alt="Foto de Pepe">
+                        <section class="testimonial-info">
+                            <button class="play-button"
+                                aria-label="Reproducir testimonio de Pepe"
+                                data-audio="../audio/testimonio_hombre2-44,1khz.mp3">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <p>Pepe</p>
+                        </section>
+                    </article>
+                    <article class="testimonial">
+                        <img
+                            src="img/progreso_mujer2-1920px.jpg"
+                            srcset="
+                            img/progreso_mujer2-480px.jpg 480w,
+                            img/progreso_mujer2-768px.jpg 768w,
+                            img/progreso_mujer2-1200px.jpg 1200w,
+                            img/progreso_mujer2-1920px.jpg 1920w,
+                            img/progreso_mujer2-2560px.jpg 2560w,
+                            img/progreso_mujer2-3820px.jpg 3820w"
+                            sizes="(max-width: 480px) 50vw,
+                               (max-width: 768px) 33vw,
+                               (max-width: 1200px) 25vw,
+                               20vw"
+                            alt="Foto de María">
+                        <section class="testimonial-info">
+                            <button class="play-button"
+                                aria-label="Reproducir testimonio de María"
+                                data-audio="../audio/testimonio_mujer2-44,1khz.mp3">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <p>María</p>
+                        </section>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Opiniones de usuarios -->
+            <section class="user-reviews">
+                <h2>Lo que dicen los usuarios de FitEssence sobre la mejor
+                    página para ponerte en forma</h2>
+                <div class="reviews-container">
+                    <button class="nav-button left"
+                        aria-label="Anterior testimonio">&#8249;</button>
+                    <article class="reviews">
+                        <article class="review">
+                            <p class="review-title">¡Una app genial!</p>
+                            <p
+                                class="review-text">"Te anima a llevar un estilo de vida más activo. Los workouts se pueden adaptar y siempre te ponen a prueba para superar tus límites."</p>
+                            <section class="review-author">
+                                <img
+                                    src="img/testimonio_hombre1-1920px.jpg"
+                                    srcset="
+                                    img/testimonio_hombre1-480px.jpg 480w,
+                                    img/testimonio_hombre1-768px.jpg 768w,
+                                    img/testimonio_hombre1-1200px.jpg 1200w,
+                                    img/testimonio_hombre1-1920px.jpg 1920w,
+                                    img/testimonio_hombre1-2560px.jpg 2560w,
+                                    img/testimonio_hombre1-3820px.jpg 3820w"
+                                    sizes="(max-width: 480px) 20vw,
+                                       (max-width: 768px) 15vw,
+                                       (max-width: 1200px) 10vw,
+                                       8vw"
+                                    alt="Foto de Mario">
+                                <p>Mario González</p>
+                            </section>
+                        </article>
+                        <article class="review">
+                            <p class="review-title">Perder peso y ganar
+                                musculatura</p>
+                            <p
+                                class="review-text">"He perdido 20kg y estoy ganando musculatura. Va muy bien para ambas cosas. Me encanta."</p>
+                            <section class="review-author">
+                                <img
+                                    src="img/testimonio_hombre2-1920px.jpg"
+                                    srcset="
+                                    img/testimonio_hombre2-480px.jpg 480w,
+                                    img/testimonio_hombre2-768px.jpg 768w,
+                                    img/testimonio_hombre2-1200px.jpg 1200w,
+                                    img/testimonio_hombre2-1920px.jpg 1920w,
+                                    img/testimonio_hombre2-2560px.jpg 2560w,
+                                    img/testimonio_hombre2-3820px.jpg 3820w"
+                                    sizes="(max-width: 480px) 20vw,
+                                       (max-width: 768px) 15vw,
+                                       (max-width: 1200px) 10vw,
+                                       8vw"
+                                    alt="Foto de Alberto">
+                                <p>Alberto Fernández</p>
+                            </section>
+                        </article>
+                    </article>
+                    <button class="nav-button right"
+                        aria-label="Siguiente testimonio">&#8250;</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="footer">
+            <figure class="footer-logo">
+                <img src="img/fitEssence2.png" alt="FitEssence Logo">
+                <nav aria-label="Redes sociales">
+                    <ul>
+                        <li><a href="#" class="social-icon instagram"
+                                aria-label="Instagram"><i
+                                    class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#" class="social-icon facebook"
+                                aria-label="Facebook"><i
+                                    class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#" class="social-icon linkedin"
+                                aria-label="LinkedIn"><i
+                                    class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="#" class="social-icon twitter"
+                                aria-label="Twitter"><i
+                                    class="fa-brands fa-twitter"></i></a></li>
+                    </ul>
+                </nav>
+            </figure>
+            <section class="footer-links">
+                <h3>&ensp;&ensp;Links</h3>
+                <ul>
+                    <li><a href="#">Entrenamientos</a></li>
+                    <li><a href="#">Seguimiento</a></li>
+                    <li><a href="#">Resultados</a></li>
+                    <li><a href="#">Logros</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </section>
+            <section class="footer-contact">
+                <h3>&ensp;&ensp;Contacto</h3>
+                <ul>
+                    <li><p>999999999</p></li>
+                    <li><p>666666666</p></li>
+                    <li><p><a
+                                href="mailto:fitEssence@gmail.com">fitEssence@gmail.com</a></p></li>
+                </ul>
+            </section>
+            <section class="footer-legal">
+                <h3>&ensp;&ensp;Legal</h3>
+                <ul>
+                    <li><a href="#">Condiciones</a></li>
+                    <li><a href="#">Privacidad y cookies</a></li>
+                    <li><a href="#">Aviso legal</a></li>
+                </ul>
+            </section>
+        </footer>
+    </body>
+</html>

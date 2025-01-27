@@ -1,0 +1,95 @@
+@import 'variables';  /* Importa las variables de configuración (colores, tamaños, fuentes, etc.) */
+@import 'mixins';     /* Importa los mixins para reutilización de código en distintos lugares */
+
+/* Estilos para la sección de testimonios */
+.testimonials {
+  background-color: $main-color; /* Color de fondo de la sección */
+  color: $neutral-color3; /* Color del texto */
+  text-align: center; /* Centra el contenido del texto */
+  padding: $spacing-large $spacing-small; /* Espaciado interior: grande en vertical y pequeño en horizontal */
+
+  /* Estilos para el título de la sección de testimonios */
+  h2 {
+    font-family: $primary-font-family; /* Fuente del título */
+    font-size: $font-size-hero-title; /* Tamaño de fuente del título */
+    font-weight: $font-weight-semibold; /* Peso de la fuente del título */
+    margin-bottom: $footer-gap; /* Espaciado debajo del título */
+    /* Ajuste del tamaño de fuente responsivo con diferentes factores en cada tamaño de pantalla */
+    @include responsive-font-size($font-size-hero-title, ('mobile': 0.75, 'tablet': 0.875, 'small-screen': 1, 'standard-screen': 1.125, 'large-screen': 1.25));
+  }
+
+  /* Estilos para el párrafo de la sección de testimonios */
+  p {
+    font-family: $primary-font-family; /* Fuente del párrafo */
+    font-size: $font-size-medium; /* Tamaño de fuente del párrafo */
+    margin-bottom: $footer-gap; /* Espaciado debajo del párrafo */
+    /* Ajuste del tamaño de fuente responsivo para diferentes tamaños de pantalla */
+    @include responsive-font-size($font-size-medium, ('mobile': 0.875, 'tablet': 1, 'small-screen': 1.125, 'standard-screen': 1.25, 'large-screen': 1.375));
+  }
+
+  /* Contenedor para los testimonios, usando Flexbox */
+  .testimonials-grid {
+    display: flex; /* Activa Flexbox para el contenedor */
+    justify-content: center; /* Centra los elementos de manera horizontal */
+    gap: $spacing-medium; /* Espaciado entre los elementos del grid */
+    flex-wrap: wrap; /* Permite que los testimonios se ajusten en múltiples filas si es necesario */
+
+    /* Estilo para cada testimonio dentro del grid */
+    .testimonial {
+      background-color: $main-color; /* Color de fondo de cada testimonio */
+      border-radius: $border-radius-medium; /* Bordes redondeados de cada testimonio */
+      padding: $spacing-small; /* Espaciado interior de cada testimonio */
+      text-align: center; /* Centra el contenido del testimonio */
+      width: 180px; /* Ancho fijo para cada testimonio */
+
+      /* Estilo de la imagen del testimonio */
+      img {
+        width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+        height: auto; /* Mantiene la relación de aspecto de la imagen */
+        border-radius: $border-radius-medium; /* Bordes redondeados para la imagen */
+        margin-bottom: $footer-item-margin; /* Espaciado debajo de la imagen */
+      }
+
+      /* Información adicional dentro de cada testimonio (nombre, descripción, etc.) */
+      .testimonial-info {
+        display: flex; /* Usa Flexbox para alinear el contenido */
+        align-items: center; /* Alinea los elementos de manera vertical */
+        justify-content: center; /* Centra los elementos de manera horizontal */
+        gap: $spacing-small; /* Espaciado entre los elementos dentro de la info del testimonio */
+
+        /* Estilo para el botón de reproducción (play) */
+        .play-button {
+          background-color: $secondary-color; /* Color de fondo del botón */
+          color: $neutral-color3; /* Color del texto dentro del botón */
+          border: none; /* Sin borde */
+          border-radius: 50%; /* Hace el botón redondo */
+          width: $play-button-size; /* Tamaño del botón */
+          height: $play-button-size; /* Tamaño del botón */
+          display: flex; /* Usa Flexbox para centrar el ícono dentro del botón */
+          justify-content: center; /* Centra el ícono dentro del botón */
+          align-items: center; /* Centra el ícono dentro del botón */
+          font-size: $font-size-small; /* Tamaño del ícono */
+          cursor: pointer; /* Muestra un cursor tipo mano al pasar sobre el botón */
+          transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+          
+          /* Estilo para cuando se pasa el cursor sobre el botón */
+          &:hover {
+            background-color: darken($secondary-color, $hover-darken-percentage); /* Oscurece el color de fondo al hacer hover */
+          }
+
+          i {
+            margin: 0; /* Elimina el margen del ícono dentro del botón */
+          }
+        }
+
+        /* Estilo para el texto dentro del contenedor del testimonio */
+        p {
+          font-family: $primary-font-family; /* Fuente del texto */
+          font-size: $font-size-small; /* Tamaño de la fuente */
+          color: $neutral-color2; /* Color del texto */
+          margin: 0; /* Elimina los márgenes */
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@import 'variables';  /* Importa las variables definidas en otro archivo, como colores, fuentes, etc. */
+@import 'mixins';     /* Importa los mixins definidos, como los para el tamaño responsivo, entre otros */
+
+// Estilos para la sección Why FitEssence
+
+/* Estilo base para un contenedor flex que alinea los elementos en columna y los centra */
+%flex-column-center {
+  display: flex; /* Activamos el layout Flexbox */
+  flex-direction: column; /* Alineamos los elementos en una columna */
+  align-items: center; /* Centramos los elementos a lo largo del eje transversal */
+}
+
+/* Estilo base para centrar el texto dentro de su contenedor */
+%text-center {
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Estilo base para una fuente responsiva, ajustable según los diferentes tamaños de pantalla */
+%responsive-font {
+  font-family: $primary-font-family; /* Define la fuente principal */
+  font-size: 1rem; /* Tamaño de fuente base */
+  @include responsive-font-size(1rem, ('mobile': 0.875, 'tablet': 1, 'small-screen': 1.125, 'standard-screen': 1.25, 'large-screen': 1.375)); /* Ajusta el tamaño de la fuente dependiendo del breakpoint */
+}
+
+/* Estilo base para las imágenes, asegura que tengan un 100% de ancho, un borde redondeado y sombra */
+%image-style {
+  width: 100%; /* La imagen ocupará todo el ancho de su contenedor */
+  height: auto; /* La altura será automática para mantener la proporción */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px $black; /* Sombra sutil alrededor de la imagen */
+}
+
+.why-fitessence {
+  @extend %flex-column-center; /* Usamos el estilo base para centrar los elementos en columna */
+  padding: 40px 20px; /* Espaciado interno: 40px arriba y abajo, 20px a los lados */
+
+  /* Estilo para el contenido dentro de 'why-content' */
+  .why-content {
+    margin-bottom: 20px; /* Espaciado inferior para separar las secciones */
+    max-width: 600px; /* Limita el ancho máximo del contenido a 600px */
+
+    /* Estilo para el título h2 dentro de 'why-content' */
+    h2 {
+      @extend %text-center; /* Centra el texto */
+      @extend %responsive-font; /* Aplica la fuente responsiva */
+      color: $secondary-color; /* Color del texto en el título */
+      margin-bottom: 15px; /* Espaciado inferior del título */
+      font-family: $primary-font-family; /* Fuente primaria */
+      font-size: 2rem; /* Tamaño de fuente grande */
+    }
+
+    /* Estilo para los párrafos dentro de 'why-content' */
+    p {
+      @extend %responsive-font; /* Aplica la fuente responsiva */
+      font-family: $secondary-font-family; /* Fuente secundaria */
+      line-height: 1.6; /* Espaciado entre líneas */
+      color: $main-color; /* Color principal del texto */
+    }
+  }
+
+  /* Estilo para la imagen dentro de 'why-image' */
+  .why-image {
+    @extend %image-style; /* Aplica el estilo base de imagen */
+    max-width: 800px; /* Limita el ancho máximo de la imagen a 800px */
+
+    /* Estilo específico para la imagen dentro de 'why-image' */
+    img {
+      @extend %image-style; /* Aplica el estilo base de imagen */
+      @include responsive-background('abdomen_equipo2'); /* Aplica un fondo responsivo para la imagen (según los breakpoints definidos) */
+    }
+  }
+}

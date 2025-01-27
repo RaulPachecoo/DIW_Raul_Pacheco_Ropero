@@ -1,0 +1,68 @@
+@import 'variables';
+@import 'mixins';
+
+/* Estilos para la sección Hero*/
+
+.hero {
+  /* Fondo responsivo con la imagen proporcionada */
+  @include responsive-background('hero_image'); /* Usamos el mixin para configurar un fondo responsivo */
+  background-size: cover; /* Asegura que la imagen cubra completamente el área */
+  background-position: center; /* Centra la imagen del fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 70vh; /* Altura del contenedor hero (70% de la altura de la ventana) */
+  display: flex; /* Usamos Flexbox para alinear los elementos dentro del contenedor */
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  color: $neutral-color3; /* Color del texto */
+  text-align: center; /* Centra el texto dentro del contenedor */
+
+  /* Contenido principal del hero */
+  .hero-content {
+    max-width: 600px; /* Limita el ancho del contenido */
+    padding: $spacing-small; /* Espaciado alrededor del contenido */
+    
+    /* Estilos del título principal */
+    h1 {
+      font-size: 2.5rem; /* Tamaño de fuente inicial */
+      font-weight: $font-weight-semibold; /* Peso de la fuente */
+      line-height: 1.3; /* Altura de línea para mejorar la legibilidad */
+      margin-bottom: $spacing-small; /* Espaciado debajo del título */
+      font-family: $primary-font-family; /* Fuente del título */
+      
+      /* Tamaño de fuente responsivo usando mixin */
+      @include responsive-font-size(2.5rem, ('mobile': 0.6, 'tablet': 0.8));
+    }
+
+    /* Estilos del párrafo en el hero */
+    p {
+      font-size: $font-size-nav; /* Tamaño de fuente para el párrafo */
+      margin-bottom: $spacing-large; /* Espaciado debajo del párrafo */
+      font-family: $primary-font-family; /* Fuente para el párrafo */
+      
+      /* Tamaño de fuente responsivo usando mixin */
+      @include responsive-font-size(1rem, ('mobile': 0.875, 'tablet': 1));
+    }
+
+    /* Estilo del botón en el hero */
+    .hero-button {
+      display: inline-block; /* Hace que el botón se comporte como un enlace de bloque */
+      background-color: $secondary-color; /* Color de fondo del botón */
+      color: $neutral-color3; /* Color del texto del botón */
+      padding: $spacing-small $spacing-medium; /* Espaciado dentro del botón */
+      font-size: $font-size-nav-small; /* Tamaño de fuente del texto del botón */
+      font-weight: $font-weight-medium; /* Peso de la fuente del botón */
+      border-radius: $border-radius-small; /* Bordes redondeados para el botón */
+      font-family: $important-font-family; /* Fuente específica para el botón */
+      text-decoration: none; /* Elimina el subrayado del enlace */
+      transition: background-color 0.3s ease; /* Efecto de transición suave en el color de fondo */
+      
+      /* Tamaño de fuente responsivo usando mixin */
+      @include responsive-font-size(1rem, ('mobile': 0.875, 'tablet': 1));
+
+      /* Efecto al pasar el cursor sobre el botón */
+      &:hover {
+        background-color: darken($secondary-color, 10%); /* Oscurece el color de fondo al hacer hover */
+      }
+    }
+  }
+}

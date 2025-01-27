@@ -1,0 +1,147 @@
+@import 'variables';
+@import 'mixins';
+
+/* Estilos para la página del login */
+
+/* Clase para centrar el texto */
+%text-center {
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* Estilo base para los botones */
+%button-base {
+  display: flex; /* Usa Flexbox para centrar el contenido del botón */
+  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  width: 100%; /* El botón ocupa todo el ancho disponible */
+  max-width: 300px; /* Limita el ancho máximo del botón */
+  margin: $footer-item-margin auto; /* Centra el botón horizontalmente con margen */
+  padding: $spacing-small; /* Espaciado interno del botón */
+  border: none; /* Sin bordes */
+  border-radius: $border-radius-small; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de fuente del botón */
+  cursor: pointer; /* Cambia el cursor a mano cuando pasa sobre el botón */
+  font-weight: $font-weight-medium; /* Peso de la fuente del texto */
+  transition: background-color 0.3s ease; /* Efecto de transición en el color de fondo */
+
+  /* Estilos para el ícono dentro del botón */
+  i {
+    font-size: 1.5rem; /* Tamaño del ícono */
+    margin-right: $spacing-small; /* Espaciado entre el ícono y el texto */
+  }
+}
+
+/* Estilo base para los enlaces */
+%link-style {
+  color: $secondary-color; /* Color del enlace */
+  font-size: 0.9rem; /* Tamaño de la fuente */
+  text-decoration: none; /* Elimina el subrayado por defecto */
+
+  /* Efecto al pasar el cursor sobre el enlace */
+  &:hover {
+    text-decoration: underline; /* Subraya el enlace al hacer hover */
+  }
+}
+
+#login-page {
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el padding predeterminado */
+  font-family: $primary-font-family; /* Fuente principal para la página */
+  background-color: $main-color; /* Color de fondo de la página */
+  display: flex; /* Usa Flexbox para centrar el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 100vh; /* La altura de la página ocupa toda la ventana */
+}
+
+/* Contenedor de login */
+.login-container {
+  background-color: $main-color; /* Color de fondo del contenedor */
+  padding: $spacing-small; /* Espaciado interno del contenedor */
+  @extend %text-center; /* Aplica los estilos para centrar el texto */
+
+  /* Contenido dentro del login */
+  .login-content {
+    color: $neutral-color3; /* Color del texto dentro del contenedor */
+
+    /* Estilo para el logo */
+    .logo {
+      width: $footer-logo-size; /* Tamaño del logo */
+      margin-bottom: $footer-logo-margin; /* Espaciado debajo del logo */
+    }
+
+    /* Estilo para el título principal */
+    h1 {
+      font-size: 2rem; /* Tamaño de fuente para el título */
+      font-weight: $font-weight-semibold; /* Peso de la fuente */
+      margin-bottom: $footer-gap; /* Espaciado debajo del título */
+    }
+
+    /* Estilo para el párrafo */
+    p {
+      font-size: 1rem; /* Tamaño de la fuente */
+      margin-bottom: $footer-gap; /* Espaciado debajo del párrafo */
+
+      /* Estilo para el enlace de "signup" */
+      .signup-link {
+        @extend %link-style; /* Aplica los estilos de enlace predefinidos */
+        
+        /* Efecto de hover para el enlace */
+        &:hover {
+          text-decoration: underline; /* Subraya el enlace al hacer hover */
+        }
+      }
+    }
+
+    /* Estilo para los botones de login */
+    .login-buttons {
+      margin-bottom: $footer-gap; /* Espaciado debajo de los botones */
+
+      /* Estilos para los botones dentro de login */
+      button {
+        @extend %button-base; /* Aplica los estilos base de botón */
+
+        /* Estilo específico para el botón de Google */
+        &.google-login {
+          background-color: $neutral-color3; /* Fondo del botón */
+          color: $black; /* Color del texto */
+          border: 1px solid $neutral-color2; /* Borde del botón */
+
+          /* Estilo para la imagen dentro del botón */
+          img {
+            width: 20px; /* Tamaño de la imagen */
+            margin-right: $spacing-small; /* Espaciado entre la imagen y el texto */
+          }
+
+          /* Efecto de hover para el botón de Google */
+          &:hover {
+            background-color: $neutral-color3; /* El fondo no cambia al hacer hover */
+          }
+        }
+
+        /* Estilo específico para el botón de Apple */
+        &.apple-login {
+          background-color: $black; /* Fondo del botón */
+          color: $neutral-color3; /* Color del texto */
+          border: 1px solid $black; /* Borde del botón */
+
+          /* Estilo para la imagen dentro del botón */
+          img {
+            width: 20px; /* Tamaño de la imagen */
+            margin-right: $spacing-small; /* Espaciado entre la imagen y el texto */
+          }
+
+          /* Efecto de hover para el botón de Apple */
+          &:hover {
+            background-color: darken($black, $hover-darken-percentage); /* Oscurece el fondo al hacer hover */
+          }
+        }
+      }
+    }
+
+    /* Enlace para login con email */
+    .email-login {
+      @extend %link-style; /* Aplica los estilos de enlace predefinidos */
+    }
+  }
+}

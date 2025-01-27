@@ -1,0 +1,204 @@
+@import 'variables';  /* Importa las variables de configuración, como colores, tamaños, fuentes, etc. */
+@import 'mixins';     /* Importa los mixins para reutilización de código en diferentes partes del proyecto */
+
+// Estilos para la sección User Reviews
+
+/* Centra el texto dentro del contenedor */
+%text-center {
+  text-align: center;
+}
+
+/* Estilo base para los botones, incluye color, tamaño y efecto de cursor */
+%button-style {
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  font-size: $font-size-large; /* Tamaño de fuente grande */
+  cursor: pointer; /* Cursor tipo mano al pasar sobre el botón */
+  color: $main-color; /* Color del texto del botón */
+  z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+/* Estilo base para el texto de las reseñas */
+%review-text {
+  font-size: $font-size-small; /* Tamaño de fuente pequeño */
+  color: $neutral-color1; /* Color del texto */
+  margin-bottom: $footer-gap; /* Espaciado en la parte inferior */
+  line-height: 1.5; /* Espaciado entre líneas */
+  font-family: $secondary-font-family; /* Fuente secundaria */
+}
+
+/* Estilo responsivo para el texto */
+%responsive-font {
+  font-family: $primary-font-family; /* Fuente primaria */
+  font-size: 1rem; /* Tamaño de fuente base */
+  @include responsive-font-size(1rem, ('mobile': 0.875, 'tablet': 1, 'small-screen': 1.125, 'standard-screen': 1.25, 'large-screen': 1.375)); /* Tamaño responsivo */
+}
+
+.user-reviews {
+  @extend %text-center; /* Centra el texto */
+  margin: $spacing-medium auto; /* Márgenes automáticos y espaciado medio */
+  padding: $spacing-small; /* Espaciado interno pequeño */
+  background-color: $neutral-color3; /* Color de fondo de la sección */
+  border-radius: $border-radius-medium; /* Bordes redondeados */
+  max-width: 600px; /* Ancho máximo de la sección */
+
+  /* Estilo para el título de la sección */
+  h2 {
+    font-size: $font-size-large; /* Tamaño de fuente grande */
+    color: $main-color; /* Color del título */
+    margin-bottom: $footer-gap; /* Espaciado en la parte inferior */
+    @include responsive-font-size($font-size-large, ('mobile': 0.833, 'tablet': 0.972, 'small-screen': 1.111, 'standard-screen': 1.25, 'large-screen': 1.389)); /* Tamaño de fuente responsivo */
+  }
+
+  /* Contenedor para las reseñas, utiliza Flexbox para alinear y distribuir los elementos */
+  .reviews-container {
+    display: flex; /* Flexbox activado */
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    position: relative; /* Posicionamiento relativo para los botones de navegación */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    padding: $spacing-small; /* Espaciado interno pequeño */
+
+    /* Estilo para los botones de navegación */
+    .nav-button {
+      @extend %button-style; /* Usa el estilo base del botón */
+
+      &.left {
+        position: absolute; /* Posición absoluta para colocarlo a la izquierda */
+        left: $spacing-small; /* Espaciado pequeño desde la izquierda */
+        top: 50%; /* Centrado vertical */
+        transform: translateY(-50%); /* Ajusta la posición para que esté perfectamente centrado */
+      }
+
+      &.right {
+        position: absolute; /* Posición absoluta para colocarlo a la derecha */
+        right: $spacing-small; /* Espaciado pequeño desde la derecha */
+        top: 50%; /* Centrado vertical */
+        transform: translateY(-50%); /* Ajusta la posición para que esté perfectamente centrado */
+      }
+    }
+
+    /* Estilo para el contenedor de las reseñas */
+    .reviews {
+      display: flex; /* Flexbox activado */
+      transition: transform 0.5s ease-in-out; /* Transición suave al mover las reseñas */
+      width: 100%; /* El contenedor ocupa todo el ancho disponible */
+      gap: $spacing-small; /* Espaciado entre las reseñas */
+
+      /* Estilo para cada reseña individual */
+      .review {
+        flex: 0 0 100%; /* Cada reseña ocupa el 100% del ancho disponible */
+        background-color: $neutral-color3; /* Color de fondo de la reseña */
+        border-radius: $border-radius-medium; /* Bordes redondeados */
+        box-shadow: $box-shadow; /* Sombra de la caja */
+        padding: $spacing-small; /* Espaciado interno pequeño */
+        text-align: left; /* Alinea el texto a la izquierda */
+        overflow-wrap: break-word; /* Evita el desbordamiento de palabras */
+        word-wrap: break-word; /* Asegura que las palabras largas se rompan */
+        word-break: break-word; /* Asegura que el texto se ajuste correctamente */
+        box-sizing: border-box; /* Considera el padding y el borde en el cálculo del ancho */
+        
+        /* Estilo para el título de la reseña */
+        .review-title {
+          font-weight: $font-weight-semibold; /* Peso de la fuente del título */
+          color: $main-color; /* Color del título */
+          margin-bottom: $footer-item-margin; /* Espaciado en la parte inferior */
+        }
+
+        /* Estilo para el texto de la reseña */
+        .review-text {
+          @extend %review-text; /* Usa el estilo base del texto de reseña */
+        }
+
+        /* Estilo para el autor de la reseña */
+        .review-author {
+          display: flex; /* Flexbox activado para los elementos del autor */
+          align-items: center; /* Alinea los elementos verticalmente */
+          gap: $spacing-small; /* Espaciado entre el icono y el texto */
+
+          /* Estilo para la imagen del autor */
+          img {
+            border-radius: 50%; /* Hace la imagen circular */
+            width: $profile-icon-size; /* Tamaño del icono de perfil */
+            height: $profile-icon-size; /* Tamaño del icono de perfil */
+            object-fit: cover; /* Ajusta la imagen dentro del contenedor sin distorsionarla */
+          }
+
+          /* Estilo para el nombre del autor */
+          p {
+            font-size: $font-size-small; /* Tamaño de fuente pequeño */
+            font-weight: $font-weight-medium; /* Peso de la fuente medio */
+            color: $main-color; /* Color del texto */
+          }
+        }
+      }
+    }
+  }
+
+  /* Media queries para ajustar el diseño según el tamaño de la pantalla */
+
+  /* Pantallas pequeñas (móviles) */
+  @media (max-width: map-get($breakpoints, 'mobile')) {
+    h2 {
+      font-size: $font-size-medium; /* Reduce el tamaño del título */
+    }
+    .review-title {
+      font-size: $font-size-small; /* Reduce el tamaño del título de la reseña */
+    }
+    .review-text {
+      font-size: $font-size-xsmall; /* Reduce el tamaño del texto de la reseña */
+    }
+  }
+
+  /* Pantallas de tablet */
+  @media (max-width: map-get($breakpoints, 'tablet')) {
+    h2 {
+      font-size: $font-size-medium;
+    }
+    .review-title {
+      font-size: $font-size-small;
+    }
+    .review-text {
+      font-size: $font-size-xsmall;
+    }
+  }
+
+  /* Pantallas más grandes */
+  @media (max-width: map-get($breakpoints, 'small-screen')) {
+    h2 {
+      font-size: $font-size-medium;
+    }
+    .review-title {
+      font-size: $font-size-small;
+    }
+    .review-text {
+      font-size: $font-size-xsmall;
+    }
+  }
+
+  /* Pantallas estándar */
+  @media (max-width: map-get($breakpoints, 'standard-screen')) {
+    h2 {
+      font-size: $font-size-medium;
+    }
+    .review-title {
+      font-size: $font-size-medium;
+    }
+    .review-text {
+      font-size: $font-size-small;
+    }
+  }
+
+  /* Pantallas grandes */
+  @media (max-width: map-get($breakpoints, 'large-screen')) {
+    h2 {
+      font-size: $font-size-large;
+    }
+    .review-title {
+      font-size: $font-size-medium;
+    }
+    .review-text {
+      font-size: $font-size-medium;
+    }
+  }
+}

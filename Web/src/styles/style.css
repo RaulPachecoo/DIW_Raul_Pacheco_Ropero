@@ -1,0 +1,1131 @@
+@charset "UTF-8";
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/*Estilos para el Header*/
+.header {
+  /* Establece el diseño del encabezado usando Flexbox */
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Espacia el contenido de forma equitativa entre los extremos */
+  padding: 0 20px; /* Espaciado pequeño alrededor del encabezado */
+  background-color: white; /* Color de fondo del encabezado */
+  height: 60px; /* Altura del encabezado */
+  position: relative; /* Posicionamiento relativo para permitir el posicionamiento absoluto de elementos secundarios */
+  /* Estilos del botón de menú para dispositivos pequeños */
+  /* Estilo del logo del encabezado */
+  /* Estilo para el icono de perfil */
+  /* Estilos para pantallas pequeñas, como tabletas */
+  /* Estilos cuando el menú está activo (desplegado) */
+}
+.header .menu-toggle {
+  display: none; /* Inicialmente oculto, se muestra solo en pantallas pequeñas */
+  flex-direction: column; /* Alineación vertical de las barras del menú */
+  justify-content: space-between; /* Espaciado uniforme entre las barras */
+  width: 30px; /* Ancho del botón de menú */
+  height: 25px; /* Alto del botón de menú */
+  cursor: pointer; /* Cambia el cursor a mano al pasar sobre el botón */
+  /* Estilo para cada barra del menú hamburguesa */
+}
+.header .menu-toggle div {
+  height: 5px; /* Altura de las barras del menú */
+  background-color: #000; /* Color de las barras */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: all 0.3s ease; /* Transición suave para los cambios de estado */
+}
+.header .logo {
+  height: 40px; /* Altura del logo */
+  display: flex; /* Utiliza Flexbox para centrar el logo */
+  justify-content: center; /* Centra el logo horizontalmente */
+  margin: 0 auto; /* Centra el logo en el contenedor */
+}
+.header .profile-icon {
+  display: flex;
+  align-items: center; /* Centra el icono verticalmente */
+  justify-content: center; /* Centra el icono horizontalmente */
+  width: 40px; /* Ancho del icono */
+  height: 40px; /* Alto del icono */
+  border-radius: 50%; /* Hace el icono redondo */
+  transition: background-color 0.3s ease; /* Transición para el cambio de color de fondo en hover */
+  /* Estilo del ícono dentro del icono de perfil */
+}
+.header .profile-icon:hover {
+  background-color: rgb(229.5, 229.5, 229.5); /* Oscurece el fondo al pasar el mouse */
+}
+.header .profile-icon i {
+  font-size: 18px; /* Tamaño del ícono */
+  margin-right: 0; /* Elimina el margen derecho */
+}
+.header .nav {
+  display: flex; /* Muestra la barra de navegación como flexbox */
+  gap: 50px; /* Espaciado entre los elementos del menú */
+}
+.header .nav ul {
+  display: flex; /* Los elementos de la lista están en fila */
+  gap: 50px; /* Espaciado entre los elementos de la lista */
+  list-style: none; /* Elimina los puntos de la lista */
+}
+.header .nav ul li a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: #000; /* Color del texto del enlace */
+  font-size: 16px; /* Tamaño de fuente del enlace */
+  font-weight: 500; /* Peso de fuente del enlace */
+  font-family: "Montserrat", sans-serif; /* Fuente principal */
+}
+.header .nav ul li a:hover {
+  color: #0277BD; /* Cambia el color al pasar el mouse */
+}
+@media (max-width: 768px) {
+  .header .menu-toggle {
+    display: flex; /* Muestra el botón de menú hamburguesa */
+  }
+  .header .nav {
+    display: none; /* Oculta la barra de navegación por defecto */
+    position: absolute; /* Posiciona la barra de navegación debajo del encabezado */
+    top: 60px; /* Ajusta la posición de la barra debajo del encabezado */
+    left: 20px; /* Alinea la barra de navegación a la izquierda */
+    background-color: white; /* Color de fondo de la barra de navegación */
+    flex-direction: column; /* Muestra los elementos del menú en columna */
+    gap: 10px; /* Espaciado reducido entre los elementos */
+    width: 240px; /* Ancho del menú móvil */
+    padding: 20px; /* Espaciado alrededor de los elementos del menú */
+    border-radius: 8px; /* Bordes redondeados en la barra de navegación */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px; /* Sombra alrededor del menú */
+    z-index: 1000; /* Asegura que el menú se muestre por encima de otros elementos */
+  }
+  .header .nav ul {
+    flex-direction: column; /* Coloca los elementos del menú en columna */
+    gap: 10px; /* Espaciado entre los elementos de la lista */
+  }
+  .header .nav ul li {
+    text-align: left; /* Alinea los enlaces a la izquierda */
+  }
+  .header .nav ul li a {
+    font-size: 18px; /* Tamaño de fuente más pequeño para enlaces */
+    font-weight: 600; /* Peso de fuente más grueso */
+  }
+}
+.header.active-menu .menu-toggle div:nth-child(1) {
+  transform: rotate(45deg); /* Rota la primera barra del menú para formar una "X" */
+  transform-origin: top left; /* Define el punto de origen para la rotación */
+}
+.header.active-menu .menu-toggle div:nth-child(2) {
+  opacity: 0; /* Hace invisible la barra del medio */
+}
+.header.active-menu .menu-toggle div:nth-child(3) {
+  transform: rotate(-45deg); /* Rota la tercera barra en la dirección opuesta */
+  transform-origin: bottom left; /* Define el punto de origen para la rotación */
+}
+.header.active-menu .nav {
+  display: flex; /* Muestra el menú desplegado */
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Estilos para la sección Hero*/
+.hero {
+  /* Fondo responsivo con la imagen proporcionada */
+  /* Fondo para pantallas pequeñas (mobile) */
+  /* Fondo para pantallas medianas (tablet) */
+  /* Fondo para pantallas pequeñas grandes (small-screen) */
+  /* Fondo para pantallas estándar (standard-screen) */
+  /* Fondo para pantallas grandes (large-screen) */
+  /* Fondo para pantallas extra grandes (extra-large-screen) */
+  /* Usamos el mixin para configurar un fondo responsivo */
+  background-size: cover; /* Asegura que la imagen cubra completamente el área */
+  background-position: center; /* Centra la imagen del fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 70vh; /* Altura del contenedor hero (70% de la altura de la ventana) */
+  display: flex; /* Usamos Flexbox para alinear los elementos dentro del contenedor */
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  color: white; /* Color del texto */
+  text-align: center; /* Centra el texto dentro del contenedor */
+  /* Contenido principal del hero */
+}
+@media (max-width: 480px) {
+  .hero {
+    background-image: url("../img/hero_image-480px.jpg"); /* Usa una imagen de 480px para dispositivos móviles */
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("../img/hero_image-768px.jpg"); /* Usa una imagen de 768px para tabletas */
+  }
+}
+@media (max-width: 1200px) {
+  .hero {
+    background-image: url("../img/hero_image-1200px.jpg"); /* Usa una imagen de 1200px para pantallas pequeñas grandes */
+  }
+}
+@media (max-width: 1920px) {
+  .hero {
+    background-image: url("../img/hero_image-1920px.jpg"); /* Usa una imagen de 1920px para pantallas estándar */
+  }
+}
+@media (max-width: 2560px) {
+  .hero {
+    background-image: url("../img/hero_image-2560px.jpg"); /* Usa una imagen de 2560px para pantallas grandes */
+  }
+}
+@media (min-width: 2561px) {
+  .hero {
+    background-image: url("../img/hero_image-3820px.jpg"); /* Usa una imagen de 3820px para pantallas extra grandes */
+  }
+}
+.hero .hero-content {
+  max-width: 600px; /* Limita el ancho del contenido */
+  padding: 20px; /* Espaciado alrededor del contenido */
+  /* Estilos del título principal */
+  /* Estilos del párrafo en el hero */
+  /* Estilo del botón en el hero */
+}
+.hero .hero-content h1 {
+  font-size: 2.5rem; /* Tamaño de fuente inicial */
+  font-weight: 600; /* Peso de la fuente */
+  line-height: 1.3; /* Altura de línea para mejorar la legibilidad */
+  margin-bottom: 20px; /* Espaciado debajo del título */
+  font-family: "Montserrat", sans-serif; /* Fuente del título */
+  /* Tamaño de fuente responsivo usando mixin */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+}
+@media (max-width: 480px) {
+  .hero .hero-content h1 {
+    font-size: 1.5rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-content h1 {
+    font-size: 2rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.hero .hero-content p {
+  font-size: 16px; /* Tamaño de fuente para el párrafo */
+  margin-bottom: 60px; /* Espaciado debajo del párrafo */
+  font-family: "Montserrat", sans-serif; /* Fuente para el párrafo */
+  /* Tamaño de fuente responsivo usando mixin */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+}
+@media (max-width: 480px) {
+  .hero .hero-content p {
+    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-content p {
+    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.hero .hero-content .hero-button {
+  display: inline-block; /* Hace que el botón se comporte como un enlace de bloque */
+  background-color: #0277BD; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 20px 40px; /* Espaciado dentro del botón */
+  font-size: 18px; /* Tamaño de fuente del texto del botón */
+  font-weight: 500; /* Peso de la fuente del botón */
+  border-radius: 5px; /* Bordes redondeados para el botón */
+  font-family: "Oswald", sans-serif; /* Fuente específica para el botón */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  transition: background-color 0.3s ease; /* Efecto de transición suave en el color de fondo */
+  /* Tamaño de fuente responsivo usando mixin */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+  /* Efecto al pasar el cursor sobre el botón */
+}
+@media (max-width: 480px) {
+  .hero .hero-content .hero-button {
+    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-content .hero-button {
+    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.hero .hero-content .hero-button:hover {
+  background-color: rgb(1.4659685864, 87.2251308901, 138.5340314136); /* Oscurece el color de fondo al hacer hover */
+}
+
+/* Importa las variables definidas en otro archivo, como colores, fuentes, etc. */
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Importa los mixins definidos, como los para el tamaño responsivo, entre otros */
+/* Estilo base para un contenedor flex que alinea los elementos en columna y los centra */
+.why-fitessence {
+  display: flex; /* Activamos el layout Flexbox */
+  flex-direction: column; /* Alineamos los elementos en una columna */
+  align-items: center; /* Centramos los elementos a lo largo del eje transversal */
+}
+
+/* Estilo base para centrar el texto dentro de su contenedor */
+.login-container, .user-reviews, .why-fitessence .why-content h2 {
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Estilo base para una fuente responsiva, ajustable según los diferentes tamaños de pantalla */
+.why-fitessence .why-content p, .why-fitessence .why-content h2 {
+  font-family: "Montserrat", sans-serif; /* Define la fuente principal */
+  font-size: 1rem; /* Tamaño de fuente base */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+  /* Ajusta el tamaño de la fuente dependiendo del breakpoint */
+}
+@media (max-width: 480px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 1.125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 1.25rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 1.375rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+
+/* Estilo base para las imágenes, asegura que tengan un 100% de ancho, un borde redondeado y sombra */
+.why-fitessence .why-image img, .why-fitessence .why-image {
+  width: 100%; /* La imagen ocupará todo el ancho de su contenedor */
+  height: auto; /* La altura será automática para mantener la proporción */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px #000; /* Sombra sutil alrededor de la imagen */
+}
+
+.why-fitessence {
+  /* Usamos el estilo base para centrar los elementos en columna */
+  padding: 40px 20px; /* Espaciado interno: 40px arriba y abajo, 20px a los lados */
+  /* Estilo para el contenido dentro de 'why-content' */
+  /* Estilo para la imagen dentro de 'why-image' */
+}
+.why-fitessence .why-content {
+  margin-bottom: 20px; /* Espaciado inferior para separar las secciones */
+  max-width: 600px; /* Limita el ancho máximo del contenido a 600px */
+  /* Estilo para el título h2 dentro de 'why-content' */
+  /* Estilo para los párrafos dentro de 'why-content' */
+}
+.why-fitessence .why-content h2 {
+  /* Centra el texto */
+  /* Aplica la fuente responsiva */
+  color: #0277BD; /* Color del texto en el título */
+  margin-bottom: 15px; /* Espaciado inferior del título */
+  font-family: "Montserrat", sans-serif; /* Fuente primaria */
+  font-size: 2rem; /* Tamaño de fuente grande */
+}
+.why-fitessence .why-content p {
+  /* Aplica la fuente responsiva */
+  font-family: "Nunito", sans-serif; /* Fuente secundaria */
+  line-height: 1.6; /* Espaciado entre líneas */
+  color: #3B4A60; /* Color principal del texto */
+}
+.why-fitessence .why-image {
+  /* Aplica el estilo base de imagen */
+  max-width: 800px; /* Limita el ancho máximo de la imagen a 800px */
+  /* Estilo específico para la imagen dentro de 'why-image' */
+}
+.why-fitessence .why-image img {
+  /* Aplica el estilo base de imagen */
+  /* Fondo para pantallas pequeñas (mobile) */
+  /* Fondo para pantallas medianas (tablet) */
+  /* Fondo para pantallas pequeñas grandes (small-screen) */
+  /* Fondo para pantallas estándar (standard-screen) */
+  /* Fondo para pantallas grandes (large-screen) */
+  /* Fondo para pantallas extra grandes (extra-large-screen) */
+  /* Aplica un fondo responsivo para la imagen (según los breakpoints definidos) */
+}
+@media (max-width: 480px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-480px.jpg"); /* Usa una imagen de 480px para dispositivos móviles */
+  }
+}
+@media (max-width: 768px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-768px.jpg"); /* Usa una imagen de 768px para tabletas */
+  }
+}
+@media (max-width: 1200px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-1200px.jpg"); /* Usa una imagen de 1200px para pantallas pequeñas grandes */
+  }
+}
+@media (max-width: 1920px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-1920px.jpg"); /* Usa una imagen de 1920px para pantallas estándar */
+  }
+}
+@media (max-width: 2560px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-2560px.jpg"); /* Usa una imagen de 2560px para pantallas grandes */
+  }
+}
+@media (min-width: 2561px) {
+  .why-fitessence .why-image img {
+    background-image: url("../img/abdomen_equipo2-3820px.jpg"); /* Usa una imagen de 3820px para pantallas extra grandes */
+  }
+}
+
+/* Importa las variables de configuración (colores, tamaños, fuentes, etc.) */
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Importa los mixins para reutilización de código en distintos lugares */
+/* Estilos para la sección de testimonios */
+.testimonials {
+  background-color: #3B4A60; /* Color de fondo de la sección */
+  color: white; /* Color del texto */
+  text-align: center; /* Centra el contenido del texto */
+  padding: 60px 20px; /* Espaciado interior: grande en vertical y pequeño en horizontal */
+  /* Estilos para el título de la sección de testimonios */
+  /* Estilos para el párrafo de la sección de testimonios */
+  /* Contenedor para los testimonios, usando Flexbox */
+}
+.testimonials h2 {
+  font-family: "Montserrat", sans-serif; /* Fuente del título */
+  font-size: 2.5rem; /* Tamaño de fuente del título */
+  font-weight: 600; /* Peso de la fuente del título */
+  margin-bottom: 20px; /* Espaciado debajo del título */
+  /* Ajuste del tamaño de fuente responsivo con diferentes factores en cada tamaño de pantalla */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+}
+@media (max-width: 480px) {
+  .testimonials h2 {
+    font-size: 1.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .testimonials h2 {
+    font-size: 2.1875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .testimonials h2 {
+    font-size: 2.5rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .testimonials h2 {
+    font-size: 2.8125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .testimonials h2 {
+    font-size: 3.125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.testimonials p {
+  font-family: "Montserrat", sans-serif; /* Fuente del párrafo */
+  font-size: 1rem; /* Tamaño de fuente del párrafo */
+  margin-bottom: 20px; /* Espaciado debajo del párrafo */
+  /* Ajuste del tamaño de fuente responsivo para diferentes tamaños de pantalla */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+}
+@media (max-width: 480px) {
+  .testimonials p {
+    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .testimonials p {
+    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .testimonials p {
+    font-size: 1.125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .testimonials p {
+    font-size: 1.25rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .testimonials p {
+    font-size: 1.375rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.testimonials .testimonials-grid {
+  display: flex; /* Activa Flexbox para el contenedor */
+  justify-content: center; /* Centra los elementos de manera horizontal */
+  gap: 40px; /* Espaciado entre los elementos del grid */
+  flex-wrap: wrap; /* Permite que los testimonios se ajusten en múltiples filas si es necesario */
+  /* Estilo para cada testimonio dentro del grid */
+}
+.testimonials .testimonials-grid .testimonial {
+  background-color: #3B4A60; /* Color de fondo de cada testimonio */
+  border-radius: 8px; /* Bordes redondeados de cada testimonio */
+  padding: 20px; /* Espaciado interior de cada testimonio */
+  text-align: center; /* Centra el contenido del testimonio */
+  width: 180px; /* Ancho fijo para cada testimonio */
+  /* Estilo de la imagen del testimonio */
+  /* Información adicional dentro de cada testimonio (nombre, descripción, etc.) */
+}
+.testimonials .testimonials-grid .testimonial img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  margin-bottom: 5px; /* Espaciado debajo de la imagen */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info {
+  display: flex; /* Usa Flexbox para alinear el contenido */
+  align-items: center; /* Alinea los elementos de manera vertical */
+  justify-content: center; /* Centra los elementos de manera horizontal */
+  gap: 20px; /* Espaciado entre los elementos dentro de la info del testimonio */
+  /* Estilo para el botón de reproducción (play) */
+  /* Estilo para el texto dentro del contenedor del testimonio */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info .play-button {
+  background-color: #0277BD; /* Color de fondo del botón */
+  color: white; /* Color del texto dentro del botón */
+  border: none; /* Sin borde */
+  border-radius: 50%; /* Hace el botón redondo */
+  width: 30px; /* Tamaño del botón */
+  height: 30px; /* Tamaño del botón */
+  display: flex; /* Usa Flexbox para centrar el ícono dentro del botón */
+  justify-content: center; /* Centra el ícono dentro del botón */
+  align-items: center; /* Centra el ícono dentro del botón */
+  font-size: 0.875rem; /* Tamaño del ícono */
+  cursor: pointer; /* Muestra un cursor tipo mano al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+  /* Estilo para cuando se pasa el cursor sobre el botón */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info .play-button:hover {
+  background-color: rgb(1.4659685864, 87.2251308901, 138.5340314136); /* Oscurece el color de fondo al hacer hover */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info .play-button i {
+  margin: 0; /* Elimina el margen del ícono dentro del botón */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info p {
+  font-family: "Montserrat", sans-serif; /* Fuente del texto */
+  font-size: 0.875rem; /* Tamaño de la fuente */
+  color: #E3E4E8; /* Color del texto */
+  margin: 0; /* Elimina los márgenes */
+}
+
+/* Importa las variables de configuración, como colores, tamaños, fuentes, etc. */
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Importa los mixins para reutilización de código en diferentes partes del proyecto */
+/* Centra el texto dentro del contenedor */
+.login-container, .user-reviews, .why-fitessence .why-content h2 {
+  text-align: center;
+}
+
+/* Estilo base para los botones, incluye color, tamaño y efecto de cursor */
+.user-reviews .reviews-container .nav-button {
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  font-size: 1.25rem; /* Tamaño de fuente grande */
+  cursor: pointer; /* Cursor tipo mano al pasar sobre el botón */
+  color: #3B4A60; /* Color del texto del botón */
+  z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+/* Estilo base para el texto de las reseñas */
+.user-reviews .reviews-container .reviews .review .review-text {
+  font-size: 0.875rem; /* Tamaño de fuente pequeño */
+  color: #B0B4BC; /* Color del texto */
+  margin-bottom: 20px; /* Espaciado en la parte inferior */
+  line-height: 1.5; /* Espaciado entre líneas */
+  font-family: "Nunito", sans-serif; /* Fuente secundaria */
+}
+
+/* Estilo responsivo para el texto */
+.why-fitessence .why-content h2, .why-fitessence .why-content p {
+  font-family: "Montserrat", sans-serif; /* Fuente primaria */
+  font-size: 1rem; /* Tamaño de fuente base */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+  /* Tamaño responsivo */
+}
+@media (max-width: 480px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 1.125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 1.25rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 1.375rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+
+.user-reviews {
+  /* Centra el texto */
+  margin: 40px auto; /* Márgenes automáticos y espaciado medio */
+  padding: 20px; /* Espaciado interno pequeño */
+  background-color: white; /* Color de fondo de la sección */
+  border-radius: 8px; /* Bordes redondeados */
+  max-width: 600px; /* Ancho máximo de la sección */
+  /* Estilo para el título de la sección */
+  /* Contenedor para las reseñas, utiliza Flexbox para alinear y distribuir los elementos */
+  /* Media queries para ajustar el diseño según el tamaño de la pantalla */
+  /* Pantallas pequeñas (móviles) */
+  /* Pantallas de tablet */
+  /* Pantallas más grandes */
+  /* Pantallas estándar */
+  /* Pantallas grandes */
+}
+.user-reviews h2 {
+  font-size: 1.25rem; /* Tamaño de fuente grande */
+  color: #3B4A60; /* Color del título */
+  margin-bottom: 20px; /* Espaciado en la parte inferior */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+  /* Tamaño de fuente responsivo */
+}
+@media (max-width: 480px) {
+  .user-reviews h2 {
+    font-size: 1.04125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .user-reviews h2 {
+    font-size: 1.215rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .user-reviews h2 {
+    font-size: 1.38875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .user-reviews h2 {
+    font-size: 1.5625rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .user-reviews h2 {
+    font-size: 1.73625rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.user-reviews .reviews-container {
+  display: flex; /* Flexbox activado */
+  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  position: relative; /* Posicionamiento relativo para los botones de navegación */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  padding: 20px; /* Espaciado interno pequeño */
+  /* Estilo para los botones de navegación */
+  /* Estilo para el contenedor de las reseñas */
+}
+.user-reviews .reviews-container .nav-button {
+  /* Usa el estilo base del botón */
+}
+.user-reviews .reviews-container .nav-button.left {
+  position: absolute; /* Posición absoluta para colocarlo a la izquierda */
+  left: 20px; /* Espaciado pequeño desde la izquierda */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajusta la posición para que esté perfectamente centrado */
+}
+.user-reviews .reviews-container .nav-button.right {
+  position: absolute; /* Posición absoluta para colocarlo a la derecha */
+  right: 20px; /* Espaciado pequeño desde la derecha */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajusta la posición para que esté perfectamente centrado */
+}
+.user-reviews .reviews-container .reviews {
+  display: flex; /* Flexbox activado */
+  transition: transform 0.5s ease-in-out; /* Transición suave al mover las reseñas */
+  width: 100%; /* El contenedor ocupa todo el ancho disponible */
+  gap: 20px; /* Espaciado entre las reseñas */
+  /* Estilo para cada reseña individual */
+}
+.user-reviews .reviews-container .reviews .review {
+  flex: 0 0 100%; /* Cada reseña ocupa el 100% del ancho disponible */
+  background-color: white; /* Color de fondo de la reseña */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px; /* Sombra de la caja */
+  padding: 20px; /* Espaciado interno pequeño */
+  text-align: left; /* Alinea el texto a la izquierda */
+  overflow-wrap: break-word; /* Evita el desbordamiento de palabras */
+  word-wrap: break-word; /* Asegura que las palabras largas se rompan */
+  word-break: break-word; /* Asegura que el texto se ajuste correctamente */
+  box-sizing: border-box; /* Considera el padding y el borde en el cálculo del ancho */
+  /* Estilo para el título de la reseña */
+  /* Estilo para el texto de la reseña */
+  /* Estilo para el autor de la reseña */
+}
+.user-reviews .reviews-container .reviews .review .review-title {
+  font-weight: 600; /* Peso de la fuente del título */
+  color: #3B4A60; /* Color del título */
+  margin-bottom: 5px; /* Espaciado en la parte inferior */
+}
+.user-reviews .reviews-container .reviews .review .review-text {
+  /* Usa el estilo base del texto de reseña */
+}
+.user-reviews .reviews-container .reviews .review .review-author {
+  display: flex; /* Flexbox activado para los elementos del autor */
+  align-items: center; /* Alinea los elementos verticalmente */
+  gap: 20px; /* Espaciado entre el icono y el texto */
+  /* Estilo para la imagen del autor */
+  /* Estilo para el nombre del autor */
+}
+.user-reviews .reviews-container .reviews .review .review-author img {
+  border-radius: 50%; /* Hace la imagen circular */
+  width: 40px; /* Tamaño del icono de perfil */
+  height: 40px; /* Tamaño del icono de perfil */
+  object-fit: cover; /* Ajusta la imagen dentro del contenedor sin distorsionarla */
+}
+.user-reviews .reviews-container .reviews .review .review-author p {
+  font-size: 0.875rem; /* Tamaño de fuente pequeño */
+  font-weight: 500; /* Peso de la fuente medio */
+  color: #3B4A60; /* Color del texto */
+}
+@media (max-width: 480px) {
+  .user-reviews h2 {
+    font-size: 1rem; /* Reduce el tamaño del título */
+  }
+  .user-reviews .review-title {
+    font-size: 0.875rem; /* Reduce el tamaño del título de la reseña */
+  }
+  .user-reviews .review-text {
+    font-size: 0.75rem; /* Reduce el tamaño del texto de la reseña */
+  }
+}
+@media (max-width: 768px) {
+  .user-reviews h2 {
+    font-size: 1rem;
+  }
+  .user-reviews .review-title {
+    font-size: 0.875rem;
+  }
+  .user-reviews .review-text {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 1200px) {
+  .user-reviews h2 {
+    font-size: 1rem;
+  }
+  .user-reviews .review-title {
+    font-size: 0.875rem;
+  }
+  .user-reviews .review-text {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 1920px) {
+  .user-reviews h2 {
+    font-size: 1rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1rem;
+  }
+  .user-reviews .review-text {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 2560px) {
+  .user-reviews h2 {
+    font-size: 1.25rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1rem;
+  }
+  .user-reviews .review-text {
+    font-size: 1rem;
+  }
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/*Estilos para el Footer*/
+/* Estilos comunes para los enlaces del pie de página */
+.footer .footer-links ul li a p a,
+.footer .footer-contact ul li a p a,
+.footer .footer-legal ul li a p a, .footer .footer-links ul li a,
+.footer .footer-contact ul li a,
+.footer .footer-legal ul li a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: #B0B4BC; /* Color base de los enlaces */
+  font-size: 14px; /* Tamaño de fuente para los enlaces */
+  margin-bottom: 5px; /* Márgenes entre los elementos */
+  display: block; /* Los enlaces se comportan como bloques */
+}
+.footer .footer-links ul li a:hover,
+.footer .footer-contact ul li a:hover,
+.footer .footer-legal ul li a:hover {
+  color: #0277BD; /* Cambia el color del enlace al pasar el mouse */
+}
+
+/* Estilos comunes para los títulos del pie de página */
+.footer .footer-links h3,
+.footer .footer-contact h3,
+.footer .footer-legal h3 {
+  font-size: 18px; /* Tamaño de fuente de los títulos */
+  color: white; /* Color del texto del título */
+  margin-bottom: 10px; /* Margen inferior en los títulos */
+}
+
+/* Estilos comunes para los iconos sociales */
+.footer .footer-logo nav ul li .social-icon {
+  color: white; /* Color base de los iconos sociales */
+  font-size: 24px; /* Tamaño de los iconos sociales */
+  display: inline-flex; /* Los iconos se muestran en línea como flex */
+  justify-content: center; /* Centra los iconos dentro de su contenedor */
+  align-items: center; /* Centra los iconos verticalmente */
+  width: 40px; /* Ancho de los iconos */
+  height: 40px; /* Alto de los iconos */
+  border-radius: 50%; /* Redondea los iconos para hacerlos circulares */
+  background-color: #3B4A60; /* Color de fondo de los iconos */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+.footer .footer-logo nav ul li .social-icon:hover {
+  opacity: 0.8; /* Reduce la opacidad de los iconos cuando se pasa el mouse */
+}
+
+/* Estilos comunes para las secciones del pie de página */
+.footer .footer-links,
+.footer .footer-contact,
+.footer .footer-legal {
+  flex: 1; /* Cada sección ocupa un espacio proporcional */
+  margin-bottom: 20px; /* Margen inferior de las secciones */
+}
+.footer .footer-links h3,
+.footer .footer-contact h3,
+.footer .footer-legal h3 {
+  /* Se extienden los estilos del título */
+}
+.footer .footer-links ul li a,
+.footer .footer-contact ul li a,
+.footer .footer-legal ul li a {
+  /* Se extienden los estilos de los enlaces */
+}
+.footer .footer-links ul li a p,
+.footer .footer-contact ul li a p,
+.footer .footer-legal ul li a p {
+  margin: 5px 0; /* Márgenes de los párrafos */
+  font-size: 14px; /* Tamaño de fuente para los párrafos */
+}
+.footer .footer-links ul li a p a,
+.footer .footer-contact ul li a p a,
+.footer .footer-legal ul li a p a {
+  /* Se extienden los estilos de los enlaces */
+}
+
+.footer {
+  font-family: "Montserrat", sans-serif; /* Fuente principal para el pie de página */
+  background-color: #3B4A60; /* Color de fondo del pie de página */
+  color: #B0B4BC; /* Color del texto */
+  padding: 20px 40px; /* Espaciado alrededor del pie de página */
+  display: flex; /* Utiliza flexbox para el layout */
+  flex-wrap: wrap; /* Permite que las secciones se ajusten en varias líneas */
+  gap: 20px; /* Espacio entre las secciones */
+  /* Para pantallas pequeñas como tabletas */
+  /* Para pantallas más pequeñas, como teléfonos móviles */
+  /* Ajustes para pantallas medianas */
+  /* Ajustes para pantallas pequeñas */
+  /* Ajustes para pantallas estándar */
+  /* Ajustes para pantallas grandes */
+}
+.footer .footer-logo {
+  display: flex; /* Flexbox para el logo */
+  flex-direction: column; /* Coloca el logo y el contenido de forma vertical */
+  align-items: center; /* Centra los elementos */
+  margin-bottom: 20px; /* Margen inferior del logo */
+}
+.footer .footer-logo img {
+  width: 80px; /* Tamaño del logo */
+  margin-bottom: 15px; /* Margen inferior del logo */
+}
+.footer .footer-logo nav ul {
+  list-style: none; /* Elimina los puntos de la lista */
+  display: block; /* Los elementos de la lista se comportan como bloques */
+  text-align: center; /* Centra el texto de los enlaces */
+  padding: 0; /* Elimina el padding por defecto */
+}
+.footer .footer-logo nav ul li {
+  margin-bottom: 5px; /* Margen inferior de cada item */
+}
+.footer .footer-logo nav ul li .social-icon {
+  /* Se extienden los estilos de los iconos sociales */
+  /* Estilos personalizados para cada icono social */
+}
+.footer .footer-logo nav ul li .social-icon.instagram {
+  background-color: #e4405f; /* Color específico para Instagram */
+}
+.footer .footer-logo nav ul li .social-icon.facebook {
+  background-color: #3b5998; /* Color específico para Facebook */
+}
+.footer .footer-logo nav ul li .social-icon.linkedin {
+  background-color: #0077b5; /* Color específico para LinkedIn */
+}
+.footer .footer-logo nav ul li .social-icon.twitter {
+  background-color: #1da1f2; /* Color específico para Twitter */
+}
+.footer .footer-logo nav a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+.footer .footer-links,
+.footer .footer-contact,
+.footer .footer-legal {
+  /* Se extienden los estilos de las secciones del pie de página */
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Cambia la dirección del layout a columna */
+    text-align: center; /* Centra el texto */
+    gap: 10px; /* Reduce el espacio entre los elementos */
+  }
+  .footer .footer-logo,
+  .footer .footer-links,
+  .footer .footer-contact,
+  .footer .footer-legal {
+    margin-bottom: 10px; /* Reduce el margen entre secciones */
+  }
+}
+@media (max-width: 480px) {
+  .footer .footer-logo img {
+    width: 60px; /* Ajusta el tamaño del logo */
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1rem; /* Tamaño de fuente de los títulos más pequeños */
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 0.875rem; /* Tamaño de fuente de los enlaces más pequeños */
+  }
+}
+@media (max-width: 768px) {
+  .footer .footer-logo img {
+    width: 70px; /* Ajusta el tamaño del logo */
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1.125rem; /* Ajusta el tamaño del título */
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 1rem; /* Ajusta el tamaño de los enlaces y párrafos */
+  }
+}
+@media (max-width: 1200px) {
+  .footer .footer-logo img {
+    width: 80px; /* Ajusta el tamaño del logo */
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1.25rem; /* Ajusta el tamaño del título */
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 1.125rem; /* Ajusta el tamaño de los enlaces y párrafos */
+  }
+}
+@media (max-width: 1920px) {
+  .footer .footer-logo img {
+    width: 90px; /* Ajusta el tamaño del logo */
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1.375rem; /* Ajusta el tamaño del título */
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 1.25rem; /* Ajusta el tamaño de los enlaces y párrafos */
+  }
+}
+@media (max-width: 2560px) {
+  .footer .footer-logo img {
+    width: 100px; /* Ajusta el tamaño del logo */
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1.5rem; /* Ajusta el tamaño del título */
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 1.375rem; /* Ajusta el tamaño de los enlaces y párrafos */
+  }
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Estilos para la página del login */
+/* Clase para centrar el texto */
+.login-container, .why-fitessence .why-content h2, .user-reviews {
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* Estilo base para los botones */
+.login-container .login-content .login-buttons button {
+  display: flex; /* Usa Flexbox para centrar el contenido del botón */
+  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  width: 100%; /* El botón ocupa todo el ancho disponible */
+  max-width: 300px; /* Limita el ancho máximo del botón */
+  margin: 5px auto; /* Centra el botón horizontalmente con margen */
+  padding: 20px; /* Espaciado interno del botón */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de fuente del botón */
+  cursor: pointer; /* Cambia el cursor a mano cuando pasa sobre el botón */
+  font-weight: 500; /* Peso de la fuente del texto */
+  transition: background-color 0.3s ease; /* Efecto de transición en el color de fondo */
+  /* Estilos para el ícono dentro del botón */
+}
+.login-container .login-content .login-buttons button i {
+  font-size: 1.5rem; /* Tamaño del ícono */
+  margin-right: 20px; /* Espaciado entre el ícono y el texto */
+}
+
+/* Estilo base para los enlaces */
+.login-container .login-content .email-login, .login-container .login-content p .signup-link {
+  color: #0277BD; /* Color del enlace */
+  font-size: 0.9rem; /* Tamaño de la fuente */
+  text-decoration: none; /* Elimina el subrayado por defecto */
+  /* Efecto al pasar el cursor sobre el enlace */
+}
+.login-container .login-content .email-login:hover, .login-container .login-content p .signup-link:hover {
+  text-decoration: underline; /* Subraya el enlace al hacer hover */
+}
+
+#login-page {
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el padding predeterminado */
+  font-family: "Montserrat", sans-serif; /* Fuente principal para la página */
+  background-color: #3B4A60; /* Color de fondo de la página */
+  display: flex; /* Usa Flexbox para centrar el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 100vh; /* La altura de la página ocupa toda la ventana */
+}
+
+/* Contenedor de login */
+.login-container {
+  background-color: #3B4A60; /* Color de fondo del contenedor */
+  padding: 20px; /* Espaciado interno del contenedor */
+  /* Aplica los estilos para centrar el texto */
+  /* Contenido dentro del login */
+}
+.login-container .login-content {
+  color: white; /* Color del texto dentro del contenedor */
+  /* Estilo para el logo */
+  /* Estilo para el título principal */
+  /* Estilo para el párrafo */
+  /* Estilo para los botones de login */
+  /* Enlace para login con email */
+}
+.login-container .login-content .logo {
+  width: 80px; /* Tamaño del logo */
+  margin-bottom: 15px; /* Espaciado debajo del logo */
+}
+.login-container .login-content h1 {
+  font-size: 2rem; /* Tamaño de fuente para el título */
+  font-weight: 600; /* Peso de la fuente */
+  margin-bottom: 20px; /* Espaciado debajo del título */
+}
+.login-container .login-content p {
+  font-size: 1rem; /* Tamaño de la fuente */
+  margin-bottom: 20px; /* Espaciado debajo del párrafo */
+  /* Estilo para el enlace de "signup" */
+}
+.login-container .login-content p .signup-link {
+  /* Aplica los estilos de enlace predefinidos */
+  /* Efecto de hover para el enlace */
+}
+.login-container .login-content p .signup-link:hover {
+  text-decoration: underline; /* Subraya el enlace al hacer hover */
+}
+.login-container .login-content .login-buttons {
+  margin-bottom: 20px; /* Espaciado debajo de los botones */
+  /* Estilos para los botones dentro de login */
+}
+.login-container .login-content .login-buttons button {
+  /* Aplica los estilos base de botón */
+  /* Estilo específico para el botón de Google */
+  /* Estilo específico para el botón de Apple */
+}
+.login-container .login-content .login-buttons button.google-login {
+  background-color: white; /* Fondo del botón */
+  color: #000; /* Color del texto */
+  border: 1px solid #E3E4E8; /* Borde del botón */
+  /* Estilo para la imagen dentro del botón */
+  /* Efecto de hover para el botón de Google */
+}
+.login-container .login-content .login-buttons button.google-login img {
+  width: 20px; /* Tamaño de la imagen */
+  margin-right: 20px; /* Espaciado entre la imagen y el texto */
+}
+.login-container .login-content .login-buttons button.google-login:hover {
+  background-color: white; /* El fondo no cambia al hacer hover */
+}
+.login-container .login-content .login-buttons button.apple-login {
+  background-color: #000; /* Fondo del botón */
+  color: white; /* Color del texto */
+  border: 1px solid #000; /* Borde del botón */
+  /* Estilo para la imagen dentro del botón */
+  /* Efecto de hover para el botón de Apple */
+}
+.login-container .login-content .login-buttons button.apple-login img {
+  width: 20px; /* Tamaño de la imagen */
+  margin-right: 20px; /* Espaciado entre la imagen y el texto */
+}
+.login-container .login-content .login-buttons button.apple-login:hover {
+  background-color: black; /* Oscurece el fondo al hacer hover */
+}
+.login-container .login-content .email-login {
+  /* Aplica los estilos de enlace predefinidos */
+}
+
+/*# sourceMappingURL=style.css.map */

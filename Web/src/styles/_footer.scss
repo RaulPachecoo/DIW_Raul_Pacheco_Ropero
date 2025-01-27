@@ -1,0 +1,246 @@
+@import 'variables';
+@import 'mixins';
+
+/*Estilos para el Footer*/
+
+/* Estilos comunes para los enlaces del pie de página */
+%footer-links-style {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: $neutral-color1; /* Color base de los enlaces */
+  font-size: $font-footer-text; /* Tamaño de fuente para los enlaces */
+  margin-bottom: $footer-item-margin; /* Márgenes entre los elementos */
+  display: block; /* Los enlaces se comportan como bloques */
+
+  &:hover {
+    color: $secondary-color; /* Cambia el color del enlace al pasar el mouse */
+  }
+}
+
+/* Estilos comunes para los títulos del pie de página */
+%footer-title-style {
+  font-size: $font-footer-title; /* Tamaño de fuente de los títulos */
+  color: $neutral-color3; /* Color del texto del título */
+  margin-bottom: $footer-title-margin; /* Margen inferior en los títulos */
+}
+
+/* Estilos comunes para los iconos sociales */
+%social-icon-style {
+  color: $neutral-color3; /* Color base de los iconos sociales */
+  font-size: $font-social-icon; /* Tamaño de los iconos sociales */
+  display: inline-flex; /* Los iconos se muestran en línea como flex */
+  justify-content: center; /* Centra los iconos dentro de su contenedor */
+  align-items: center; /* Centra los iconos verticalmente */
+  width: 40px; /* Ancho de los iconos */
+  height: 40px; /* Alto de los iconos */
+  border-radius: 50%; /* Redondea los iconos para hacerlos circulares */
+  background-color: $main-color; /* Color de fondo de los iconos */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+
+  &:hover {
+    opacity: 0.8; /* Reduce la opacidad de los iconos cuando se pasa el mouse */
+  }
+}
+
+/* Estilos comunes para las secciones del pie de página */
+%footer-section {
+  flex: 1; /* Cada sección ocupa un espacio proporcional */
+  margin-bottom: $footer-section-margin; /* Margen inferior de las secciones */
+
+  h3 {
+    @extend %footer-title-style; /* Se extienden los estilos del título */
+  }
+
+  ul {
+    li {
+      a {
+        @extend %footer-links-style; /* Se extienden los estilos de los enlaces */
+
+        p {
+          margin: $footer-item-margin 0; /* Márgenes de los párrafos */
+          font-size: $font-footer-text; /* Tamaño de fuente para los párrafos */
+          
+          a {
+            @extend %footer-links-style; /* Se extienden los estilos de los enlaces */
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  font-family: $primary-font-family; /* Fuente principal para el pie de página */
+  background-color: $main-color; /* Color de fondo del pie de página */
+  color: $neutral-color1; /* Color del texto */
+  padding: $footer-padding; /* Espaciado alrededor del pie de página */
+  display: flex; /* Utiliza flexbox para el layout */
+  flex-wrap: wrap; /* Permite que las secciones se ajusten en varias líneas */
+  gap: $footer-gap; /* Espacio entre las secciones */
+
+  .footer-logo {
+    display: flex; /* Flexbox para el logo */
+    flex-direction: column; /* Coloca el logo y el contenido de forma vertical */
+    align-items: center; /* Centra los elementos */
+    margin-bottom: $footer-section-margin; /* Margen inferior del logo */
+
+    img {
+      width: $footer-logo-size; /* Tamaño del logo */
+      margin-bottom: $footer-logo-margin; /* Margen inferior del logo */
+    }
+
+    nav {
+      ul {
+        list-style: none; /* Elimina los puntos de la lista */
+        display: block; /* Los elementos de la lista se comportan como bloques */
+        text-align: center; /* Centra el texto de los enlaces */
+        padding: 0; /* Elimina el padding por defecto */
+
+        li {
+          margin-bottom: $footer-item-margin; /* Margen inferior de cada item */
+
+          .social-icon {
+            @extend %social-icon-style; /* Se extienden los estilos de los iconos sociales */
+
+            /* Estilos personalizados para cada icono social */
+            &.instagram {
+              background-color: $instagram-color; /* Color específico para Instagram */
+            }
+
+            &.facebook {
+              background-color: $facebook-color; /* Color específico para Facebook */
+            }
+
+            &.linkedin {
+              background-color: $linkedin-color; /* Color específico para LinkedIn */
+            }
+
+            &.twitter {
+              background-color: $twitter-color; /* Color específico para Twitter */
+            }
+          }
+        }
+      }
+
+      a {
+        text-decoration: none; /* Elimina el subrayado de los enlaces */
+      }
+    }
+  }
+
+  .footer-links,
+  .footer-contact,
+  .footer-legal {
+    @extend %footer-section; /* Se extienden los estilos de las secciones del pie de página */
+  }
+
+  // Diseño responsivo
+
+  /* Para pantallas pequeñas como tabletas */
+  @media (max-width: map-get($breakpoints, 'tablet')) {
+    flex-direction: column; /* Cambia la dirección del layout a columna */
+    text-align: center; /* Centra el texto */
+    gap: $footer-gap-sm; /* Reduce el espacio entre los elementos */
+
+    .footer-logo,
+    .footer-links,
+    .footer-contact,
+    .footer-legal {
+      margin-bottom: $footer-section-margin-sm; /* Reduce el margen entre secciones */
+    }
+  }
+
+  /* Para pantallas más pequeñas, como teléfonos móviles */
+  @media (max-width: map-get($breakpoints, 'mobile')) {
+    .footer-logo {
+      img {
+        width: $footer-logo-size-sm; /* Ajusta el tamaño del logo */
+      }
+    }
+    .footer-links,
+    .footer-contact,
+    .footer-legal {
+      h3 {
+        font-size: 1rem; /* Tamaño de fuente de los títulos más pequeños */
+      }
+      a, p {
+        font-size: 0.875rem; /* Tamaño de fuente de los enlaces más pequeños */
+      }
+    }
+  }
+
+  /* Ajustes para pantallas medianas */
+  @media (max-width: map-get($breakpoints, 'tablet')) {
+    .footer-logo {
+      img {
+        width: $footer-logo-size-md; /* Ajusta el tamaño del logo */
+      }
+    }
+    .footer-links,
+    .footer-contact,
+    .footer-legal {
+      h3 {
+        font-size: 1.125rem; /* Ajusta el tamaño del título */
+      }
+      a, p {
+        font-size: 1rem; /* Ajusta el tamaño de los enlaces y párrafos */
+      }
+    }
+  }
+
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: map-get($breakpoints, 'small-screen')) {
+    .footer-logo {
+      img {
+        width: $footer-logo-size-lg; /* Ajusta el tamaño del logo */
+      }
+    }
+    .footer-links,
+    .footer-contact,
+    .footer-legal {
+      h3 {
+        font-size: 1.25rem; /* Ajusta el tamaño del título */
+      }
+      a, p {
+        font-size: 1.125rem; /* Ajusta el tamaño de los enlaces y párrafos */
+      }
+    }
+  }
+
+  /* Ajustes para pantallas estándar */
+  @media (max-width: map-get($breakpoints, 'standard-screen')) {
+    .footer-logo {
+      img {
+        width: $footer-logo-size-xl; /* Ajusta el tamaño del logo */
+      }
+    }
+    .footer-links,
+    .footer-contact,
+    .footer-legal {
+      h3 {
+        font-size: 1.375rem; /* Ajusta el tamaño del título */
+      }
+      a, p {
+        font-size: 1.25rem; /* Ajusta el tamaño de los enlaces y párrafos */
+      }
+    }
+  }
+
+  /* Ajustes para pantallas grandes */
+  @media (max-width: map-get($breakpoints, 'large-screen')) {
+    .footer-logo {
+      img {
+        width: $footer-logo-size-xxl; /* Ajusta el tamaño del logo */
+      }
+    }
+    .footer-links,
+    .footer-contact,
+    .footer-legal {
+      h3 {
+        font-size: 1.5rem; /* Ajusta el tamaño del título */
+      }
+      a, p {
+        font-size: 1.375rem; /* Ajusta el tamaño de los enlaces y párrafos */
+      }
+    }
+  }
+}

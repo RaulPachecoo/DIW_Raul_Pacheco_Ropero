@@ -1,0 +1,60 @@
+/* Función para escalar el tamaño de la fuente según un factor dado */
+@function scale-font-size($base-size, $factor) {
+  @return $base-size * $factor; /* Retorna el tamaño base multiplicado por el factor */
+}
+
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+@mixin responsive-background($image) {
+  /* Fondo para pantallas pequeñas (mobile) */
+  @media (max-width: map-get($breakpoints, 'mobile')) {
+    background-image: url('../img/#{$image}-480px.jpg'); /* Usa una imagen de 480px para dispositivos móviles */
+  }
+
+  /* Fondo para pantallas medianas (tablet) */
+  @media (max-width: map-get($breakpoints, 'tablet')) {
+    background-image: url('../img/#{$image}-768px.jpg'); /* Usa una imagen de 768px para tabletas */
+  }
+
+  /* Fondo para pantallas pequeñas grandes (small-screen) */
+  @media (max-width: map-get($breakpoints, 'small-screen')) {
+    background-image: url('../img/#{$image}-1200px.jpg'); /* Usa una imagen de 1200px para pantallas pequeñas grandes */
+  }
+
+  /* Fondo para pantallas estándar (standard-screen) */
+  @media (max-width: map-get($breakpoints, 'standard-screen')) {
+    background-image: url('../img/#{$image}-1920px.jpg'); /* Usa una imagen de 1920px para pantallas estándar */
+  }
+
+  /* Fondo para pantallas grandes (large-screen) */
+  @media (max-width: map-get($breakpoints, 'large-screen')) {
+    background-image: url('../img/#{$image}-2560px.jpg'); /* Usa una imagen de 2560px para pantallas grandes */
+  }
+
+  /* Fondo para pantallas extra grandes (extra-large-screen) */
+  @media (min-width: map-get($breakpoints, 'extra-large-screen')) {
+    background-image: url('../img/#{$image}-3820px.jpg'); /* Usa una imagen de 3820px para pantallas extra grandes */
+  }
+}
+
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+@mixin responsive-font-size($base-size, $scales) {
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+  @each $breakpoint, $factor in $scales {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      font-size: scale-font-size($base-size, $factor); /* Aplica la función scale-font-size con el tamaño base y el factor */
+    }
+  }
+}
+
+/* Mixin para los estilos de los botones */
+@mixin button-styles {
+  display: flex; /* Usa Flexbox para centrar el contenido */
+  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  border: none; /* Elimina los bordes del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+  font-weight: 500; /* Peso de la fuente del texto */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+}
