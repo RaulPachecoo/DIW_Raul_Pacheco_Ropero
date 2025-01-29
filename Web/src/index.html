@@ -21,14 +21,14 @@
         <!-- Encabezado -->
         <header class="header">
             <!-- Botón del menú hamburguesa -->
-            <div class="menu-toggle" aria-label="Abrir menú" tabindex="0">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
 
             <!-- Logo centrado -->
-            <a href="index.html" class="logo-link">
+            <a href="./index.html" class="logo-link">
                 <img class="logo" src="img/fitEssence2.png"
                     alt="FitEssence Logo">
             </a>
@@ -36,7 +36,7 @@
             <!-- Menú de navegación -->
             <nav class="nav" aria-label="Menú principal">
                 <ul class="nav-list">
-                    <li><a href="#">Entrenamientos</a></li>
+                    <li><a href="html/trainingPage.html">Entrenamientos</a></li>
                     <li><a href="#">Seguimiento</a></li>
                     <li><a href="#">Resultados</a></li>
                     <li><a href="#">Logros</a></li>
@@ -72,46 +72,48 @@
                         conseguirlo.</p>
                 </article>
                 <figure class="why-image">
-                    <img
-                        src="img/abdomen_equipo2-1920px.jpg"
-                        srcset="
-                        img/abdomen_equipo2-480px.jpg 480w,
-                        img/abdomen_equipo2-768px.jpg 768w,
-                        img/abdomen_equipo2-1200px.jpg 1200w,
-                        img/abdomen_equipo2-1920px.jpg 1920w,
-                        img/abdomen_equipo2-2560px.jpg 2560w,
-                        img/abdomen_equipo2-3820px.jpg 3820w"
-                        sizes="(max-width: 480px) 100vw,
-                           (max-width: 768px) 100vw,
-                           (max-width: 1200px) 100vw,
-                           (max-width: 1920px) 100vw,
-                           100vw"
-                        alt="Entrenamiento en equipo">
+                    <picture>
+                        <!-- Formato AVIF -->
+                        <source srcset="img/abdomen_equipo2-480px.avif 480w,
+                            img/abdomen_equipo2-768px.avif 768w,
+                            img/abdomen_equipo2-1200px.avif 1200w,
+                            img/abdomen_equipo2-1920px.avif 1920w"
+                            type="image/avif">
+                        <!-- Formato WebP-->
+                        <source srcset="img/abdomen_equipo2-480px.webp 480w,
+                            img/abdomen_equipo2-768px.webp 768w,
+                            img/abdomen_equipo2-1200px.webp 1200w,
+                            img/abdomen_equipo2-1920px.webp 1920w"
+                            type="image/webp">
+                        <!-- Fallback tradicional en JPEG -->
+                        <img src="img/abdomen_equipo2-1920px.jpg"
+                            srcset="img/abdomen_equipo2-480px.jpg 480w,
+                         img/abdomen_equipo2-768px.jpg 768w,
+                         img/abdomen_equipo2-1200px.jpg 1200w,
+                         img/abdomen_equipo2-1920px.jpg 1920w"
+                            sizes="(max-width: 480px) 100vw,
+                        (max-width: 768px) 100vw,
+                        (max-width: 1200px) 100vw,
+                        100vw"
+                            alt="Entrenamiento en equipo">
+                    </picture>
                 </figure>
             </section>
 
-            <!-- Testimonios -->
             <section class="testimonials">
                 <h2>Atrévete a ser tú</h2>
                 <p>Sin excusas, solo resultados. Estos Atletas Libres lo han
                     conseguido.</p>
                 <div class="testimonials-grid">
-                    <!-- Testimonios individuales -->
                     <article class="testimonial">
-                        <img
-                            src="img/progreso_hombre2-1920px.jpg"
-                            srcset="
-                            img/progreso_hombre2-480px.jpg 480w,
-                            img/progreso_hombre2-768px.jpg 768w,
-                            img/progreso_hombre2-1200px.jpg 1200w,
-                            img/progreso_hombre2-1920px.jpg 1920w,
-                            img/progreso_hombre2-2560px.jpg 2560w,
-                            img/progreso_hombre2-3820px.jpg 3820w"
-                            sizes="(max-width: 480px) 50vw,
-                               (max-width: 768px) 33vw,
-                               (max-width: 1200px) 25vw,
-                               20vw"
-                            alt="Foto de Marcos">
+                        <picture>
+                            <source srcset="img/progreso_hombre2-180px.avif"
+                                type="image/avif">
+                            <source srcset="img/progreso_hombre2-180px.webp"
+                                type="image/webp">
+                            <img src="img/progreso_hombre2-180px.jpg"
+                                alt="Foto de Marcos">
+                        </picture>
                         <section class="testimonial-info">
                             <button class="play-button"
                                 aria-label="Reproducir testimonio de Marcos"
@@ -121,21 +123,16 @@
                             <p>Marcos</p>
                         </section>
                     </article>
+
                     <article class="testimonial">
-                        <img
-                            src="img/progreso_mujer1-1920px.jpg"
-                            srcset="
-                            img/progreso_mujer1-480px.jpg 480w,
-                            img/progreso_mujer1-768px.jpg 768w,
-                            img/progreso_mujer1-1200px.jpg 1200w,
-                            img/progreso_mujer1-1920px.jpg 1920w,
-                            img/progreso_mujer1-2560px.jpg 2560w,
-                            img/progreso_mujer1-3820px.jpg 3820w"
-                            sizes="(max-width: 480px) 50vw,
-                               (max-width: 768px) 33vw,
-                               (max-width: 1200px) 25vw,
-                               20vw"
-                            alt="Foto de Laura">
+                        <picture>
+                            <source srcset="img/progreso_mujer1-180px.avif"
+                                type="image/avif">
+                            <source srcset="img/progreso_mujer1-180px.webp"
+                                type="image/webp">
+                            <img src="img/progreso_mujer1-180px.jpg"
+                                alt="Foto de Laura">
+                        </picture>
                         <section class="testimonial-info">
                             <button class="play-button"
                                 aria-label="Reproducir testimonio de Laura"
@@ -145,21 +142,16 @@
                             <p>Laura</p>
                         </section>
                     </article>
+
                     <article class="testimonial">
-                        <img
-                            src="img/progreso_hombre1-1920px.jpg"
-                            srcset="
-                            img/progreso_hombre1-480px.jpg 480w,
-                            img/progreso_hombre1-768px.jpg 768w,
-                            img/progreso_hombre1-1200px.jpg 1200w,
-                            img/progreso_hombre1-1920px.jpg 1920w,
-                            img/progreso_hombre1-2560px.jpg 2560w,
-                            img/progreso_hombre1-3820px.jpg 3820w"
-                            sizes="(max-width: 480px) 50vw,
-                               (max-width: 768px) 33vw,
-                               (max-width: 1200px) 25vw,
-                               20vw"
-                            alt="Foto de Pepe">
+                        <picture>
+                            <source srcset="img/progreso_hombre1-180px.avif"
+                                type="image/avif">
+                            <source srcset="img/progreso_hombre1-180px.webp"
+                                type="image/webp">
+                            <img src="img/progreso_hombre1-180px.jpg"
+                                alt="Foto de Pepe">
+                        </picture>
                         <section class="testimonial-info">
                             <button class="play-button"
                                 aria-label="Reproducir testimonio de Pepe"
@@ -169,21 +161,16 @@
                             <p>Pepe</p>
                         </section>
                     </article>
+
                     <article class="testimonial">
-                        <img
-                            src="img/progreso_mujer2-1920px.jpg"
-                            srcset="
-                            img/progreso_mujer2-480px.jpg 480w,
-                            img/progreso_mujer2-768px.jpg 768w,
-                            img/progreso_mujer2-1200px.jpg 1200w,
-                            img/progreso_mujer2-1920px.jpg 1920w,
-                            img/progreso_mujer2-2560px.jpg 2560w,
-                            img/progreso_mujer2-3820px.jpg 3820w"
-                            sizes="(max-width: 480px) 50vw,
-                               (max-width: 768px) 33vw,
-                               (max-width: 1200px) 25vw,
-                               20vw"
-                            alt="Foto de María">
+                        <picture>
+                            <source srcset="img/progreso_mujer2-180px.avif"
+                                type="image/avif">
+                            <source srcset="img/progreso_mujer2-180px.webp"
+                                type="image/webp">
+                            <img src="img/progreso_mujer2-180px.jpg"
+                                alt="Foto de María">
+                        </picture>
                         <section class="testimonial-info">
                             <button class="play-button"
                                 aria-label="Reproducir testimonio de María"
@@ -278,9 +265,9 @@
                 </nav>
             </figure>
             <section class="footer-links">
-                <h3>&ensp;&ensp;Links</h3>
+                <h3>Links</h3>
                 <ul>
-                    <li><a href="#">Entrenamientos</a></li>
+                    <li><a href="html/trainingPage.html">Entrenamientos</a></li>
                     <li><a href="#">Seguimiento</a></li>
                     <li><a href="#">Resultados</a></li>
                     <li><a href="#">Logros</a></li>
@@ -288,7 +275,7 @@
                 </ul>
             </section>
             <section class="footer-contact">
-                <h3>&ensp;&ensp;Contacto</h3>
+                <h3>Contacto</h3>
                 <ul>
                     <li><p>999999999</p></li>
                     <li><p>666666666</p></li>
@@ -297,7 +284,7 @@
                 </ul>
             </section>
             <section class="footer-legal">
-                <h3>&ensp;&ensp;Legal</h3>
+                <h3>Legal</h3>
                 <ul>
                     <li><a href="#">Condiciones</a></li>
                     <li><a href="#">Privacidad y cookies</a></li>

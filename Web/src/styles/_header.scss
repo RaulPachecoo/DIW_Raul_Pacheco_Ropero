@@ -15,21 +15,57 @@
 
   /* Estilos del botón de menú para dispositivos pequeños */
   .menu-toggle {
-    display: none; /* Inicialmente oculto, se muestra solo en pantallas pequeñas */
-    flex-direction: column; /* Alineación vertical de las barras del menú */
-    justify-content: space-between; /* Espaciado uniforme entre las barras */
-    width: $menu-toggle-width; /* Ancho del botón de menú */
-    height: $menu-toggle-height; /* Alto del botón de menú */
-    cursor: pointer; /* Cambia el cursor a mano al pasar sobre el botón */
+    display: none; // Ocultar en pantallas grandes
+    flex-direction: column;
+    justify-content: space-between;
+    width: 36px; // Ajusta el ancho del botón
+    height: 28px; // Ajusta la altura total
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
 
-    /* Estilo para cada barra del menú hamburguesa */
-    div {
-      height: $menu-toggle-bar-height; /* Altura de las barras del menú */
-      background-color: $black; /* Color de las barras */
-      border-radius: $border-radius-small; /* Bordes redondeados */
-      transition: all 0.3s ease; /* Transición suave para los cambios de estado */
+/* Estilos de las barras del menú */
+.menu-bar {
+    display: block;
+    width: 100%; // Que ocupe todo el ancho del botón
+    height: 5px; // Más gruesas
+    background-color: black;
+    border-radius: 3px; // Bordes más redondeados
+    transition: all 0.3s ease;
+}
+
+/* Reducir el espacio entre líneas */
+.menu-toggle .menu-bar:not(:last-child) {
+    margin-bottom: 4px; // Reduce el espacio entre las líneas
+}
+
+/* Mostrar solo en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; // Aparece en pantallas pequeñas
     }
-  }
+
+    .nav {
+        display: none; // Ocultar menú por defecto
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cuando el menú esté activo, mostrarlo */
+    .nav.active {
+        display: flex;
+    }
+}
+
+
 
   /* Estilo del logo del encabezado */
   .logo {

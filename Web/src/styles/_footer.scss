@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'mixins';
 
-/*Estilos para el Footer*/
+/* Estilos para el Footer */
 
 /* Estilos comunes para los enlaces del pie de página */
 %footer-links-style {
@@ -51,14 +51,20 @@
   }
 
   ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 0; /* Elimina el margen por defecto */
+
     li {
+      margin-bottom: $footer-item-margin; /* Margen inferior de cada item */
+
       a {
         @extend %footer-links-style; /* Se extienden los estilos de los enlaces */
 
         p {
           margin: $footer-item-margin 0; /* Márgenes de los párrafos */
           font-size: $font-footer-text; /* Tamaño de fuente para los párrafos */
-          
+
           a {
             @extend %footer-links-style; /* Se extienden los estilos de los enlaces */
           }
@@ -82,48 +88,65 @@
     flex-direction: column; /* Coloca el logo y el contenido de forma vertical */
     align-items: center; /* Centra los elementos */
     margin-bottom: $footer-section-margin; /* Margen inferior del logo */
+    margin-right: 200px; /* Margen derecho en pantallas grandes */
 
     img {
       width: $footer-logo-size; /* Tamaño del logo */
       margin-bottom: $footer-logo-margin; /* Margen inferior del logo */
     }
 
-    nav {
-      ul {
-        list-style: none; /* Elimina los puntos de la lista */
-        display: block; /* Los elementos de la lista se comportan como bloques */
-        text-align: center; /* Centra el texto de los enlaces */
-        padding: 0; /* Elimina el padding por defecto */
+    /* Pantallas más pequeñas (como tabletas) */
+    @media (max-width: map-get($breakpoints, 'tablet')) {
+      margin-right: 40px; /* Disminuye el margen derecho en pantallas más pequeñas */
+    }
 
-        li {
-          margin-bottom: $footer-item-margin; /* Margen inferior de cada item */
+    /* Pantallas móviles */
+    @media (max-width: map-get($breakpoints, 'mobile')) {
+      margin-right: 40px; /* Disminuye aún más el margen derecho en pantallas móviles */
+    }
 
-          .social-icon {
-            @extend %social-icon-style; /* Se extienden los estilos de los iconos sociales */
+    /* Pantallas grandes */
+    @media (min-width: map-get($breakpoints, 'large-screen')) {
+      margin-right: 400px; /* Aumenta el margen derecho en pantallas grandes */
+    }
+  }
 
-            /* Estilos personalizados para cada icono social */
-            &.instagram {
-              background-color: $instagram-color; /* Color específico para Instagram */
-            }
+  nav {
+    ul {
+      list-style-type: none; /* Elimina los puntos de la lista */
+      padding: 0; /* Elimina el padding por defecto */
+      margin: 0; /* Elimina el margen por defecto */
+      display: block; /* Los elementos de la lista se comportan como bloques */
+      text-align: center; /* Centra el texto de los enlaces */
 
-            &.facebook {
-              background-color: $facebook-color; /* Color específico para Facebook */
-            }
+      li {
+        margin-bottom: $footer-item-margin; /* Margen inferior de cada item */
 
-            &.linkedin {
-              background-color: $linkedin-color; /* Color específico para LinkedIn */
-            }
+        .social-icon {
+          @extend %social-icon-style; /* Se extienden los estilos de los iconos sociales */
 
-            &.twitter {
-              background-color: $twitter-color; /* Color específico para Twitter */
-            }
+          /* Estilos personalizados para cada icono social */
+          &.instagram {
+            background-color: $instagram-color; /* Color específico para Instagram */
+          }
+
+          &.facebook {
+            background-color: $facebook-color; /* Color específico para Facebook */
+          }
+
+          &.linkedin {
+            background-color: $linkedin-color; /* Color específico para LinkedIn */
+          }
+
+          &.twitter {
+            background-color: $twitter-color; /* Color específico para Twitter */
           }
         }
       }
+    }
 
-      a {
-        text-decoration: none; /* Elimina el subrayado de los enlaces */
-      }
+    a {
+      text-decoration: none; /* Elimina el subrayado de los enlaces */
     }
   }
 
@@ -164,82 +187,6 @@
       }
       a, p {
         font-size: 0.875rem; /* Tamaño de fuente de los enlaces más pequeños */
-      }
-    }
-  }
-
-  /* Ajustes para pantallas medianas */
-  @media (max-width: map-get($breakpoints, 'tablet')) {
-    .footer-logo {
-      img {
-        width: $footer-logo-size-md; /* Ajusta el tamaño del logo */
-      }
-    }
-    .footer-links,
-    .footer-contact,
-    .footer-legal {
-      h3 {
-        font-size: 1.125rem; /* Ajusta el tamaño del título */
-      }
-      a, p {
-        font-size: 1rem; /* Ajusta el tamaño de los enlaces y párrafos */
-      }
-    }
-  }
-
-  /* Ajustes para pantallas pequeñas */
-  @media (max-width: map-get($breakpoints, 'small-screen')) {
-    .footer-logo {
-      img {
-        width: $footer-logo-size-lg; /* Ajusta el tamaño del logo */
-      }
-    }
-    .footer-links,
-    .footer-contact,
-    .footer-legal {
-      h3 {
-        font-size: 1.25rem; /* Ajusta el tamaño del título */
-      }
-      a, p {
-        font-size: 1.125rem; /* Ajusta el tamaño de los enlaces y párrafos */
-      }
-    }
-  }
-
-  /* Ajustes para pantallas estándar */
-  @media (max-width: map-get($breakpoints, 'standard-screen')) {
-    .footer-logo {
-      img {
-        width: $footer-logo-size-xl; /* Ajusta el tamaño del logo */
-      }
-    }
-    .footer-links,
-    .footer-contact,
-    .footer-legal {
-      h3 {
-        font-size: 1.375rem; /* Ajusta el tamaño del título */
-      }
-      a, p {
-        font-size: 1.25rem; /* Ajusta el tamaño de los enlaces y párrafos */
-      }
-    }
-  }
-
-  /* Ajustes para pantallas grandes */
-  @media (max-width: map-get($breakpoints, 'large-screen')) {
-    .footer-logo {
-      img {
-        width: $footer-logo-size-xxl; /* Ajusta el tamaño del logo */
-      }
-    }
-    .footer-links,
-    .footer-contact,
-    .footer-legal {
-      h3 {
-        font-size: 1.5rem; /* Ajusta el tamaño del título */
-      }
-      a, p {
-        font-size: 1.375rem; /* Ajusta el tamaño de los enlaces y párrafos */
       }
     }
   }

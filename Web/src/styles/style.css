@@ -18,25 +18,57 @@
   height: 60px; /* Altura del encabezado */
   position: relative; /* Posicionamiento relativo para permitir el posicionamiento absoluto de elementos secundarios */
   /* Estilos del botón de menú para dispositivos pequeños */
+  /* Estilos de las barras del menú */
+  /* Reducir el espacio entre líneas */
+  /* Mostrar solo en pantallas pequeñas */
   /* Estilo del logo del encabezado */
   /* Estilo para el icono de perfil */
   /* Estilos para pantallas pequeñas, como tabletas */
   /* Estilos cuando el menú está activo (desplegado) */
 }
 .header .menu-toggle {
-  display: none; /* Inicialmente oculto, se muestra solo en pantallas pequeñas */
-  flex-direction: column; /* Alineación vertical de las barras del menú */
-  justify-content: space-between; /* Espaciado uniforme entre las barras */
-  width: 30px; /* Ancho del botón de menú */
-  height: 25px; /* Alto del botón de menú */
-  cursor: pointer; /* Cambia el cursor a mano al pasar sobre el botón */
-  /* Estilo para cada barra del menú hamburguesa */
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 36px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
-.header .menu-toggle div {
-  height: 5px; /* Altura de las barras del menú */
-  background-color: #000; /* Color de las barras */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: all 0.3s ease; /* Transición suave para los cambios de estado */
+.header .menu-bar {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.header .menu-toggle .menu-bar:not(:last-child) {
+  margin-bottom: 4px;
+}
+@media (max-width: 768px) {
+  .header {
+    /* Cuando el menú esté activo, mostrarlo */
+  }
+  .header .menu-toggle {
+    display: flex;
+  }
+  .header .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .header .nav.active {
+    display: flex;
+  }
 }
 .header .logo {
   height: 40px; /* Altura del logo */
@@ -152,32 +184,44 @@
 }
 @media (max-width: 480px) {
   .hero {
-    background-image: url("../img/hero_image-480px.jpg"); /* Usa una imagen de 480px para dispositivos móviles */
+    background-image: url("../img/hero_image-480px.avif");
+    background-image: url("../img/hero_image-480px.webp");
+    background-image: url("../img/hero_image-480px.jpg");
   }
 }
 @media (max-width: 768px) {
   .hero {
-    background-image: url("../img/hero_image-768px.jpg"); /* Usa una imagen de 768px para tabletas */
+    background-image: url("../img/hero_image-768px.avif");
+    background-image: url("../img/hero_image-768px.webp");
+    background-image: url("../img/hero_image-768px.jpg");
   }
 }
 @media (max-width: 1200px) {
   .hero {
-    background-image: url("../img/hero_image-1200px.jpg"); /* Usa una imagen de 1200px para pantallas pequeñas grandes */
+    background-image: url("../img/hero_image-1200px.avif");
+    background-image: url("../img/hero_image-1200px.webp");
+    background-image: url("../img/hero_image-1200px.jpg");
   }
 }
 @media (max-width: 1920px) {
   .hero {
-    background-image: url("../img/hero_image-1920px.jpg"); /* Usa una imagen de 1920px para pantallas estándar */
+    background-image: url("../img/hero_image-1920px.avif");
+    background-image: url("../img/hero_image-1920px.webp");
+    background-image: url("../img/hero_image-1920px.jpg");
   }
 }
 @media (max-width: 2560px) {
   .hero {
-    background-image: url("../img/hero_image-2560px.jpg"); /* Usa una imagen de 2560px para pantallas grandes */
+    background-image: url("../img/hero_image-2560px.avif");
+    background-image: url("../img/hero_image-2560px.webp");
+    background-image: url("../img/hero_image-2560px.jpg");
   }
 }
 @media (min-width: 2561px) {
   .hero {
-    background-image: url("../img/hero_image-3820px.jpg"); /* Usa una imagen de 3820px para pantallas extra grandes */
+    background-image: url("../img/hero_image-3820px.avif");
+    background-image: url("../img/hero_image-3820px.webp");
+    background-image: url("../img/hero_image-3820px.jpg");
   }
 }
 .hero .hero-content {
@@ -344,43 +388,6 @@
 }
 .why-fitessence .why-image img {
   /* Aplica el estilo base de imagen */
-  /* Fondo para pantallas pequeñas (mobile) */
-  /* Fondo para pantallas medianas (tablet) */
-  /* Fondo para pantallas pequeñas grandes (small-screen) */
-  /* Fondo para pantallas estándar (standard-screen) */
-  /* Fondo para pantallas grandes (large-screen) */
-  /* Fondo para pantallas extra grandes (extra-large-screen) */
-  /* Aplica un fondo responsivo para la imagen (según los breakpoints definidos) */
-}
-@media (max-width: 480px) {
-  .why-fitessence .why-image img {
-    background-image: url("../img/abdomen_equipo2-480px.jpg"); /* Usa una imagen de 480px para dispositivos móviles */
-  }
-}
-@media (max-width: 768px) {
-  .why-fitessence .why-image img {
-    background-image: url("../img/abdomen_equipo2-768px.jpg"); /* Usa una imagen de 768px para tabletas */
-  }
-}
-@media (max-width: 1200px) {
-  .why-fitessence .why-image img {
-    background-image: url("../img/abdomen_equipo2-1200px.jpg"); /* Usa una imagen de 1200px para pantallas pequeñas grandes */
-  }
-}
-@media (max-width: 1920px) {
-  .why-fitessence .why-image img {
-    background-image: url("../img/abdomen_equipo2-1920px.jpg"); /* Usa una imagen de 1920px para pantallas estándar */
-  }
-}
-@media (max-width: 2560px) {
-  .why-fitessence .why-image img {
-    background-image: url("../img/abdomen_equipo2-2560px.jpg"); /* Usa una imagen de 2560px para pantallas grandes */
-  }
-}
-@media (min-width: 2561px) {
-  .why-fitessence .why-image img {
-    background-image: url("../img/abdomen_equipo2-3820px.jpg"); /* Usa una imagen de 3820px para pantallas extra grandes */
-  }
 }
 
 /* Importa las variables de configuración (colores, tamaños, fuentes, etc.) */
@@ -766,11 +773,9 @@
 /* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
-/*Estilos para el Footer*/
+/* Estilos para el Footer */
 /* Estilos comunes para los enlaces del pie de página */
-.footer .footer-links ul li a p a,
-.footer .footer-contact ul li a p a,
-.footer .footer-legal ul li a p a, .footer .footer-links ul li a,
+.footer .footer-links ul li a,
 .footer .footer-contact ul li a,
 .footer .footer-legal ul li a {
   text-decoration: none; /* Elimina el subrayado de los enlaces */
@@ -795,7 +800,7 @@
 }
 
 /* Estilos comunes para los iconos sociales */
-.footer .footer-logo nav ul li .social-icon {
+.footer nav ul li .social-icon {
   color: white; /* Color base de los iconos sociales */
   font-size: 24px; /* Tamaño de los iconos sociales */
   display: inline-flex; /* Los iconos se muestran en línea como flex */
@@ -807,7 +812,7 @@
   background-color: #3B4A60; /* Color de fondo de los iconos */
   transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
 }
-.footer .footer-logo nav ul li .social-icon:hover {
+.footer nav ul li .social-icon:hover {
   opacity: 0.8; /* Reduce la opacidad de los iconos cuando se pasa el mouse */
 }
 
@@ -822,6 +827,18 @@
 .footer .footer-contact h3,
 .footer .footer-legal h3 {
   /* Se extienden los estilos del título */
+}
+.footer .footer-links ul,
+.footer .footer-contact ul,
+.footer .footer-legal ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding por defecto */
+  margin: 0; /* Elimina el margen por defecto */
+}
+.footer .footer-links ul li,
+.footer .footer-contact ul li,
+.footer .footer-legal ul li {
+  margin-bottom: 5px; /* Margen inferior de cada item */
 }
 .footer .footer-links ul li a,
 .footer .footer-contact ul li a,
@@ -850,47 +867,63 @@
   gap: 20px; /* Espacio entre las secciones */
   /* Para pantallas pequeñas como tabletas */
   /* Para pantallas más pequeñas, como teléfonos móviles */
-  /* Ajustes para pantallas medianas */
-  /* Ajustes para pantallas pequeñas */
-  /* Ajustes para pantallas estándar */
-  /* Ajustes para pantallas grandes */
 }
 .footer .footer-logo {
   display: flex; /* Flexbox para el logo */
   flex-direction: column; /* Coloca el logo y el contenido de forma vertical */
   align-items: center; /* Centra los elementos */
   margin-bottom: 20px; /* Margen inferior del logo */
+  margin-right: 200px; /* Margen derecho en pantallas grandes */
+  /* Pantallas más pequeñas (como tabletas) */
+  /* Pantallas móviles */
+  /* Pantallas grandes */
 }
 .footer .footer-logo img {
   width: 80px; /* Tamaño del logo */
   margin-bottom: 15px; /* Margen inferior del logo */
 }
-.footer .footer-logo nav ul {
-  list-style: none; /* Elimina los puntos de la lista */
+@media (max-width: 768px) {
+  .footer .footer-logo {
+    margin-right: 40px; /* Disminuye el margen derecho en pantallas más pequeñas */
+  }
+}
+@media (max-width: 480px) {
+  .footer .footer-logo {
+    margin-right: 40px; /* Disminuye aún más el margen derecho en pantallas móviles */
+  }
+}
+@media (min-width: 2560px) {
+  .footer .footer-logo {
+    margin-right: 400px; /* Aumenta el margen derecho en pantallas grandes */
+  }
+}
+.footer nav ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding por defecto */
+  margin: 0; /* Elimina el margen por defecto */
   display: block; /* Los elementos de la lista se comportan como bloques */
   text-align: center; /* Centra el texto de los enlaces */
-  padding: 0; /* Elimina el padding por defecto */
 }
-.footer .footer-logo nav ul li {
+.footer nav ul li {
   margin-bottom: 5px; /* Margen inferior de cada item */
 }
-.footer .footer-logo nav ul li .social-icon {
+.footer nav ul li .social-icon {
   /* Se extienden los estilos de los iconos sociales */
   /* Estilos personalizados para cada icono social */
 }
-.footer .footer-logo nav ul li .social-icon.instagram {
+.footer nav ul li .social-icon.instagram {
   background-color: #e4405f; /* Color específico para Instagram */
 }
-.footer .footer-logo nav ul li .social-icon.facebook {
+.footer nav ul li .social-icon.facebook {
   background-color: #3b5998; /* Color específico para Facebook */
 }
-.footer .footer-logo nav ul li .social-icon.linkedin {
+.footer nav ul li .social-icon.linkedin {
   background-color: #0077b5; /* Color específico para LinkedIn */
 }
-.footer .footer-logo nav ul li .social-icon.twitter {
+.footer nav ul li .social-icon.twitter {
   background-color: #1da1f2; /* Color específico para Twitter */
 }
-.footer .footer-logo nav a {
+.footer nav a {
   text-decoration: none; /* Elimina el subrayado de los enlaces */
 }
 .footer .footer-links,
@@ -926,74 +959,6 @@
   .footer .footer-legal a,
   .footer .footer-legal p {
     font-size: 0.875rem; /* Tamaño de fuente de los enlaces más pequeños */
-  }
-}
-@media (max-width: 768px) {
-  .footer .footer-logo img {
-    width: 70px; /* Ajusta el tamaño del logo */
-  }
-  .footer .footer-links h3,
-  .footer .footer-contact h3,
-  .footer .footer-legal h3 {
-    font-size: 1.125rem; /* Ajusta el tamaño del título */
-  }
-  .footer .footer-links a, .footer .footer-links p,
-  .footer .footer-contact a,
-  .footer .footer-contact p,
-  .footer .footer-legal a,
-  .footer .footer-legal p {
-    font-size: 1rem; /* Ajusta el tamaño de los enlaces y párrafos */
-  }
-}
-@media (max-width: 1200px) {
-  .footer .footer-logo img {
-    width: 80px; /* Ajusta el tamaño del logo */
-  }
-  .footer .footer-links h3,
-  .footer .footer-contact h3,
-  .footer .footer-legal h3 {
-    font-size: 1.25rem; /* Ajusta el tamaño del título */
-  }
-  .footer .footer-links a, .footer .footer-links p,
-  .footer .footer-contact a,
-  .footer .footer-contact p,
-  .footer .footer-legal a,
-  .footer .footer-legal p {
-    font-size: 1.125rem; /* Ajusta el tamaño de los enlaces y párrafos */
-  }
-}
-@media (max-width: 1920px) {
-  .footer .footer-logo img {
-    width: 90px; /* Ajusta el tamaño del logo */
-  }
-  .footer .footer-links h3,
-  .footer .footer-contact h3,
-  .footer .footer-legal h3 {
-    font-size: 1.375rem; /* Ajusta el tamaño del título */
-  }
-  .footer .footer-links a, .footer .footer-links p,
-  .footer .footer-contact a,
-  .footer .footer-contact p,
-  .footer .footer-legal a,
-  .footer .footer-legal p {
-    font-size: 1.25rem; /* Ajusta el tamaño de los enlaces y párrafos */
-  }
-}
-@media (max-width: 2560px) {
-  .footer .footer-logo img {
-    width: 100px; /* Ajusta el tamaño del logo */
-  }
-  .footer .footer-links h3,
-  .footer .footer-contact h3,
-  .footer .footer-legal h3 {
-    font-size: 1.5rem; /* Ajusta el tamaño del título */
-  }
-  .footer .footer-links a, .footer .footer-links p,
-  .footer .footer-contact a,
-  .footer .footer-contact p,
-  .footer .footer-legal a,
-  .footer .footer-legal p {
-    font-size: 1.375rem; /* Ajusta el tamaño de los enlaces y párrafos */
   }
 }
 
@@ -1126,6 +1091,125 @@
 }
 .login-container .login-content .email-login {
   /* Aplica los estilos de enlace predefinidos */
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+#training-page .training-page .pagination, #training-page .training-page .filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#training-page {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  background-color: #3B4A60;
+  margin: 0;
+  padding: 0;
+}
+#training-page .training-page {
+  padding: 2rem;
+}
+#training-page .training-page .filters {
+  gap: 1.5rem;
+  margin-bottom: 40px;
+}
+#training-page .training-page .filters .filter-button {
+  background-color: rgb(88.1193548387, 110.5225806452, 143.3806451613);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+#training-page .training-page .filters .filter-button:hover {
+  background-color: rgb(114.0967741935, 136.1129032258, 168.4032258065);
+}
+#training-page .training-page .training-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+#training-page .training-page .training-list .training-card {
+  background-color: white;
+  color: #3B4A60;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0;
+  box-shadow: 0 4px 6px #000;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#training-page .training-page .training-list .training-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px #000;
+}
+#training-page .training-page .training-list .training-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#training-page .training-page .training-list .training-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 20px;
+}
+#training-page .training-page .pagination {
+  margin-top: 40px;
+}
+#training-page .training-page .pagination .pagination-button {
+  background-color: rgb(88.1193548387, 110.5225806452, 143.3806451613);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+#training-page .training-page .pagination .pagination-button:hover {
+  background-color: rgb(114.0967741935, 136.1129032258, 168.4032258065);
+}
+@media (max-width: 1200px) {
+  #training-page .training-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  #training-page .training-page {
+    padding: 1.5rem;
+  }
+  #training-page .training-page .filters {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  #training-page .training-page .filters .filter-button {
+    padding: 0.5rem;
+  }
+  #training-page .training-page .training-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  #training-page .training-page {
+    padding: 1rem;
+  }
+  #training-page .training-page .filters {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #training-page .training-page .training-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

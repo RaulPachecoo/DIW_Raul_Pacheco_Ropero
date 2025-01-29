@@ -64,6 +64,7 @@ $footer-section-margin-sm: 10px;
 $footer-title-margin: 10px;
 $footer-item-margin: 5px;
 
+
 // Header
 $font-size-nav: 16px;
 $font-size-nav-small: 18px;
@@ -126,3 +127,17 @@ $border-radius-large: 12px;
 $menu-toggle-width: 30px;
 $menu-toggle-height: 25px;
 $menu-toggle-bar-height: 5px;
+
+
+
+$padding-default: 2rem;
+$padding-medium: 1.5rem;
+$padding-small: 1rem;
+$gap-default: 1.5rem;
+$gap-small: 0.5rem;
+$button-padding: 0.5rem 1rem;
+$button-padding-small: 0.5rem;
+$radius: 0.5rem;
+$shadow-default: 0 4px 6px $black;
+$shadow-hover: 0 6px 10px $black;
+$transition-default: transform 0.3s ease, box-shadow 0.3s ease;
