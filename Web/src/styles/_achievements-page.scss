@@ -1,0 +1,135 @@
+@import 'variables'; 
+@import 'mixins'; 
+
+// Estilos generales para la página de logros (#achievementsPage)
+#achievementsPage {
+  font-family: $primary-font-family; // Establece la fuente principal definida en las variables
+  line-height: $line-height-base; // Configura la altura de línea base
+  background-color: $main-color; // Asigna el color de fondo principal
+  color: $main-color; // Asigna el color de texto principal
+}
+
+// Estilo para los iconos en la sección de acciones de logros
+#achievementsPage .achievement-actions {
+  display: flex; // Utiliza flexbox para organizar los iconos en línea
+  gap: $gap-base; // Añade un espacio base entre los iconos
+  margin-top: $gap-base; // Añade margen superior base
+}
+
+// Estilos para los iconos dentro de las acciones de logros
+#achievementsPage .achievement-actions i {
+  font-size: 1.5rem; // Establece el tamaño de los iconos
+  color: $neutral-color1; // Color de los iconos, utilizando una variable de color neutral
+  cursor: pointer; // Cambia el cursor a puntero al pasar sobre los iconos
+  transition: color 0.3s ease; // Añade una transición suave en el cambio de color
+}
+
+// Estilo cuando el icono es hover (se pasa el ratón por encima)
+#achievementsPage .achievement-actions i:hover {
+  color: $important-color; // Cambia el color del icono a un color importante cuando se pasa el ratón
+}
+
+// Sección principal de logros
+#achievementsPage .achievements {
+  padding: 2rem; // Añade padding a la sección de logros
+  max-width: 1200px; // Establece el ancho máximo de la sección de logros
+  margin: 0 auto; // Centra la sección en la página
+}
+
+// Estilo para la lista de logros
+#achievementsPage .achievement-list {
+  display: flex; // Utiliza flexbox para organizar los logros
+  flex-direction: column; // Los logros se apilan verticalmente
+  gap: 2rem; // Espaciado entre los logros
+}
+
+// Estilo para cada tarjeta de logro
+#achievementsPage .achievement-card {
+  @include card-style; // Aplica el estilo de tarjeta definido en un mixin
+  display: grid; // Utiliza el modelo de diseño de cuadrícula (grid)
+  grid-template-columns: 1fr 1fr; // Divide la tarjeta en dos columnas (imagen y contenido)
+  direction: ltr; // Alinea el contenido de izquierda a derecha
+  
+  &:hover {
+    transform: translateY(-5px); // Aplica un efecto de desplazamiento hacia arriba en hover
+    box-shadow: $shadow-hover; // Aplica una sombra adicional en hover
+  }
+}
+
+// Estilo para la imagen dentro de la tarjeta de logro
+#achievementsPage .achievement-image {
+  grid-column: 2; // Coloca la imagen en la segunda columna de la cuadrícula
+  width: 100%; // Hace que la imagen ocupe el 100% del ancho disponible
+  height: 100%; // Hace que la imagen ocupe el 100% de la altura disponible
+  object-fit: cover; // Hace que la imagen cubra completamente su contenedor
+}
+
+// Estilo para el contenido dentro de la tarjeta de logro
+#achievementsPage .achievement-content {
+  grid-column: 1; // Coloca el contenido en la primera columna
+  padding: $padding-base; // Añade padding base al contenido
+  display: flex; // Utiliza flexbox para organizar el contenido dentro de la tarjeta
+  flex-direction: column; // Los elementos dentro de la tarjeta se apilan verticalmente
+  justify-content: center; // Centra el contenido de la tarjeta verticalmente
+  gap: $gap-base; // Añade espacio entre los elementos del contenido
+}
+
+// Estilo para el título del logro
+#achievementsPage .achievement-title {
+  font-size: 1.5rem; // Establece el tamaño de fuente para el título
+  font-weight: bold; // Hace el título en negrita
+  color: $main-color; // Asigna el color principal al título
+}
+
+// Estilo para la descripción del logro
+#achievementsPage .achievement-description {
+  font-family: $secondary-font-family; //Fuente de las descripciones
+  font-size: $font-size-base; // Establece el tamaño de fuente base para la descripción
+  color: $main-color; // Asigna el color principal a la descripción
+  line-height: $line-height-base; // Establece la altura de línea base
+}
+
+// Media query para pantallas pequeñas
+@media (max-width: map-get($breakpoints, 'small-screen')) {
+  #achievementsPage .achievement-card {
+    grid-template-columns: 1fr; // En pantallas pequeñas, las tarjetas se convierten en una sola columna
+  }
+
+  #achievementsPage .achievement-image {
+    grid-column: 1; // La imagen ocupa toda la columna
+    order: -1; // Mueve la imagen arriba (por encima del contenido)
+  }
+
+  #achievementsPage .achievement-content {
+    grid-column: 1; // El contenido ocupa toda la columna
+    order: 1; // Coloca el contenido debajo de la imagen
+  }
+}
+
+// Media query para pantallas grandes (otra variante de diseño)
+@media (max-width: map-get($breakpoints, 'small-screen')) {
+  #achievementsPage .achievement-card {
+    display: flex; // Muestra los logros como un diseño flex
+    flex-direction: column; // Apila la imagen y el contenido de forma vertical
+  }
+
+  #achievementsPage .achievement-image {
+    order: -1; // Mueve la imagen arriba
+    width: 100%; // Ajusta la imagen para ocupar el 100% del ancho disponible
+    height: auto; // Ajusta la altura de la imagen automáticamente
+  }
+
+  #achievementsPage .achievement-content {
+    order: 1; // Coloca el contenido debajo de la imagen
+    padding: 1rem; // Añade padding adicional para mejorar la legibilidad en pantallas pequeñas
+  }
+}
+
+// Mixin para el estilo de las tarjetas
+@mixin card-style {
+  background-color: $neutral-color3; // Asigna el color de fondo de la tarjeta
+  border-radius: $border-radius; // Establece el radio de borde para redondear las esquinas
+  overflow: hidden; // Asegura que el contenido no sobresalga de la tarjeta
+  box-shadow: $shadow-base; // Aplica una sombra base a la tarjeta
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Añade una transición suave para transformaciones y sombras
+}

@@ -441,34 +441,34 @@
 }
 .testimonials p {
   font-family: "Montserrat", sans-serif; /* Fuente del párrafo */
-  font-size: 1rem; /* Tamaño de fuente del párrafo */
+  font-size: 1.5rem; /* Tamaño de fuente del párrafo */
   margin-bottom: 20px; /* Espaciado debajo del párrafo */
   /* Ajuste del tamaño de fuente responsivo para diferentes tamaños de pantalla */
   /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
 }
 @media (max-width: 480px) {
   .testimonials p {
-    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 1.3125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 @media (max-width: 768px) {
   .testimonials p {
-    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 1.5rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 @media (max-width: 1200px) {
   .testimonials p {
-    font-size: 1.125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 1.6875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 @media (max-width: 1920px) {
   .testimonials p {
-    font-size: 1.25rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 1.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 @media (max-width: 2560px) {
   .testimonials p {
-    font-size: 1.375rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 2.0625rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 .testimonials .testimonials-grid {
@@ -511,7 +511,7 @@
   display: flex; /* Usa Flexbox para centrar el ícono dentro del botón */
   justify-content: center; /* Centra el ícono dentro del botón */
   align-items: center; /* Centra el ícono dentro del botón */
-  font-size: 0.875rem; /* Tamaño del ícono */
+  font-size: 1rem; /* Tamaño del ícono */
   cursor: pointer; /* Muestra un cursor tipo mano al pasar sobre el botón */
   transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
   /* Estilo para cuando se pasa el cursor sobre el botón */
@@ -524,7 +524,7 @@
 }
 .testimonials .testimonials-grid .testimonial .testimonial-info p {
   font-family: "Montserrat", sans-serif; /* Fuente del texto */
-  font-size: 0.875rem; /* Tamaño de la fuente */
+  font-size: 1rem; /* Tamaño de la fuente */
   color: #E3E4E8; /* Color del texto */
   margin: 0; /* Elimina los márgenes */
 }
@@ -544,7 +544,7 @@
 .user-reviews .reviews-container .nav-button {
   background-color: transparent; /* Fondo transparente */
   border: none; /* Sin borde */
-  font-size: 1.25rem; /* Tamaño de fuente grande */
+  font-size: 2rem; /* Tamaño de fuente grande */
   cursor: pointer; /* Cursor tipo mano al pasar sobre el botón */
   color: #3B4A60; /* Color del texto del botón */
   z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
@@ -552,7 +552,7 @@
 
 /* Estilo base para el texto de las reseñas */
 .user-reviews .reviews-container .reviews .review .review-text {
-  font-size: 0.875rem; /* Tamaño de fuente pequeño */
+  font-size: 1rem; /* Tamaño de fuente pequeño */
   color: #B0B4BC; /* Color del texto */
   margin-bottom: 20px; /* Espaciado en la parte inferior */
   line-height: 1.5; /* Espaciado entre líneas */
@@ -609,7 +609,7 @@
   /* Pantallas grandes */
 }
 .user-reviews h2 {
-  font-size: 1.25rem; /* Tamaño de fuente grande */
+  font-size: 2rem; /* Tamaño de fuente grande */
   color: #3B4A60; /* Color del título */
   margin-bottom: 20px; /* Espaciado en la parte inferior */
   /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
@@ -617,27 +617,27 @@
 }
 @media (max-width: 480px) {
   .user-reviews h2 {
-    font-size: 1.04125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 1.666rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 @media (max-width: 768px) {
   .user-reviews h2 {
-    font-size: 1.215rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 1.944rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 @media (max-width: 1200px) {
   .user-reviews h2 {
-    font-size: 1.38875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 2.222rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 @media (max-width: 1920px) {
   .user-reviews h2 {
-    font-size: 1.5625rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 2.5rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 @media (max-width: 2560px) {
   .user-reviews h2 {
-    font-size: 1.73625rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+    font-size: 2.778rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
   }
 }
 .user-reviews .reviews-container {
@@ -709,63 +709,63 @@
   object-fit: cover; /* Ajusta la imagen dentro del contenedor sin distorsionarla */
 }
 .user-reviews .reviews-container .reviews .review .review-author p {
-  font-size: 0.875rem; /* Tamaño de fuente pequeño */
+  font-size: 1rem; /* Tamaño de fuente pequeño */
   font-weight: 500; /* Peso de la fuente medio */
   color: #3B4A60; /* Color del texto */
 }
 @media (max-width: 480px) {
   .user-reviews h2 {
-    font-size: 1rem; /* Reduce el tamaño del título */
+    font-size: 1.5rem; /* Reduce el tamaño del título */
   }
   .user-reviews .review-title {
-    font-size: 0.875rem; /* Reduce el tamaño del título de la reseña */
+    font-size: 1rem; /* Reduce el tamaño del título de la reseña */
   }
   .user-reviews .review-text {
-    font-size: 0.75rem; /* Reduce el tamaño del texto de la reseña */
+    font-size: 0.9rem; /* Reduce el tamaño del texto de la reseña */
   }
 }
 @media (max-width: 768px) {
   .user-reviews h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .user-reviews .review-title {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
   .user-reviews .review-text {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 }
 @media (max-width: 1200px) {
   .user-reviews h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .user-reviews .review-title {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
   .user-reviews .review-text {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 }
 @media (max-width: 1920px) {
   .user-reviews h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .user-reviews .review-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .user-reviews .review-text {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 2560px) {
   .user-reviews h2 {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
   .user-reviews .review-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .user-reviews .review-text {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1097,7 +1097,8 @@
 /* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
-#training-page .training-page .pagination, #training-page .training-page .filters {
+/* %flex-center: Estilo base que usa flexbox para centrar elementos tanto en el eje horizontal como vertical */
+#TrainingTrackingPage .training-section .actions, #training-page .training-page .pagination, #training-page .training-page .filters {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1109,13 +1110,18 @@
   background-color: #3B4A60;
   margin: 0;
   padding: 0;
+  /* Estilos para la sección de la página de entrenamiento */
 }
 #training-page .training-page {
   padding: 2rem;
+  /* Estilos para los filtros */
+  /* Lista de entrenamientos */
+  /* Estilos para la paginación */
 }
 #training-page .training-page .filters {
   gap: 1.5rem;
   margin-bottom: 40px;
+  /* Estilo de los botones de filtro */
 }
 #training-page .training-page .filters .filter-button {
   background-color: rgb(88.1193548387, 110.5225806452, 143.3806451613);
@@ -1132,6 +1138,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+  /* Estilo de las tarjetas de entrenamiento */
 }
 #training-page .training-page .training-list .training-card {
   background-color: white;
@@ -1142,10 +1149,13 @@
   box-shadow: 0 4px 6px #000;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Efectos al pasar el mouse sobre la tarjeta */
+  /* Estilos para las imágenes dentro de las tarjetas */
+  /* Estilos para el texto dentro de las tarjetas */
 }
 #training-page .training-page .training-list .training-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 10px #000;
+  box-shadow: 0 8px 16px #000;
 }
 #training-page .training-page .training-list .training-card img {
   width: 100%;
@@ -1153,12 +1163,13 @@
   display: block;
 }
 #training-page .training-page .training-list .training-card p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   padding: 20px;
 }
 #training-page .training-page .pagination {
   margin-top: 40px;
+  /* Estilo de los botones de paginación */
 }
 #training-page .training-page .pagination .pagination-button {
   background-color: rgb(88.1193548387, 110.5225806452, 143.3806451613);
@@ -1173,6 +1184,9 @@
   background-color: rgb(114.0967741935, 136.1129032258, 168.4032258065);
 }
 @media (max-width: 1200px) {
+  #training-page {
+    /* Estilo para pantallas pequeñas */
+  }
   #training-page .training-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1180,6 +1194,9 @@
   }
 }
 @media (max-width: 768px) {
+  #training-page {
+    /* Estilo para tabletas */
+  }
   #training-page .training-page {
     padding: 1.5rem;
   }
@@ -1198,6 +1215,9 @@
   }
 }
 @media (max-width: 480px) {
+  #training-page {
+    /* Estilo para móviles */
+  }
   #training-page .training-page {
     padding: 1rem;
   }
@@ -1209,6 +1229,574 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
+  }
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+#achievementsPage {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background-color: #3B4A60;
+  color: #3B4A60;
+}
+
+#achievementsPage .achievement-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#achievementsPage .achievement-actions i {
+  font-size: 1.5rem;
+  color: #B0B4BC;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#achievementsPage .achievement-actions i:hover {
+  color: #FF6B3B;
+}
+
+#achievementsPage .achievements {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#achievementsPage .achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#achievementsPage .achievement-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  direction: ltr;
+}
+#achievementsPage .achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px #000;
+}
+
+#achievementsPage .achievement-image {
+  grid-column: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#achievementsPage .achievement-content {
+  grid-column: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#achievementsPage .achievement-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3B4A60;
+}
+
+#achievementsPage .achievement-description {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  color: #3B4A60;
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  #achievementsPage .achievement-card {
+    grid-template-columns: 1fr;
+  }
+  #achievementsPage .achievement-image {
+    grid-column: 1;
+    order: -1;
+  }
+  #achievementsPage .achievement-content {
+    grid-column: 1;
+    order: 1;
+  }
+}
+@media (max-width: 1200px) {
+  #achievementsPage .achievement-card {
+    display: flex;
+    flex-direction: column;
+  }
+  #achievementsPage .achievement-image {
+    order: -1;
+    width: 100%;
+    height: auto;
+  }
+  #achievementsPage .achievement-content {
+    order: 1;
+    padding: 1rem;
+  }
+}
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+#shareResultsPage {
+  background-color: #3B4A60;
+  /* Media Queries para diferentes tamaños de pantalla */
+}
+#shareResultsPage .share-results {
+  padding: 2rem;
+  max-width: 90%;
+  margin: 0 auto;
+}
+#shareResultsPage .share-results h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+#shareResultsPage .share-results .share-results-form {
+  padding: 2rem;
+}
+#shareResultsPage .share-results .share-results-form .form-group {
+  margin-bottom: 1rem;
+  color: #B0B4BC;
+  border: none;
+}
+#shareResultsPage .share-results .share-results-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+#shareResultsPage .share-results .share-results-form .form-group input[type=text],
+#shareResultsPage .share-results .share-results-form .form-group textarea,
+#shareResultsPage .share-results .share-results-form .form-group input[type=file] {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+#shareResultsPage .share-results .share-results-form .form-group input[type=text]:focus,
+#shareResultsPage .share-results .share-results-form .form-group textarea:focus,
+#shareResultsPage .share-results .share-results-form .form-group input[type=file]:focus {
+  box-shadow: 0 0 0 2px #FF6B3B;
+}
+#shareResultsPage .share-results .share-results-form .form-group .custom-file-input {
+  display: none;
+}
+#shareResultsPage .share-results .share-results-form .form-group .custom-file-label {
+  display: inline-block;
+  background-color: white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+#shareResultsPage .share-results .share-results-form .form-group .custom-file-label::before {
+  content: "+";
+  font-size: 30px;
+  font-weight: bold;
+  color: #3B4A60;
+}
+#shareResultsPage .share-results .share-results-form .form-group input[type=file] {
+  display: none;
+}
+#shareResultsPage .share-results .share-results-form .share-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #0277BD;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#shareResultsPage .share-results .share-results-form .share-button:hover {
+  background-color: rgb(255, 68.4897959184, 8);
+}
+#shareResultsPage #content {
+  width: 100%;
+  height: 500px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: "Nunito", sans-serif;
+}
+#shareResultsPage #content:focus {
+  box-shadow: 0 0 0 2px #FF6B3B;
+}
+#shareResultsPage .image-carousel {
+  text-align: center;
+  margin-top: 3rem;
+  background-color: #3B4A60;
+  padding: 1rem;
+  border-radius: 8px;
+}
+#shareResultsPage .image-carousel h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+#shareResultsPage .image-carousel .carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#shareResultsPage .image-carousel .carousel-images {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+#shareResultsPage .image-carousel .carousel-images .carousel-item {
+  flex: 0 0 auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 33%;
+  object-fit: contain;
+}
+#shareResultsPage .image-carousel .carousel-images .carousel-item .image-wrapper {
+  position: relative;
+  width: 100%;
+}
+#shareResultsPage .image-carousel .carousel-images .carousel-item .image-wrapper img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+#shareResultsPage .image-carousel .carousel-images .carousel-item .image-wrapper .carousel-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+#shareResultsPage .image-carousel .carousel-btn {
+  color: white;
+  border: none;
+  background: none;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+#shareResultsPage .image-carousel .carousel-btn:hover {
+  transform: scale(1.1);
+}
+#shareResultsPage .image-carousel .carousel-btn:active {
+  transform: scale(0.9);
+}
+@media (max-width: 1200px) {
+  #shareResultsPage .share-results {
+    padding: 1.5rem;
+  }
+  #shareResultsPage h1 {
+    font-size: 1.75rem;
+  }
+  #shareResultsPage .share-results-form {
+    padding: 1.5rem;
+  }
+  #shareResultsPage .share-results-form .form-group {
+    margin-bottom: 1rem;
+  }
+  #shareResultsPage .share-results-form .share-button {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  #shareResultsPage .image-carousel {
+    padding: 1.5rem;
+  }
+  #shareResultsPage .image-carousel h2 {
+    font-size: 1.5rem;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-images {
+    max-width: 100%;
+    gap: 0.8rem;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-images .carousel-item {
+    width: 70%;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-btn {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  #shareResultsPage .share-results {
+    padding: 1rem;
+  }
+  #shareResultsPage h1 {
+    font-size: 1.5rem;
+  }
+  #shareResultsPage .share-results-form {
+    padding: 1rem;
+  }
+  #shareResultsPage .share-results-form .form-group {
+    margin-bottom: 0.75rem;
+  }
+  #shareResultsPage .share-results-form .share-button {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  #shareResultsPage #content {
+    font-size: 1rem;
+  }
+  #shareResultsPage .image-carousel {
+    padding: 1rem;
+  }
+  #shareResultsPage .image-carousel h2 {
+    font-size: 1.6rem;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-images {
+    max-width: 90%;
+    gap: 1rem;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-images .carousel-item {
+    width: 60%;
+  }
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Clase de estilo para centrar elementos usando flexbox */
+#TrainingTrackingPage .training-section .actions, #training-page .training-page .filters, #training-page .training-page .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo base para tarjetas, con padding y margen definidos */
+#TrainingTrackingPage .training-section .training-card {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ESTILOS PRINCIPALES */
+#TrainingTrackingPage {
+  background-color: #3B4A60;
+  padding: 2rem;
+  font-family: "Nunito", sans-serif;
+  /* Sección que contiene el entrenamiento */
+  /* Media Queries */
+  /* Estilos para pantallas de tablet */
+  /* Estilos para pantallas de móvil */
+}
+#TrainingTrackingPage .training-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  /* Estilo del botón para cargar entrenamiento */
+  /* Estilo de la tarjeta de entrenamiento */
+  /* Estilo de las acciones (botones de exportar, guardar, etc.) */
+}
+#TrainingTrackingPage .training-section .load-training-btn {
+  background-color: #0277BD;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+#TrainingTrackingPage .training-section .load-training-btn:hover {
+  background-color: rgb(1.4659685864, 87.2251308901, 138.5340314136);
+}
+#TrainingTrackingPage .training-section .load-training-btn:hover {
+  background-color: rgb(1.4659685864, 87.2251308901, 138.5340314136);
+}
+#TrainingTrackingPage .training-section .training-card {
+  /* Estilo de la tabla de entrenamiento */
+  /* Estilo del botón de añadir */
+}
+#TrainingTrackingPage .training-section .training-card .section-title {
+  color: #E3E4E8;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+#TrainingTrackingPage .training-section .training-card .training-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.5rem;
+  color: #3B4A60;
+}
+#TrainingTrackingPage .training-section .training-card .training-table td {
+  padding: 0.75rem;
+  border: 1px solid #3B4A60;
+  text-align: left;
+  background-color: white;
+  font-size: 1rem;
+  cursor: text;
+}
+#TrainingTrackingPage .training-section .training-card .training-table td:hover {
+  background-color: #E3E4E8;
+}
+#TrainingTrackingPage .training-section .training-card .training-table td:focus {
+  outline: 2px solid #0277BD;
+  background-color: rgb(141.2041884817, 211.6492146597, 253.7958115183);
+}
+#TrainingTrackingPage .training-section .training-card .add-btn {
+  background-color: #FF6B3B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+#TrainingTrackingPage .training-section .training-card .add-btn:hover {
+  background-color: rgb(255, 68.4897959184, 8);
+}
+#TrainingTrackingPage .training-section .training-card .add-btn:hover {
+  transform: scale(1.1);
+}
+#TrainingTrackingPage .training-section .actions {
+  gap: 0.5rem;
+  /* Estilos de los botones de acción */
+}
+#TrainingTrackingPage .training-section .actions .action-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  /* Estilo específico para el botón PDF */
+  /* Estilo específico para el botón Excel */
+  /* Estilo específico para el botón Guardar */
+}
+#TrainingTrackingPage .training-section .actions .action-btn.pdf {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#TrainingTrackingPage .training-section .actions .action-btn.pdf:hover {
+  background-color: #0088cc;
+}
+#TrainingTrackingPage .training-section .actions .action-btn.excel {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#TrainingTrackingPage .training-section .actions .action-btn.excel:hover {
+  background-color: rgb(30.1449275362, 125.8550724638, 52);
+}
+#TrainingTrackingPage .training-section .actions .action-btn.save {
+  background-color: #FF6B3B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#TrainingTrackingPage .training-section .actions .action-btn.save:hover {
+  background-color: rgb(255, 68.4897959184, 8);
+}
+#TrainingTrackingPage .training-section .actions .action-btn:hover {
+  background-color: #0088cc;
+}
+@media (max-width: 768px) {
+  #TrainingTrackingPage .training-section {
+    padding: 1.5rem;
+  }
+  #TrainingTrackingPage .training-section .training-card {
+    padding: 1.5rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .section-title {
+    font-size: 1.5rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .training-table td {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .add-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+  #TrainingTrackingPage .training-section .actions .action-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  #TrainingTrackingPage .training-section {
+    padding: 1rem;
+  }
+  #TrainingTrackingPage .training-section .training-card {
+    padding: 1rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .section-title {
+    font-size: 1rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .training-table td {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .add-btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  #TrainingTrackingPage .training-section .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #TrainingTrackingPage .training-section .actions .action-btn {
+    padding: 0.5rem;
+    font-size: 1rem;
   }
 }
 

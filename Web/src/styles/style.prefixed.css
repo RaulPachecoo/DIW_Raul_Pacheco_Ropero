@@ -1,0 +1,1801 @@
+@charset "UTF-8";
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/*Estilos para el Header*/
+.header {
+  /* Establece el diseño del encabezado usando Flexbox */
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Espacia el contenido de forma equitativa entre los extremos */
+  padding: 0 20px; /* Espaciado pequeño alrededor del encabezado */
+  background-color: white; /* Color de fondo del encabezado */
+  height: 60px; /* Altura del encabezado */
+  position: relative; /* Posicionamiento relativo para permitir el posicionamiento absoluto de elementos secundarios */
+  /* Estilos del botón de menú para dispositivos pequeños */
+  /* Estilos de las barras del menú */
+  /* Reducir el espacio entre líneas */
+  /* Mostrar solo en pantallas pequeñas */
+  /* Estilo del logo del encabezado */
+  /* Estilo para el icono de perfil */
+  /* Estilos para pantallas pequeñas, como tabletas */
+  /* Estilos cuando el menú está activo (desplegado) */
+}
+.header .menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 36px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.header .menu-bar {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.header .menu-toggle .menu-bar:not(:last-child) {
+  margin-bottom: 4px;
+}
+@media (max-width: 768px) {
+  .header {
+    /* Cuando el menú esté activo, mostrarlo */
+  }
+  .header .menu-toggle {
+    display: flex;
+  }
+  .header .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .header .nav.active {
+    display: flex;
+  }
+}
+.header .logo {
+  height: 40px; /* Altura del logo */
+  display: flex; /* Utiliza Flexbox para centrar el logo */
+  justify-content: center; /* Centra el logo horizontalmente */
+  margin: 0 auto; /* Centra el logo en el contenedor */
+}
+.header .profile-icon {
+  display: flex;
+  align-items: center; /* Centra el icono verticalmente */
+  justify-content: center; /* Centra el icono horizontalmente */
+  width: 40px; /* Ancho del icono */
+  height: 40px; /* Alto del icono */
+  border-radius: 50%; /* Hace el icono redondo */
+  transition: background-color 0.3s ease; /* Transición para el cambio de color de fondo en hover */
+  /* Estilo del ícono dentro del icono de perfil */
+}
+.header .profile-icon:hover {
+  background-color: rgb(229.5, 229.5, 229.5); /* Oscurece el fondo al pasar el mouse */
+}
+.header .profile-icon i {
+  font-size: 18px; /* Tamaño del ícono */
+  margin-right: 0; /* Elimina el margen derecho */
+}
+.header .nav {
+  display: flex; /* Muestra la barra de navegación como flexbox */
+  gap: 50px; /* Espaciado entre los elementos del menú */
+}
+.header .nav ul {
+  display: flex; /* Los elementos de la lista están en fila */
+  gap: 50px; /* Espaciado entre los elementos de la lista */
+  list-style: none; /* Elimina los puntos de la lista */
+}
+.header .nav ul li a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: #000; /* Color del texto del enlace */
+  font-size: 16px; /* Tamaño de fuente del enlace */
+  font-weight: 500; /* Peso de fuente del enlace */
+  font-family: "Montserrat", sans-serif; /* Fuente principal */
+}
+.header .nav ul li a:hover {
+  color: #0277BD; /* Cambia el color al pasar el mouse */
+}
+@media (max-width: 768px) {
+  .header .menu-toggle {
+    display: flex; /* Muestra el botón de menú hamburguesa */
+  }
+  .header .nav {
+    display: none; /* Oculta la barra de navegación por defecto */
+    position: absolute; /* Posiciona la barra de navegación debajo del encabezado */
+    top: 60px; /* Ajusta la posición de la barra debajo del encabezado */
+    left: 20px; /* Alinea la barra de navegación a la izquierda */
+    background-color: white; /* Color de fondo de la barra de navegación */
+    flex-direction: column; /* Muestra los elementos del menú en columna */
+    gap: 10px; /* Espaciado reducido entre los elementos */
+    width: 240px; /* Ancho del menú móvil */
+    padding: 20px; /* Espaciado alrededor de los elementos del menú */
+    border-radius: 8px; /* Bordes redondeados en la barra de navegación */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px; /* Sombra alrededor del menú */
+    z-index: 1000; /* Asegura que el menú se muestre por encima de otros elementos */
+  }
+  .header .nav ul {
+    flex-direction: column; /* Coloca los elementos del menú en columna */
+    gap: 10px; /* Espaciado entre los elementos de la lista */
+  }
+  .header .nav ul li {
+    text-align: left; /* Alinea los enlaces a la izquierda */
+  }
+  .header .nav ul li a {
+    font-size: 18px; /* Tamaño de fuente más pequeño para enlaces */
+    font-weight: 600; /* Peso de fuente más grueso */
+  }
+}
+.header.active-menu .menu-toggle div:nth-child(1) {
+  transform: rotate(45deg); /* Rota la primera barra del menú para formar una "X" */
+  transform-origin: top left; /* Define el punto de origen para la rotación */
+}
+.header.active-menu .menu-toggle div:nth-child(2) {
+  opacity: 0; /* Hace invisible la barra del medio */
+}
+.header.active-menu .menu-toggle div:nth-child(3) {
+  transform: rotate(-45deg); /* Rota la tercera barra en la dirección opuesta */
+  transform-origin: bottom left; /* Define el punto de origen para la rotación */
+}
+.header.active-menu .nav {
+  display: flex; /* Muestra el menú desplegado */
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Estilos para la sección Hero*/
+.hero {
+  /* Fondo responsivo con la imagen proporcionada */
+  /* Fondo para pantallas pequeñas (mobile) */
+  /* Fondo para pantallas medianas (tablet) */
+  /* Fondo para pantallas pequeñas grandes (small-screen) */
+  /* Fondo para pantallas estándar (standard-screen) */
+  /* Fondo para pantallas grandes (large-screen) */
+  /* Fondo para pantallas extra grandes (extra-large-screen) */
+  /* Usamos el mixin para configurar un fondo responsivo */
+  background-size: cover; /* Asegura que la imagen cubra completamente el área */
+  background-position: center; /* Centra la imagen del fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 70vh; /* Altura del contenedor hero (70% de la altura de la ventana) */
+  display: flex; /* Usamos Flexbox para alinear los elementos dentro del contenedor */
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  color: white; /* Color del texto */
+  text-align: center; /* Centra el texto dentro del contenedor */
+  /* Contenido principal del hero */
+}
+@media (max-width: 480px) {
+  .hero {
+    background-image: url("../img/hero_image-480px.avif");
+    background-image: url("../img/hero_image-480px.webp");
+    background-image: url("../img/hero_image-480px.jpg");
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("../img/hero_image-768px.avif");
+    background-image: url("../img/hero_image-768px.webp");
+    background-image: url("../img/hero_image-768px.jpg");
+  }
+}
+@media (max-width: 1200px) {
+  .hero {
+    background-image: url("../img/hero_image-1200px.avif");
+    background-image: url("../img/hero_image-1200px.webp");
+    background-image: url("../img/hero_image-1200px.jpg");
+  }
+}
+@media (max-width: 1920px) {
+  .hero {
+    background-image: url("../img/hero_image-1920px.avif");
+    background-image: url("../img/hero_image-1920px.webp");
+    background-image: url("../img/hero_image-1920px.jpg");
+  }
+}
+@media (max-width: 2560px) {
+  .hero {
+    background-image: url("../img/hero_image-2560px.avif");
+    background-image: url("../img/hero_image-2560px.webp");
+    background-image: url("../img/hero_image-2560px.jpg");
+  }
+}
+@media (min-width: 2561px) {
+  .hero {
+    background-image: url("../img/hero_image-3820px.avif");
+    background-image: url("../img/hero_image-3820px.webp");
+    background-image: url("../img/hero_image-3820px.jpg");
+  }
+}
+.hero .hero-content {
+  max-width: 600px; /* Limita el ancho del contenido */
+  padding: 20px; /* Espaciado alrededor del contenido */
+  /* Estilos del título principal */
+  /* Estilos del párrafo en el hero */
+  /* Estilo del botón en el hero */
+}
+.hero .hero-content h1 {
+  font-size: 2.5rem; /* Tamaño de fuente inicial */
+  font-weight: 600; /* Peso de la fuente */
+  line-height: 1.3; /* Altura de línea para mejorar la legibilidad */
+  margin-bottom: 20px; /* Espaciado debajo del título */
+  font-family: "Montserrat", sans-serif; /* Fuente del título */
+  /* Tamaño de fuente responsivo usando mixin */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+}
+@media (max-width: 480px) {
+  .hero .hero-content h1 {
+    font-size: 1.5rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-content h1 {
+    font-size: 2rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.hero .hero-content p {
+  font-size: 16px; /* Tamaño de fuente para el párrafo */
+  margin-bottom: 60px; /* Espaciado debajo del párrafo */
+  font-family: "Montserrat", sans-serif; /* Fuente para el párrafo */
+  /* Tamaño de fuente responsivo usando mixin */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+}
+@media (max-width: 480px) {
+  .hero .hero-content p {
+    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-content p {
+    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.hero .hero-content .hero-button {
+  display: inline-block; /* Hace que el botón se comporte como un enlace de bloque */
+  background-color: #0277BD; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 20px 40px; /* Espaciado dentro del botón */
+  font-size: 18px; /* Tamaño de fuente del texto del botón */
+  font-weight: 500; /* Peso de la fuente del botón */
+  border-radius: 5px; /* Bordes redondeados para el botón */
+  font-family: "Oswald", sans-serif; /* Fuente específica para el botón */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  transition: background-color 0.3s ease; /* Efecto de transición suave en el color de fondo */
+  /* Tamaño de fuente responsivo usando mixin */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+  /* Efecto al pasar el cursor sobre el botón */
+}
+@media (max-width: 480px) {
+  .hero .hero-content .hero-button {
+    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-content .hero-button {
+    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.hero .hero-content .hero-button:hover {
+  background-color: rgb(1.4659685864, 87.2251308901, 138.5340314136); /* Oscurece el color de fondo al hacer hover */
+}
+
+/* Importa las variables definidas en otro archivo, como colores, fuentes, etc. */
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Importa los mixins definidos, como los para el tamaño responsivo, entre otros */
+/* Estilo base para un contenedor flex que alinea los elementos en columna y los centra */
+.why-fitessence {
+  display: flex; /* Activamos el layout Flexbox */
+  flex-direction: column; /* Alineamos los elementos en una columna */
+  align-items: center; /* Centramos los elementos a lo largo del eje transversal */
+}
+
+/* Estilo base para centrar el texto dentro de su contenedor */
+.login-container, .user-reviews, .why-fitessence .why-content h2 {
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Estilo base para una fuente responsiva, ajustable según los diferentes tamaños de pantalla */
+.why-fitessence .why-content p, .why-fitessence .why-content h2 {
+  font-family: "Montserrat", sans-serif; /* Define la fuente principal */
+  font-size: 1rem; /* Tamaño de fuente base */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+  /* Ajusta el tamaño de la fuente dependiendo del breakpoint */
+}
+@media (max-width: 480px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 1.125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 1.25rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .why-fitessence .why-content p, .why-fitessence .why-content h2 {
+    font-size: 1.375rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+
+/* Estilo base para las imágenes, asegura que tengan un 100% de ancho, un borde redondeado y sombra */
+.why-fitessence .why-image img, .why-fitessence .why-image {
+  width: 100%; /* La imagen ocupará todo el ancho de su contenedor */
+  height: auto; /* La altura será automática para mantener la proporción */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px #000; /* Sombra sutil alrededor de la imagen */
+}
+
+.why-fitessence {
+  /* Usamos el estilo base para centrar los elementos en columna */
+  padding: 40px 20px; /* Espaciado interno: 40px arriba y abajo, 20px a los lados */
+  /* Estilo para el contenido dentro de 'why-content' */
+  /* Estilo para la imagen dentro de 'why-image' */
+}
+.why-fitessence .why-content {
+  margin-bottom: 20px; /* Espaciado inferior para separar las secciones */
+  max-width: 600px; /* Limita el ancho máximo del contenido a 600px */
+  /* Estilo para el título h2 dentro de 'why-content' */
+  /* Estilo para los párrafos dentro de 'why-content' */
+}
+.why-fitessence .why-content h2 {
+  /* Centra el texto */
+  /* Aplica la fuente responsiva */
+  color: #0277BD; /* Color del texto en el título */
+  margin-bottom: 15px; /* Espaciado inferior del título */
+  font-family: "Montserrat", sans-serif; /* Fuente primaria */
+  font-size: 2rem; /* Tamaño de fuente grande */
+}
+.why-fitessence .why-content p {
+  /* Aplica la fuente responsiva */
+  font-family: "Nunito", sans-serif; /* Fuente secundaria */
+  line-height: 1.6; /* Espaciado entre líneas */
+  color: #3B4A60; /* Color principal del texto */
+}
+.why-fitessence .why-image {
+  /* Aplica el estilo base de imagen */
+  max-width: 800px; /* Limita el ancho máximo de la imagen a 800px */
+  /* Estilo específico para la imagen dentro de 'why-image' */
+}
+.why-fitessence .why-image img {
+  /* Aplica el estilo base de imagen */
+}
+
+/* Importa las variables de configuración (colores, tamaños, fuentes, etc.) */
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Importa los mixins para reutilización de código en distintos lugares */
+/* Estilos para la sección de testimonios */
+.testimonials {
+  background-color: #3B4A60; /* Color de fondo de la sección */
+  color: white; /* Color del texto */
+  text-align: center; /* Centra el contenido del texto */
+  padding: 60px 20px; /* Espaciado interior: grande en vertical y pequeño en horizontal */
+  /* Estilos para el título de la sección de testimonios */
+  /* Estilos para el párrafo de la sección de testimonios */
+  /* Contenedor para los testimonios, usando Flexbox */
+}
+.testimonials h2 {
+  font-family: "Montserrat", sans-serif; /* Fuente del título */
+  font-size: 2.5rem; /* Tamaño de fuente del título */
+  font-weight: 600; /* Peso de la fuente del título */
+  margin-bottom: 20px; /* Espaciado debajo del título */
+  /* Ajuste del tamaño de fuente responsivo con diferentes factores en cada tamaño de pantalla */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+}
+@media (max-width: 480px) {
+  .testimonials h2 {
+    font-size: 1.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .testimonials h2 {
+    font-size: 2.1875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .testimonials h2 {
+    font-size: 2.5rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .testimonials h2 {
+    font-size: 2.8125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .testimonials h2 {
+    font-size: 3.125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.testimonials p {
+  font-family: "Montserrat", sans-serif; /* Fuente del párrafo */
+  font-size: 1.5rem; /* Tamaño de fuente del párrafo */
+  margin-bottom: 20px; /* Espaciado debajo del párrafo */
+  /* Ajuste del tamaño de fuente responsivo para diferentes tamaños de pantalla */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+}
+@media (max-width: 480px) {
+  .testimonials p {
+    font-size: 1.3125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .testimonials p {
+    font-size: 1.5rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .testimonials p {
+    font-size: 1.6875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .testimonials p {
+    font-size: 1.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .testimonials p {
+    font-size: 2.0625rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.testimonials .testimonials-grid {
+  display: flex; /* Activa Flexbox para el contenedor */
+  justify-content: center; /* Centra los elementos de manera horizontal */
+  gap: 40px; /* Espaciado entre los elementos del grid */
+  flex-wrap: wrap; /* Permite que los testimonios se ajusten en múltiples filas si es necesario */
+  /* Estilo para cada testimonio dentro del grid */
+}
+.testimonials .testimonials-grid .testimonial {
+  background-color: #3B4A60; /* Color de fondo de cada testimonio */
+  border-radius: 8px; /* Bordes redondeados de cada testimonio */
+  padding: 20px; /* Espaciado interior de cada testimonio */
+  text-align: center; /* Centra el contenido del testimonio */
+  width: 180px; /* Ancho fijo para cada testimonio */
+  /* Estilo de la imagen del testimonio */
+  /* Información adicional dentro de cada testimonio (nombre, descripción, etc.) */
+}
+.testimonials .testimonials-grid .testimonial img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  margin-bottom: 5px; /* Espaciado debajo de la imagen */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info {
+  display: flex; /* Usa Flexbox para alinear el contenido */
+  align-items: center; /* Alinea los elementos de manera vertical */
+  justify-content: center; /* Centra los elementos de manera horizontal */
+  gap: 20px; /* Espaciado entre los elementos dentro de la info del testimonio */
+  /* Estilo para el botón de reproducción (play) */
+  /* Estilo para el texto dentro del contenedor del testimonio */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info .play-button {
+  background-color: #0277BD; /* Color de fondo del botón */
+  color: white; /* Color del texto dentro del botón */
+  border: none; /* Sin borde */
+  border-radius: 50%; /* Hace el botón redondo */
+  width: 30px; /* Tamaño del botón */
+  height: 30px; /* Tamaño del botón */
+  display: flex; /* Usa Flexbox para centrar el ícono dentro del botón */
+  justify-content: center; /* Centra el ícono dentro del botón */
+  align-items: center; /* Centra el ícono dentro del botón */
+  font-size: 1rem; /* Tamaño del ícono */
+  cursor: pointer; /* Muestra un cursor tipo mano al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+  /* Estilo para cuando se pasa el cursor sobre el botón */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info .play-button:hover {
+  background-color: rgb(1.4659685864, 87.2251308901, 138.5340314136); /* Oscurece el color de fondo al hacer hover */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info .play-button i {
+  margin: 0; /* Elimina el margen del ícono dentro del botón */
+}
+.testimonials .testimonials-grid .testimonial .testimonial-info p {
+  font-family: "Montserrat", sans-serif; /* Fuente del texto */
+  font-size: 1rem; /* Tamaño de la fuente */
+  color: #E3E4E8; /* Color del texto */
+  margin: 0; /* Elimina los márgenes */
+}
+
+/* Importa las variables de configuración, como colores, tamaños, fuentes, etc. */
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Importa los mixins para reutilización de código en diferentes partes del proyecto */
+/* Centra el texto dentro del contenedor */
+.login-container, .user-reviews, .why-fitessence .why-content h2 {
+  text-align: center;
+}
+
+/* Estilo base para los botones, incluye color, tamaño y efecto de cursor */
+.user-reviews .reviews-container .nav-button {
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  font-size: 2rem; /* Tamaño de fuente grande */
+  cursor: pointer; /* Cursor tipo mano al pasar sobre el botón */
+  color: #3B4A60; /* Color del texto del botón */
+  z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+/* Estilo base para el texto de las reseñas */
+.user-reviews .reviews-container .reviews .review .review-text {
+  font-size: 1rem; /* Tamaño de fuente pequeño */
+  color: #B0B4BC; /* Color del texto */
+  margin-bottom: 20px; /* Espaciado en la parte inferior */
+  line-height: 1.5; /* Espaciado entre líneas */
+  font-family: "Nunito", sans-serif; /* Fuente secundaria */
+}
+
+/* Estilo responsivo para el texto */
+.why-fitessence .why-content h2, .why-fitessence .why-content p {
+  font-family: "Montserrat", sans-serif; /* Fuente primaria */
+  font-size: 1rem; /* Tamaño de fuente base */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+  /* Tamaño responsivo */
+}
+@media (max-width: 480px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 0.875rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 1rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 1.125rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 1.25rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .why-fitessence .why-content h2, .why-fitessence .why-content p {
+    font-size: 1.375rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+
+.user-reviews {
+  /* Centra el texto */
+  margin: 40px auto; /* Márgenes automáticos y espaciado medio */
+  padding: 20px; /* Espaciado interno pequeño */
+  background-color: white; /* Color de fondo de la sección */
+  border-radius: 8px; /* Bordes redondeados */
+  max-width: 600px; /* Ancho máximo de la sección */
+  /* Estilo para el título de la sección */
+  /* Contenedor para las reseñas, utiliza Flexbox para alinear y distribuir los elementos */
+  /* Media queries para ajustar el diseño según el tamaño de la pantalla */
+  /* Pantallas pequeñas (móviles) */
+  /* Pantallas de tablet */
+  /* Pantallas más grandes */
+  /* Pantallas estándar */
+  /* Pantallas grandes */
+}
+.user-reviews h2 {
+  font-size: 2rem; /* Tamaño de fuente grande */
+  color: #3B4A60; /* Color del título */
+  margin-bottom: 20px; /* Espaciado en la parte inferior */
+  /* Itera sobre cada tamaño de pantalla y su factor correspondiente */
+  /* Tamaño de fuente responsivo */
+}
+@media (max-width: 480px) {
+  .user-reviews h2 {
+    font-size: 1.666rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 768px) {
+  .user-reviews h2 {
+    font-size: 1.944rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1200px) {
+  .user-reviews h2 {
+    font-size: 2.222rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 1920px) {
+  .user-reviews h2 {
+    font-size: 2.5rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+@media (max-width: 2560px) {
+  .user-reviews h2 {
+    font-size: 2.778rem; /* Aplica la función scale-font-size con el tamaño base y el factor */
+  }
+}
+.user-reviews .reviews-container {
+  display: flex; /* Flexbox activado */
+  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  position: relative; /* Posicionamiento relativo para los botones de navegación */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  padding: 20px; /* Espaciado interno pequeño */
+  /* Estilo para los botones de navegación */
+  /* Estilo para el contenedor de las reseñas */
+}
+.user-reviews .reviews-container .nav-button {
+  /* Usa el estilo base del botón */
+}
+.user-reviews .reviews-container .nav-button.left {
+  position: absolute; /* Posición absoluta para colocarlo a la izquierda */
+  left: 20px; /* Espaciado pequeño desde la izquierda */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajusta la posición para que esté perfectamente centrado */
+}
+.user-reviews .reviews-container .nav-button.right {
+  position: absolute; /* Posición absoluta para colocarlo a la derecha */
+  right: 20px; /* Espaciado pequeño desde la derecha */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajusta la posición para que esté perfectamente centrado */
+}
+.user-reviews .reviews-container .reviews {
+  display: flex; /* Flexbox activado */
+  transition: transform 0.5s ease-in-out; /* Transición suave al mover las reseñas */
+  width: 100%; /* El contenedor ocupa todo el ancho disponible */
+  gap: 20px; /* Espaciado entre las reseñas */
+  /* Estilo para cada reseña individual */
+}
+.user-reviews .reviews-container .reviews .review {
+  flex: 0 0 100%; /* Cada reseña ocupa el 100% del ancho disponible */
+  background-color: white; /* Color de fondo de la reseña */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px; /* Sombra de la caja */
+  padding: 20px; /* Espaciado interno pequeño */
+  text-align: left; /* Alinea el texto a la izquierda */
+  overflow-wrap: break-word; /* Evita el desbordamiento de palabras */
+  word-wrap: break-word; /* Asegura que las palabras largas se rompan */
+  word-break: break-word; /* Asegura que el texto se ajuste correctamente */
+  box-sizing: border-box; /* Considera el padding y el borde en el cálculo del ancho */
+  /* Estilo para el título de la reseña */
+  /* Estilo para el texto de la reseña */
+  /* Estilo para el autor de la reseña */
+}
+.user-reviews .reviews-container .reviews .review .review-title {
+  font-weight: 600; /* Peso de la fuente del título */
+  color: #3B4A60; /* Color del título */
+  margin-bottom: 5px; /* Espaciado en la parte inferior */
+}
+.user-reviews .reviews-container .reviews .review .review-text {
+  /* Usa el estilo base del texto de reseña */
+}
+.user-reviews .reviews-container .reviews .review .review-author {
+  display: flex; /* Flexbox activado para los elementos del autor */
+  align-items: center; /* Alinea los elementos verticalmente */
+  gap: 20px; /* Espaciado entre el icono y el texto */
+  /* Estilo para la imagen del autor */
+  /* Estilo para el nombre del autor */
+}
+.user-reviews .reviews-container .reviews .review .review-author img {
+  border-radius: 50%; /* Hace la imagen circular */
+  width: 40px; /* Tamaño del icono de perfil */
+  height: 40px; /* Tamaño del icono de perfil */
+  -o-object-fit: cover;
+     object-fit: cover; /* Ajusta la imagen dentro del contenedor sin distorsionarla */
+}
+.user-reviews .reviews-container .reviews .review .review-author p {
+  font-size: 1rem; /* Tamaño de fuente pequeño */
+  font-weight: 500; /* Peso de la fuente medio */
+  color: #3B4A60; /* Color del texto */
+}
+@media (max-width: 480px) {
+  .user-reviews h2 {
+    font-size: 1.5rem; /* Reduce el tamaño del título */
+  }
+  .user-reviews .review-title {
+    font-size: 1rem; /* Reduce el tamaño del título de la reseña */
+  }
+  .user-reviews .review-text {
+    font-size: 0.9rem; /* Reduce el tamaño del texto de la reseña */
+  }
+}
+@media (max-width: 768px) {
+  .user-reviews h2 {
+    font-size: 1.5rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1rem;
+  }
+  .user-reviews .review-text {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 1200px) {
+  .user-reviews h2 {
+    font-size: 1.5rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1rem;
+  }
+  .user-reviews .review-text {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 1920px) {
+  .user-reviews h2 {
+    font-size: 1.5rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1.5rem;
+  }
+  .user-reviews .review-text {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 2560px) {
+  .user-reviews h2 {
+    font-size: 2rem;
+  }
+  .user-reviews .review-title {
+    font-size: 1.5rem;
+  }
+  .user-reviews .review-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Estilos para el Footer */
+/* Estilos comunes para los enlaces del pie de página */
+.footer .footer-links ul li a,
+.footer .footer-contact ul li a,
+.footer .footer-legal ul li a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: #B0B4BC; /* Color base de los enlaces */
+  font-size: 14px; /* Tamaño de fuente para los enlaces */
+  margin-bottom: 5px; /* Márgenes entre los elementos */
+  display: block; /* Los enlaces se comportan como bloques */
+}
+.footer .footer-links ul li a:hover,
+.footer .footer-contact ul li a:hover,
+.footer .footer-legal ul li a:hover {
+  color: #0277BD; /* Cambia el color del enlace al pasar el mouse */
+}
+
+/* Estilos comunes para los títulos del pie de página */
+.footer .footer-links h3,
+.footer .footer-contact h3,
+.footer .footer-legal h3 {
+  font-size: 18px; /* Tamaño de fuente de los títulos */
+  color: white; /* Color del texto del título */
+  margin-bottom: 10px; /* Margen inferior en los títulos */
+}
+
+/* Estilos comunes para los iconos sociales */
+.footer nav ul li .social-icon {
+  color: white; /* Color base de los iconos sociales */
+  font-size: 24px; /* Tamaño de los iconos sociales */
+  display: inline-flex; /* Los iconos se muestran en línea como flex */
+  justify-content: center; /* Centra los iconos dentro de su contenedor */
+  align-items: center; /* Centra los iconos verticalmente */
+  width: 40px; /* Ancho de los iconos */
+  height: 40px; /* Alto de los iconos */
+  border-radius: 50%; /* Redondea los iconos para hacerlos circulares */
+  background-color: #3B4A60; /* Color de fondo de los iconos */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+.footer nav ul li .social-icon:hover {
+  opacity: 0.8; /* Reduce la opacidad de los iconos cuando se pasa el mouse */
+}
+
+/* Estilos comunes para las secciones del pie de página */
+.footer .footer-links,
+.footer .footer-contact,
+.footer .footer-legal {
+  flex: 1; /* Cada sección ocupa un espacio proporcional */
+  margin-bottom: 20px; /* Margen inferior de las secciones */
+}
+.footer .footer-links h3,
+.footer .footer-contact h3,
+.footer .footer-legal h3 {
+  /* Se extienden los estilos del título */
+}
+.footer .footer-links ul,
+.footer .footer-contact ul,
+.footer .footer-legal ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding por defecto */
+  margin: 0; /* Elimina el margen por defecto */
+}
+.footer .footer-links ul li,
+.footer .footer-contact ul li,
+.footer .footer-legal ul li {
+  margin-bottom: 5px; /* Margen inferior de cada item */
+}
+.footer .footer-links ul li a,
+.footer .footer-contact ul li a,
+.footer .footer-legal ul li a {
+  /* Se extienden los estilos de los enlaces */
+}
+.footer .footer-links ul li a p,
+.footer .footer-contact ul li a p,
+.footer .footer-legal ul li a p {
+  margin: 5px 0; /* Márgenes de los párrafos */
+  font-size: 14px; /* Tamaño de fuente para los párrafos */
+}
+.footer .footer-links ul li a p a,
+.footer .footer-contact ul li a p a,
+.footer .footer-legal ul li a p a {
+  /* Se extienden los estilos de los enlaces */
+}
+
+.footer {
+  font-family: "Montserrat", sans-serif; /* Fuente principal para el pie de página */
+  background-color: #3B4A60; /* Color de fondo del pie de página */
+  color: #B0B4BC; /* Color del texto */
+  padding: 20px 40px; /* Espaciado alrededor del pie de página */
+  display: flex; /* Utiliza flexbox para el layout */
+  flex-wrap: wrap; /* Permite que las secciones se ajusten en varias líneas */
+  gap: 20px; /* Espacio entre las secciones */
+  /* Para pantallas pequeñas como tabletas */
+  /* Para pantallas más pequeñas, como teléfonos móviles */
+}
+.footer .footer-logo {
+  display: flex; /* Flexbox para el logo */
+  flex-direction: column; /* Coloca el logo y el contenido de forma vertical */
+  align-items: center; /* Centra los elementos */
+  margin-bottom: 20px; /* Margen inferior del logo */
+  margin-right: 200px; /* Margen derecho en pantallas grandes */
+  /* Pantallas más pequeñas (como tabletas) */
+  /* Pantallas móviles */
+  /* Pantallas grandes */
+}
+.footer .footer-logo img {
+  width: 80px; /* Tamaño del logo */
+  margin-bottom: 15px; /* Margen inferior del logo */
+}
+@media (max-width: 768px) {
+  .footer .footer-logo {
+    margin-right: 40px; /* Disminuye el margen derecho en pantallas más pequeñas */
+  }
+}
+@media (max-width: 480px) {
+  .footer .footer-logo {
+    margin-right: 40px; /* Disminuye aún más el margen derecho en pantallas móviles */
+  }
+}
+@media (min-width: 2560px) {
+  .footer .footer-logo {
+    margin-right: 400px; /* Aumenta el margen derecho en pantallas grandes */
+  }
+}
+.footer nav ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding por defecto */
+  margin: 0; /* Elimina el margen por defecto */
+  display: block; /* Los elementos de la lista se comportan como bloques */
+  text-align: center; /* Centra el texto de los enlaces */
+}
+.footer nav ul li {
+  margin-bottom: 5px; /* Margen inferior de cada item */
+}
+.footer nav ul li .social-icon {
+  /* Se extienden los estilos de los iconos sociales */
+  /* Estilos personalizados para cada icono social */
+}
+.footer nav ul li .social-icon.instagram {
+  background-color: #e4405f; /* Color específico para Instagram */
+}
+.footer nav ul li .social-icon.facebook {
+  background-color: #3b5998; /* Color específico para Facebook */
+}
+.footer nav ul li .social-icon.linkedin {
+  background-color: #0077b5; /* Color específico para LinkedIn */
+}
+.footer nav ul li .social-icon.twitter {
+  background-color: #1da1f2; /* Color específico para Twitter */
+}
+.footer nav a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+.footer .footer-links,
+.footer .footer-contact,
+.footer .footer-legal {
+  /* Se extienden los estilos de las secciones del pie de página */
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Cambia la dirección del layout a columna */
+    text-align: center; /* Centra el texto */
+    gap: 10px; /* Reduce el espacio entre los elementos */
+  }
+  .footer .footer-logo,
+  .footer .footer-links,
+  .footer .footer-contact,
+  .footer .footer-legal {
+    margin-bottom: 10px; /* Reduce el margen entre secciones */
+  }
+}
+@media (max-width: 480px) {
+  .footer .footer-logo img {
+    width: 60px; /* Ajusta el tamaño del logo */
+  }
+  .footer .footer-links h3,
+  .footer .footer-contact h3,
+  .footer .footer-legal h3 {
+    font-size: 1rem; /* Tamaño de fuente de los títulos más pequeños */
+  }
+  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-contact a,
+  .footer .footer-contact p,
+  .footer .footer-legal a,
+  .footer .footer-legal p {
+    font-size: 0.875rem; /* Tamaño de fuente de los enlaces más pequeños */
+  }
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Estilos para la página del login */
+/* Clase para centrar el texto */
+.login-container, .why-fitessence .why-content h2, .user-reviews {
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* Estilo base para los botones */
+.login-container .login-content .login-buttons button {
+  display: flex; /* Usa Flexbox para centrar el contenido del botón */
+  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  width: 100%; /* El botón ocupa todo el ancho disponible */
+  max-width: 300px; /* Limita el ancho máximo del botón */
+  margin: 5px auto; /* Centra el botón horizontalmente con margen */
+  padding: 20px; /* Espaciado interno del botón */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de fuente del botón */
+  cursor: pointer; /* Cambia el cursor a mano cuando pasa sobre el botón */
+  font-weight: 500; /* Peso de la fuente del texto */
+  transition: background-color 0.3s ease; /* Efecto de transición en el color de fondo */
+  /* Estilos para el ícono dentro del botón */
+}
+.login-container .login-content .login-buttons button i {
+  font-size: 1.5rem; /* Tamaño del ícono */
+  margin-right: 20px; /* Espaciado entre el ícono y el texto */
+}
+
+/* Estilo base para los enlaces */
+.login-container .login-content .email-login, .login-container .login-content p .signup-link {
+  color: #0277BD; /* Color del enlace */
+  font-size: 0.9rem; /* Tamaño de la fuente */
+  text-decoration: none; /* Elimina el subrayado por defecto */
+  /* Efecto al pasar el cursor sobre el enlace */
+}
+.login-container .login-content .email-login:hover, .login-container .login-content p .signup-link:hover {
+  text-decoration: underline; /* Subraya el enlace al hacer hover */
+}
+
+#login-page {
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el padding predeterminado */
+  font-family: "Montserrat", sans-serif; /* Fuente principal para la página */
+  background-color: #3B4A60; /* Color de fondo de la página */
+  display: flex; /* Usa Flexbox para centrar el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 100vh; /* La altura de la página ocupa toda la ventana */
+}
+
+/* Contenedor de login */
+.login-container {
+  background-color: #3B4A60; /* Color de fondo del contenedor */
+  padding: 20px; /* Espaciado interno del contenedor */
+  /* Aplica los estilos para centrar el texto */
+  /* Contenido dentro del login */
+}
+.login-container .login-content {
+  color: white; /* Color del texto dentro del contenedor */
+  /* Estilo para el logo */
+  /* Estilo para el título principal */
+  /* Estilo para el párrafo */
+  /* Estilo para los botones de login */
+  /* Enlace para login con email */
+}
+.login-container .login-content .logo {
+  width: 80px; /* Tamaño del logo */
+  margin-bottom: 15px; /* Espaciado debajo del logo */
+}
+.login-container .login-content h1 {
+  font-size: 2rem; /* Tamaño de fuente para el título */
+  font-weight: 600; /* Peso de la fuente */
+  margin-bottom: 20px; /* Espaciado debajo del título */
+}
+.login-container .login-content p {
+  font-size: 1rem; /* Tamaño de la fuente */
+  margin-bottom: 20px; /* Espaciado debajo del párrafo */
+  /* Estilo para el enlace de "signup" */
+}
+.login-container .login-content p .signup-link {
+  /* Aplica los estilos de enlace predefinidos */
+  /* Efecto de hover para el enlace */
+}
+.login-container .login-content p .signup-link:hover {
+  text-decoration: underline; /* Subraya el enlace al hacer hover */
+}
+.login-container .login-content .login-buttons {
+  margin-bottom: 20px; /* Espaciado debajo de los botones */
+  /* Estilos para los botones dentro de login */
+}
+.login-container .login-content .login-buttons button {
+  /* Aplica los estilos base de botón */
+  /* Estilo específico para el botón de Google */
+  /* Estilo específico para el botón de Apple */
+}
+.login-container .login-content .login-buttons button.google-login {
+  background-color: white; /* Fondo del botón */
+  color: #000; /* Color del texto */
+  border: 1px solid #E3E4E8; /* Borde del botón */
+  /* Estilo para la imagen dentro del botón */
+  /* Efecto de hover para el botón de Google */
+}
+.login-container .login-content .login-buttons button.google-login img {
+  width: 20px; /* Tamaño de la imagen */
+  margin-right: 20px; /* Espaciado entre la imagen y el texto */
+}
+.login-container .login-content .login-buttons button.google-login:hover {
+  background-color: white; /* El fondo no cambia al hacer hover */
+}
+.login-container .login-content .login-buttons button.apple-login {
+  background-color: #000; /* Fondo del botón */
+  color: white; /* Color del texto */
+  border: 1px solid #000; /* Borde del botón */
+  /* Estilo para la imagen dentro del botón */
+  /* Efecto de hover para el botón de Apple */
+}
+.login-container .login-content .login-buttons button.apple-login img {
+  width: 20px; /* Tamaño de la imagen */
+  margin-right: 20px; /* Espaciado entre la imagen y el texto */
+}
+.login-container .login-content .login-buttons button.apple-login:hover {
+  background-color: black; /* Oscurece el fondo al hacer hover */
+}
+.login-container .login-content .email-login {
+  /* Aplica los estilos de enlace predefinidos */
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* %flex-center: Estilo base que usa flexbox para centrar elementos tanto en el eje horizontal como vertical */
+#TrainingTrackingPage .training-section .actions, #training-page .training-page .pagination, #training-page .training-page .filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#training-page {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  background-color: #3B4A60;
+  margin: 0;
+  padding: 0;
+  /* Estilos para la sección de la página de entrenamiento */
+}
+#training-page .training-page {
+  padding: 2rem;
+  /* Estilos para los filtros */
+  /* Lista de entrenamientos */
+  /* Estilos para la paginación */
+}
+#training-page .training-page .filters {
+  gap: 1.5rem;
+  margin-bottom: 40px;
+  /* Estilo de los botones de filtro */
+}
+#training-page .training-page .filters .filter-button {
+  background-color: rgb(88.1193548387, 110.5225806452, 143.3806451613);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+#training-page .training-page .filters .filter-button:hover {
+  background-color: rgb(114.0967741935, 136.1129032258, 168.4032258065);
+}
+#training-page .training-page .training-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  /* Estilo de las tarjetas de entrenamiento */
+}
+#training-page .training-page .training-list .training-card {
+  background-color: white;
+  color: #3B4A60;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0;
+  box-shadow: 0 4px 6px #000;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Efectos al pasar el mouse sobre la tarjeta */
+  /* Estilos para las imágenes dentro de las tarjetas */
+  /* Estilos para el texto dentro de las tarjetas */
+}
+#training-page .training-page .training-list .training-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px #000;
+}
+#training-page .training-page .training-list .training-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#training-page .training-page .training-list .training-card p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 20px;
+}
+#training-page .training-page .pagination {
+  margin-top: 40px;
+  /* Estilo de los botones de paginación */
+}
+#training-page .training-page .pagination .pagination-button {
+  background-color: rgb(88.1193548387, 110.5225806452, 143.3806451613);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+#training-page .training-page .pagination .pagination-button:hover {
+  background-color: rgb(114.0967741935, 136.1129032258, 168.4032258065);
+}
+@media (max-width: 1200px) {
+  #training-page {
+    /* Estilo para pantallas pequeñas */
+  }
+  #training-page .training-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  #training-page {
+    /* Estilo para tabletas */
+  }
+  #training-page .training-page {
+    padding: 1.5rem;
+  }
+  #training-page .training-page .filters {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  #training-page .training-page .filters .filter-button {
+    padding: 0.5rem;
+  }
+  #training-page .training-page .training-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  #training-page {
+    /* Estilo para móviles */
+  }
+  #training-page .training-page {
+    padding: 1rem;
+  }
+  #training-page .training-page .filters {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #training-page .training-page .training-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+#achievementsPage {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background-color: #3B4A60;
+  color: #3B4A60;
+}
+
+#achievementsPage .achievement-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#achievementsPage .achievement-actions i {
+  font-size: 1.5rem;
+  color: #B0B4BC;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#achievementsPage .achievement-actions i:hover {
+  color: #FF6B3B;
+}
+
+#achievementsPage .achievements {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#achievementsPage .achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#achievementsPage .achievement-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  direction: ltr;
+}
+#achievementsPage .achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px #000;
+}
+
+#achievementsPage .achievement-image {
+  grid-column: 2;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#achievementsPage .achievement-content {
+  grid-column: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#achievementsPage .achievement-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3B4A60;
+}
+
+#achievementsPage .achievement-description {
+  font-size: 1rem;
+  color: #3B4A60;
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  #achievementsPage .achievement-card {
+    grid-template-columns: 1fr;
+  }
+  #achievementsPage .achievement-image {
+    grid-column: 1;
+    order: -1;
+  }
+  #achievementsPage .achievement-content {
+    grid-column: 1;
+    order: 1;
+  }
+}
+@media (max-width: 1200px) {
+  #achievementsPage .achievement-card {
+    display: flex;
+    flex-direction: column;
+  }
+  #achievementsPage .achievement-image {
+    order: -1;
+    width: 100%;
+    height: auto;
+  }
+  #achievementsPage .achievement-content {
+    order: 1;
+    padding: 1rem;
+  }
+}
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+#shareResultsPage {
+  background-color: #3B4A60;
+  /* Media Queries para diferentes tamaños de pantalla */
+}
+#shareResultsPage .share-results {
+  padding: 2rem;
+  max-width: 90%;
+  margin: 0 auto;
+}
+#shareResultsPage .share-results h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: white;
+}
+#shareResultsPage .share-results .share-results-form {
+  padding: 2rem;
+}
+#shareResultsPage .share-results .share-results-form .form-group {
+  margin-bottom: 1rem;
+  color: #B0B4BC;
+  border: none;
+}
+#shareResultsPage .share-results .share-results-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+#shareResultsPage .share-results .share-results-form .form-group input[type=text],
+#shareResultsPage .share-results .share-results-form .form-group textarea,
+#shareResultsPage .share-results .share-results-form .form-group input[type=file] {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+#shareResultsPage .share-results .share-results-form .form-group input[type=text]:focus,
+#shareResultsPage .share-results .share-results-form .form-group textarea:focus,
+#shareResultsPage .share-results .share-results-form .form-group input[type=file]:focus {
+  box-shadow: 0 0 0 2px #FF6B3B;
+}
+#shareResultsPage .share-results .share-results-form .form-group .custom-file-input {
+  display: none;
+}
+#shareResultsPage .share-results .share-results-form .form-group .custom-file-label {
+  display: inline-block;
+  background-color: white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+#shareResultsPage .share-results .share-results-form .form-group .custom-file-label::before {
+  content: "+";
+  font-size: 30px;
+  font-weight: bold;
+  color: #3B4A60;
+}
+#shareResultsPage .share-results .share-results-form .form-group input[type=file] {
+  display: none;
+}
+#shareResultsPage .share-results .share-results-form .share-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #0277BD;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#shareResultsPage .share-results .share-results-form .share-button:hover {
+  background-color: rgb(255, 68.4897959184, 8);
+}
+#shareResultsPage #content {
+  width: 100%;
+  height: 500px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+#shareResultsPage #content:focus {
+  box-shadow: 0 0 0 2px #FF6B3B;
+}
+#shareResultsPage .image-carousel {
+  text-align: center;
+  margin-top: 3rem;
+  background-color: #3B4A60;
+  padding: 1rem;
+  border-radius: 8px;
+}
+#shareResultsPage .image-carousel h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+#shareResultsPage .image-carousel .carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#shareResultsPage .image-carousel .carousel-images {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+#shareResultsPage .image-carousel .carousel-images .carousel-item {
+  flex: 0 0 auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 33%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#shareResultsPage .image-carousel .carousel-images .carousel-item .image-wrapper {
+  position: relative;
+  width: 100%;
+}
+#shareResultsPage .image-carousel .carousel-images .carousel-item .image-wrapper img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+#shareResultsPage .image-carousel .carousel-images .carousel-item .image-wrapper .carousel-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+#shareResultsPage .image-carousel .carousel-btn {
+  color: white;
+  border: none;
+  background: none;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+#shareResultsPage .image-carousel .carousel-btn:hover {
+  transform: scale(1.1);
+}
+#shareResultsPage .image-carousel .carousel-btn:active {
+  transform: scale(0.9);
+}
+@media (max-width: 1200px) {
+  #shareResultsPage .share-results {
+    padding: 1.5rem;
+  }
+  #shareResultsPage h1 {
+    font-size: 1.75rem;
+  }
+  #shareResultsPage .share-results-form {
+    padding: 1.5rem;
+  }
+  #shareResultsPage .share-results-form .form-group {
+    margin-bottom: 1rem;
+  }
+  #shareResultsPage .share-results-form .share-button {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  #shareResultsPage .image-carousel {
+    padding: 1.5rem;
+  }
+  #shareResultsPage .image-carousel h2 {
+    font-size: 1.5rem;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-images {
+    max-width: 100%;
+    gap: 0.8rem;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-images .carousel-item {
+    width: 70%;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-btn {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  #shareResultsPage .share-results {
+    padding: 1rem;
+  }
+  #shareResultsPage h1 {
+    font-size: 1.5rem;
+  }
+  #shareResultsPage .share-results-form {
+    padding: 1rem;
+  }
+  #shareResultsPage .share-results-form .form-group {
+    margin-bottom: 0.75rem;
+  }
+  #shareResultsPage .share-results-form .share-button {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  #shareResultsPage #content {
+    font-size: 1rem;
+  }
+  #shareResultsPage .image-carousel {
+    padding: 1rem;
+  }
+  #shareResultsPage .image-carousel h2 {
+    font-size: 1.6rem;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-images {
+    max-width: 90%;
+    gap: 1rem;
+  }
+  #shareResultsPage .image-carousel .carousel-container .carousel-images .carousel-item {
+    width: 60%;
+  }
+}
+
+/* Función para escalar el tamaño de la fuente según un factor dado */
+/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
+/* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
+/* Mixin para los estilos de los botones */
+/* Clase de estilo para centrar elementos usando flexbox */
+#TrainingTrackingPage .training-section .actions, #training-page .training-page .filters, #training-page .training-page .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo base para tarjetas, con padding y margen definidos */
+#TrainingTrackingPage .training-section .training-card {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ESTILOS PRINCIPALES */
+#TrainingTrackingPage {
+  background-color: #3B4A60;
+  padding: 2rem;
+  /* Sección que contiene el entrenamiento */
+  /* Media Queries */
+  /* Estilos para pantallas de tablet */
+  /* Estilos para pantallas de móvil */
+}
+#TrainingTrackingPage .training-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  /* Estilo del botón para cargar entrenamiento */
+  /* Estilo de la tarjeta de entrenamiento */
+  /* Estilo de las acciones (botones de exportar, guardar, etc.) */
+}
+#TrainingTrackingPage .training-section .load-training-btn {
+  background-color: #0277BD;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+#TrainingTrackingPage .training-section .load-training-btn:hover {
+  background-color: rgb(1.4659685864, 87.2251308901, 138.5340314136);
+}
+#TrainingTrackingPage .training-section .load-training-btn:hover {
+  background-color: rgb(1.4659685864, 87.2251308901, 138.5340314136);
+}
+#TrainingTrackingPage .training-section .training-card {
+  /* Estilo de la tabla de entrenamiento */
+  /* Estilo del botón de añadir */
+}
+#TrainingTrackingPage .training-section .training-card .section-title {
+  color: #E3E4E8;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+#TrainingTrackingPage .training-section .training-card .training-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.5rem;
+  color: #3B4A60;
+}
+#TrainingTrackingPage .training-section .training-card .training-table td {
+  padding: 0.75rem;
+  border: 1px solid #3B4A60;
+  text-align: left;
+  background-color: white;
+  font-size: 1rem;
+  cursor: text;
+}
+#TrainingTrackingPage .training-section .training-card .training-table td:hover {
+  background-color: #E3E4E8;
+}
+#TrainingTrackingPage .training-section .training-card .training-table td:focus {
+  outline: 2px solid #0277BD;
+  background-color: rgb(141.2041884817, 211.6492146597, 253.7958115183);
+}
+#TrainingTrackingPage .training-section .training-card .add-btn {
+  background-color: #FF6B3B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+#TrainingTrackingPage .training-section .training-card .add-btn:hover {
+  background-color: rgb(255, 68.4897959184, 8);
+}
+#TrainingTrackingPage .training-section .training-card .add-btn:hover {
+  transform: scale(1.1);
+}
+#TrainingTrackingPage .training-section .actions {
+  gap: 0.5rem;
+  /* Estilos de los botones de acción */
+}
+#TrainingTrackingPage .training-section .actions .action-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  /* Estilo específico para el botón PDF */
+  /* Estilo específico para el botón Excel */
+  /* Estilo específico para el botón Guardar */
+}
+#TrainingTrackingPage .training-section .actions .action-btn.pdf {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#TrainingTrackingPage .training-section .actions .action-btn.pdf:hover {
+  background-color: #0088cc;
+}
+#TrainingTrackingPage .training-section .actions .action-btn.excel {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#TrainingTrackingPage .training-section .actions .action-btn.excel:hover {
+  background-color: rgb(30.1449275362, 125.8550724638, 52);
+}
+#TrainingTrackingPage .training-section .actions .action-btn.save {
+  background-color: #FF6B3B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#TrainingTrackingPage .training-section .actions .action-btn.save:hover {
+  background-color: rgb(255, 68.4897959184, 8);
+}
+#TrainingTrackingPage .training-section .actions .action-btn:hover {
+  background-color: #0088cc;
+}
+@media (max-width: 768px) {
+  #TrainingTrackingPage .training-section {
+    padding: 1.5rem;
+  }
+  #TrainingTrackingPage .training-section .training-card {
+    padding: 1.5rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .section-title {
+    font-size: 1.5rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .training-table td {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .add-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+  #TrainingTrackingPage .training-section .actions .action-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  #TrainingTrackingPage .training-section {
+    padding: 1rem;
+  }
+  #TrainingTrackingPage .training-section .training-card {
+    padding: 1rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .section-title {
+    font-size: 1rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .training-table td {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+  #TrainingTrackingPage .training-section .training-card .add-btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  #TrainingTrackingPage .training-section .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #TrainingTrackingPage .training-section .actions .action-btn {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmNzcyIsIl9taXhpbnMuc2NzcyIsIl9oZWFkZXIuc2NzcyIsIl92YXJpYWJsZXMuc2NzcyIsIl9oZXJvLnNjc3MiLCJfd2h5LWZpdGVzc2VuY2Uuc2NzcyIsIl90ZXN0aW1vbmlhbHMuc2NzcyIsIl91c2VyLXJldmlld3Muc2NzcyIsIl9mb290ZXIuc2NzcyIsIl9sb2dpbi5zY3NzIiwidHJhaW5pbmctcGFnZS5zY3NzIiwiX2FjaGlldmVtZW50cy1wYWdlLnNjc3MiLCJfc2hhcmUtcmVzdWx0cy1wYWdlLnNjc3MiLCJfdHJhaW5pbmctdHJhY2tpbmctcGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQjtBQ0FoQixxRUFBQTtBQUtBLHdGQUFBO0FBOENBLGtHQUFBO0FBVUEsMENBQUE7QUE3REEscUVBQUE7QUFLQSx3RkFBQTtBQThDQSxrR0FBQTtBQVVBLDBDQUFBO0FDMURBLHlCQUFBO0FBRUE7RUFDRSxzREFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQSxFQUFBLHVDQUFBO0VBQ0EsOEJBQUEsRUFBQSxnRUFBQTtFQUNBLGVBQUEsRUFBQSwrQ0FBQTtFQUNBLHVCQ1JlLEVEUW9CLGtDQUFBO0VBQ25DLFlDOEdjLEVEOUdVLDBCQUFBO0VBQ3hCLGtCQUFBLEVBQUEsZ0dBQUE7RUFFQSx5REFBQTtFQWFGLG1DQUFBO0VBVUEsb0NBQUE7RUFLQSx1Q0FBQTtFQTBCRSxtQ0FBQTtFQVFBLG1DQUFBO0VBOENBLG1EQUFBO0VBb0NBLG9EQUFBO0FGcElGO0FFWEU7RUFDRSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSw4QkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLFVBQUE7QUZhSjtBRVRBO0VBQ0ksY0FBQTtFQUNBLFdBQUE7RUFDQSxXQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLHlCQUFBO0FGV0o7QUVQQTtFQUNJLGtCQUFBO0FGU0o7QUVMQTtFQXZD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RUFFRSxXUCtHUTtFTzlHUixtQlBtRFc7RU9qRFgsb0NBQUE7QVZ3a0NOO0FVdmtDTTtFVCtDSixvRVM5QzRCO0VUK0M1QixZQUFBO0VBQ0EsWUUzRWU7RUY0RWYsb0JFMkRlO0VGMURmLHFCRTRETztFRjNEUCxlQUFBO0FEMmhDRjtBQ3poQ0U7RUFDRSxxRUFBQTtBRDJoQ0o7QVU1a0NJO0VUOERGLGFBQUE7RUFDQSxxQ0FBQTtFQUNBLFdFcUNZO0VPbEdSLDRDQUFBO0FWK2tDTjtBVTlrQ007RUFDRSx1QlByQ1M7RU9zQ1QsY1B4Q0s7RU95Q0wscUJQa0dDO0VPakdELGtCQUFBO0VBQ0EsVUFBQTtFQUNBLDBCUGdHUztFTy9GVCxnQkFBQTtFQUNBLHFEUGdHYTtFTzlGYiwrQ0FBQTtFQU1BLHFEQUFBO0VBT0EsaURBQUE7QVZva0NSO0FVaGxDUTtFQUNFLHNCQUFBO0VBQ0EsMkJQbUdLO0FIKytCZjtBVTlrQ1E7RUFDRSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7QVZnbENWO0FVNWtDUTtFQUNFLGlCUHdHUztFT3ZHVCxnQlBRVztFT1BYLGFQVU07QUhva0NoQjtBVXhrQ0k7RUFFRSxnQlBHVztFT0RYLHdDQUFBO0FWd2tDTjtBVXZrQ007RVRESixvRVNFNEI7RVRENUIsWUFBQTtFQUNBLFlFM0VlO0VGNEVmLG9CRTJEZTtFRjFEZixxQkU0RE87RUYzRFAsZUFBQTtFU0ZNLGdCQUFBO0FWOGtDUjtBQzFrQ0U7RUFDRSxxRUFBQTtBRDRrQ0o7QUN0a0NFO0VTL0VGO0lBMkVJLG1DQUFBO0VWOGtDRjtFVTdrQ0U7SVRVRixhQUFBO0lBQ0EscUNBQUE7SUFDQSxXRXFDWTtFSGlpQ1o7QUFDRjtBQ2hsQ0U7RVMvRUY7SUFrRkkseUJBQUE7RVZpbENGO0VVaGxDRTtJQUNFLGVQdUNXO0VIMmlDZjtFVWhsQ0k7SUFDRSwyQkFBQTtJQUNBLGVBQUE7SUFDQSxXUHFDSTtFSDZpQ1Y7RVVobENNO0lBQ0UsZVBvQ2E7RUg4aUNyQjtFVTlrQ0k7SVRWSixhQUFBO0lBQ0EscUNBQUE7SUFDQSxXRXFDWTtFSHNq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 */

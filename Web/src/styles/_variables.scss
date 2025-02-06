@@ -4,11 +4,14 @@ $neutral-color1: #B0B4BC;
 $neutral-color3: #ffff;
 $neutral-color2: #E3E4E8;
 $secondary-color: #0277BD;
+$important-color: #FF6B3B; 
 $black: #000;
 $instagram-color: #e4405f;
 $facebook-color: #3b5998;
 $linkedin-color: #0077b5;
 $twitter-color: #1da1f2;
+$pdf-color: #00aaff;
+$excel-color: #28a745;
 
 // Colores adicionales para hover y efectos
 $secondary-color-dark: darken($secondary-color, 10%);
@@ -128,8 +131,6 @@ $menu-toggle-width: 30px;
 $menu-toggle-height: 25px;
 $menu-toggle-bar-height: 5px;
 
-
-
 $padding-default: 2rem;
 $padding-medium: 1.5rem;
 $padding-small: 1rem;
@@ -141,3 +142,60 @@ $radius: 0.5rem;
 $shadow-default: 0 4px 6px $black;
 $shadow-hover: 0 6px 10px $black;
 $transition-default: transform 0.3s ease, box-shadow 0.3s ease;
+
+//Página de logros
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+$gap-base: 1rem;
+$padding-base: 1.5rem;
+$shadow-base: 0 4px 8px $black;
+$shadow-hover: 0 8px 16px $black;
+$border-radius: 10px;
+
+// Variables adicionales
+$carousel-btn-size: 2rem;
+$carousel-btn-hover-scale: 1.1;
+$carousel-btn-active-scale: 0.9;
+$carousel-item-width: 300px;
+$carousel-item-gap: 1rem;
+$carousel-padding: 2rem;
+$carousel-text-padding: 0.5rem;
+$carousel-text-font-size: 1rem;
+$carousel-text-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+$carousel-border-radius: 8px;
+
+// Tamaños de fuentes
+$font-size-large: 2rem;
+$font-size-medium: 1.5rem;
+$font-size-small: 1rem;
+$font-size-xsmall: 0.9rem;
+
+
+// Nuevas variables para evitar conflictos con las predefinidas
+$share-padding-default: 2rem;
+$share-padding-medium: 1.5rem;
+$share-padding-small: 1rem;
+$share-padding-xsmall: 0.5rem;
+
+$share-font-size-large: 2rem;
+$share-font-size-medium: 1.75rem;
+$share-font-size-small: 1.1rem;  // Evitar conflicto con la variable predefinida
+$share-font-size-xsmall: 0.9rem;
+$share-font-size-base: 1.1rem;
+
+$share-gap-default: 1.5rem;
+$share-gap-small: 1rem;
+
+$share-button-padding: 1rem;
+$share-button-padding-small: 0.75rem;
+
+// Otros tamaños y márgenes
+$share-carousel-padding: 1rem;
+$share-carousel-item-gap: 1rem;
+$share-carousel-border-radius: 8px;
+$share-carousel-btn-size: 1.5rem;
+
+// Establecer el tamaño de los botones y otros elementos en variables
+$share-font-size-nav: 1rem;
+$share-font-size-header: 2.5rem;  
+

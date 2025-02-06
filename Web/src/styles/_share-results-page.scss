@@ -1,0 +1,271 @@
+@import 'variables'; 
+@import 'mixins'; 
+
+// Estilo general para la página de compartir resultados (#shareResultsPage)
+#shareResultsPage {
+    background-color: $main-color; // Asigna el color de fondo principal a la página
+
+    // Estilo para el contenedor de los resultados compartidos
+    .share-results {
+        padding: $share-padding-default; // Añade padding definido para los resultados
+        max-width: 90%; // Establece un ancho máximo del 90% del contenedor
+        margin: 0 auto; // Centra el contenedor horizontalmente
+
+        // Estilo para el título de la sección de resultados
+        h1 {
+            font-size: $share-font-size-large; // Establece un tamaño de fuente grande para el título
+            margin-bottom: $share-gap-default; // Añade un margen inferior
+            text-align: center; // Centra el texto
+            color: $neutral-color3; // Asigna un color neutral para el texto
+            font-family: $primary-font-family;
+        }
+
+        // Estilo para el formulario de compartir resultados
+        .share-results-form {
+            padding: $share-padding-default; // Añade padding al formulario
+
+            // Estilo para cada grupo de formulario (inputs, textarea, etc.)
+            .form-group {
+                margin-bottom: $share-gap-small; // Añade un margen pequeño entre los elementos
+                color: $neutral-color1; // Establece un color neutro para el texto
+                border: none; // Elimina el borde por defecto
+
+                // Estilo para las etiquetas de los formularios
+                label {
+                    display: block; // Muestra las etiquetas como bloques
+                    margin-bottom: 0.5rem; // Añade margen inferior
+                    font-weight: 500; // Establece el peso de la fuente
+                }
+
+                // Estilo para los campos de texto, textarea y entradas de archivo
+                input[type="text"],
+                textarea,
+                input[type="file"] {
+                    width: 100%; // Hace que los inputs ocupen el 100% del contenedor
+                    padding: $share-button-padding-small; // Añade padding pequeño dentro del campo
+                    border: none; // Elimina el borde
+                    outline: none; // Elimina el contorno cuando está enfocado
+                    border-radius: 4px; // Redondea las esquinas
+                    font-size: $share-font-size-small; // Tamaño de fuente pequeño para los inputs
+                    transition: all 0.3s ease; // Añade una transición suave para todos los estilos
+
+                    // Estilo cuando el campo tiene el foco (cuando se hace clic)
+                    &:focus {
+                        box-shadow: 0 0 0 2px $important-color; // Añade un borde de sombra cuando está enfocado
+                    }
+                }
+
+                // Estilo para los campos personalizados de selección de archivo
+                .custom-file-input {
+                    display: none; // Oculta el input de tipo archivo
+                }
+
+                // Estilo para la etiqueta de archivo personalizada
+                .custom-file-label {
+                    display: inline-block; // Muestra la etiqueta en línea
+                    background-color: $neutral-color3; // Color de fondo neutral para la etiqueta
+                    color: $neutral-color3; // Color del texto
+                    padding: 10px 20px; // Padding de la etiqueta
+                    border-radius: 5px; // Bordes redondeados
+                    cursor: pointer; // Establece el cursor como puntero
+                    font-size: 18px; // Tamaño de fuente para la etiqueta
+                    font-weight: bold; // Fuente en negrita
+                    text-align: center; // Centra el texto dentro de la etiqueta
+
+                    // Estilo para el contenido dentro de la etiqueta
+                    &::before {
+                        content: "+"; // Añade un símbolo "+" antes del texto
+                        font-size: 30px; // Tamaño grande para el símbolo "+"
+                        font-weight: bold; // Fuente en negrita
+                        color: $main-color; // Color principal para el símbolo "+"
+                    }
+                }
+
+                // Oculta el input de tipo archivo real
+                input[type="file"] {
+                    display: none; // El input de archivo permanece oculto
+                }
+            }
+
+            // Estilo para el botón de compartir
+            .share-button {
+                width: 100%; // El botón ocupa todo el ancho disponible
+                padding: $share-button-padding; // Añade padding definido
+                background-color: $secondary-color; // Color de fondo secundario para el botón
+                color: $neutral-color3; // Color del texto del botón
+                border: none; // Elimina los bordes
+                border-radius: 4px; // Bordes redondeados
+                font-size: $share-font-size-small; // Tamaño pequeño de fuente
+                cursor: pointer; // Establece el cursor como puntero
+                transition: background-color 0.3s ease; // Transición suave para el color de fondo
+
+                // Estilo cuando el botón es hover (cuando se pasa el ratón por encima)
+                &:hover {
+                    background-color: darken($important-color, 10%); // Cambia el color de fondo al pasar el ratón
+                }
+            }
+        }
+    }
+
+    // Estilo para el área de contenido
+    #content {
+        width: 100%; // El contenido ocupa el 100% del ancho disponible
+        height: 500px; // Establece una altura fija para el área de contenido
+        padding: $share-button-padding-small; // Añade padding pequeño dentro del área de contenido
+        font-size: $share-font-size-base; // Tamaño de fuente base
+        border: none; // Elimina el borde
+        outline: none; // Elimina el contorno del campo
+        border-radius: 4px; // Bordes redondeados
+        transition: all 0.3s ease; // Transición suave para todos los estilos
+        font-family: $secondary-font-family;
+
+        // Estilo cuando el área de contenido tiene el foco
+        &:focus {
+            box-shadow: 0 0 0 2px $important-color; // Añade una sombra de foco
+        }
+    }
+
+    // Estilo para el carrusel de imágenes
+    .image-carousel {
+        text-align: center; // Centra el contenido del carrusel
+        margin-top: 3rem; // Añade margen superior
+        background-color: $main-color; // Color de fondo principal
+        padding: $share-carousel-padding; // Padding específico para el carrusel
+        border-radius: $share-carousel-border-radius; // Bordes redondeados
+
+        // Estilo para el título del carrusel
+        h2 {
+            font-size: 1.8rem; // Tamaño de fuente grande para el título
+            margin-bottom: 1rem; // Añade margen inferior
+            color: $neutral-color3; // Color neutro para el título
+            font-family: $primary-font-family;
+        }
+
+        // Contenedor del carrusel
+        .carousel-container {
+            display: flex; // Utiliza flexbox para el contenedor
+            align-items: center; // Alinea los elementos verticalmente
+            justify-content: center; // Centra los elementos horizontalmente
+            position: relative; // Posicionamiento relativo para permitir la colocación de elementos
+        }
+
+        // Estilo para las imágenes dentro del carrusel
+        .carousel-images {
+            display: flex; // Utiliza flexbox para organizar las imágenes en fila
+            overflow-x: auto; // Permite el desplazamiento horizontal
+            scroll-behavior: smooth; // Hacer el desplazamiento suave
+            gap: $share-carousel-item-gap; // Añade espacio entre las imágenes
+            padding: 1rem 0; // Padding para el contenedor de imágenes
+            max-width: 100%; // Hace que el contenedor ocupe el 100% del ancho disponible
+            box-sizing: border-box; // Asegura que el padding se incluya dentro del tamaño total
+
+            // Estilo para cada imagen dentro del carrusel
+            .carousel-item {
+                @include carousel-item-style; // Aplica un estilo definido en el mixin carousel-item-style
+                width: 33%; // Ajusta las imágenes a un 50% de su tamaño en pantallas normales (escritorio)
+                object-fit: contain; // Asegura que las imágenes no se deformen
+            }
+        }
+
+        // Estilo para los botones del carrusel
+        .carousel-btn {
+            @include carousel-btn-style; // Aplica un estilo definido en el mixin carousel-btn-style
+        }
+    }
+
+    /* Media Queries para diferentes tamaños de pantalla */
+
+    // Para pantallas pequeñas (móviles)
+    @media (max-width: map-get($breakpoints, 'small-screen')) {
+        // Ajusta el padding y otros estilos para pantallas pequeñas
+        .share-results {
+            padding: $share-padding-medium;
+        }
+
+        h1 {
+            font-size: $share-font-size-medium;
+        }
+
+        .share-results-form {
+            padding: $share-padding-medium;
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .share-button {
+                padding: $share-button-padding-small;
+                font-size: 0.9rem;
+            }
+        }
+
+        .image-carousel {
+            padding: $share-padding-medium;
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-container {
+                .carousel-images {
+                    max-width: 100%;
+                    gap: 0.8rem;
+                    .carousel-item {
+                        width: 70%; // Ajusta las imágenes para pantallas pequeñas
+                    }
+                }
+
+                .carousel-btn {
+                    font-size: $share-carousel-btn-size;
+                }
+            }
+        }
+    }
+
+    // Para pantallas de tamaño tableta
+    @media (max-width: map-get($breakpoints, 'tablet')) {
+        // Ajusta padding, tamaños de fuentes y otros estilos para tabletas
+        .share-results {
+            padding: $share-padding-small;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .share-results-form {
+            padding: $share-padding-small;
+
+            .form-group {
+                margin-bottom: 0.75rem;
+            }
+
+            .share-button {
+                padding: $share-button-padding-small;
+                font-size: 1rem;
+            }
+        }
+
+        #content {
+            font-size: 1rem;
+        }
+
+        .image-carousel {
+            padding: $share-padding-small;
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .carousel-container {
+                .carousel-images {
+                    max-width: 90%;
+                    gap: 1rem;
+                    .carousel-item {
+                        width: 60%; // Ajuste de imágenes para tabletas
+                    }
+                }
+            }
+        }
+    }
+}

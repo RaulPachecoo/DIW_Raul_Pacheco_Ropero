@@ -1,0 +1,182 @@
+@import 'variables'; 
+@import 'mixins'; 
+
+
+/* Clase de estilo para centrar elementos usando flexbox */
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo base para tarjetas, con padding y margen definidos */
+%responsive-card {
+    padding: $padding-medium;
+    margin-bottom: $gap-default;
+}
+
+/* ESTILOS PRINCIPALES */
+#TrainingTrackingPage {
+    background-color: $main-color;  // Fondo principal de la página
+    padding: $padding-default;  // Padding alrededor de todo el contenido
+    font-family: $secondary-font-family;
+
+    /* Sección que contiene el entrenamiento */
+    .training-section {
+        max-width: 1200px;  // Limita el ancho máximo de la sección
+        margin: 0 auto;  // Centra la sección
+        text-align: center;  // Centra el texto dentro de la sección
+
+        /* Estilo del botón para cargar entrenamiento */
+        .load-training-btn {
+            @include button-style-training-tracking($secondary-color, $neutral-color3, darken($secondary-color, $hover-darken-percentage)); // Usa una mezcla de estilos para el botón
+            margin-bottom: $gap-default;  // Espacio debajo del botón
+            padding: $button-padding;  // Padding del botón
+            font-size: $font-size-medium;  // Tamaño de fuente del botón
+            border-radius: $radius;  // Radio de borde para bordes redondeados
+            transition: background-color 0.3s ease;  // Transición suave al pasar el mouse
+
+            &:hover {
+                background-color: darken($secondary-color, $hover-darken-percentage);  // Cambio de color en hover
+            }
+        }
+
+        /* Estilo de la tarjeta de entrenamiento */
+        .training-card {
+            @extend %responsive-card;  // Hereda los estilos de la tarjeta
+
+            .section-title {
+                color: $neutral-color2;  // Color del título
+                font-size: $font-size-large;  // Tamaño de fuente grande para el título
+                margin-bottom: $gap-small;  // Espacio debajo del título
+            }
+
+            /* Estilo de la tabla de entrenamiento */
+            .training-table {
+                width: 100%;  // La tabla ocupa el 100% del ancho
+                border-collapse: collapse;  // Asegura que las celdas de la tabla no tengan espacios
+                margin-bottom: $gap-small;  // Espacio debajo de la tabla
+                color: $main-color;  // Color del texto en la tabla
+
+                td {
+                    @include table-cell-style;  // Aplica los estilos definidos para las celdas de la tabla
+                }
+            }
+
+            /* Estilo del botón de añadir */
+            .add-btn {
+                @include button-style-training-tracking($important-color, $neutral-color3, darken($important-color, 10%));  // Estilo de botón
+                width: 3rem;  // Ancho del botón
+                height: 3rem;  // Alto del botón
+                border-radius: 50%;  // Botón redondeado
+                font-size: 1.5rem;  // Tamaño de fuente
+                transition: transform 0.3s ease;  // Transición al hacer hover
+
+                &:hover {
+                    transform: scale(1.1);  // Efecto de aumentar el tamaño al hacer hover
+                }
+            }
+        }
+
+        /* Estilo de las acciones (botones de exportar, guardar, etc.) */
+        .actions {
+            @extend %flex-center;  // Aplica flexbox para centrar los elementos dentro de la clase
+            gap: $gap-small;  // Espacio entre los botones de acción
+
+            /* Estilos de los botones de acción */
+            .action-btn {
+                padding: $button-padding;  // Padding de los botones
+                font-size: $font-size-medium;  // Tamaño de la fuente
+                border-radius: $radius;  // Bordes redondeados
+                transition: background-color 0.3s ease;  // Transición para cambiar el color de fondo
+
+                /* Estilo específico para el botón PDF */
+                &.pdf {
+                    @include button-style-training-tracking($pdf-color, $neutral-color3, darken($pdf-color, $hover-darken-percentage));
+                }
+
+                /* Estilo específico para el botón Excel */
+                &.excel {
+                    @include button-style-training-tracking($excel-color, $neutral-color3, darken($excel-color, $hover-darken-percentage));
+                }
+
+                /* Estilo específico para el botón Guardar */
+                &.save {
+                    @include button-style-training-tracking($important-color, $neutral-color3, darken($important-color, $hover-darken-percentage));
+                }
+
+                &:hover {
+                    background-color: darken($pdf-color, $hover-darken-percentage);  // Cambio de color de fondo en hover
+                }
+            }
+        }
+    }
+
+    /* Media Queries */
+    /* Estilos para pantallas de tablet */
+    @media (max-width: map-get($breakpoints, 'tablet')) {
+        .training-section {
+            padding: $padding-medium;  // Padding reducido en tablet
+
+            .training-card {
+                padding: $padding-medium;  // Padding de las tarjetas en tablet
+
+                .section-title {
+                    font-size: $font-size-medium;  // Tamaño de la fuente del título más pequeño
+                }
+
+                .training-table td {
+                    font-size: 0.9rem;  // Fuente más pequeña en la tabla
+                    padding: 0.5rem;  // Menor padding en las celdas de la tabla
+                }
+
+                .add-btn {
+                    width: 2.5rem;  // Botón más pequeño
+                    height: 2.5rem;  // Botón más pequeño
+                    font-size: 1.25rem;  // Fuente más pequeña
+                }
+            }
+
+            .actions .action-btn {
+                padding: 0.5rem 1rem;  // Botones de acción más pequeños
+                font-size: 0.9rem;  // Fuente más pequeña en los botones
+            }
+        }
+    }
+
+    /* Estilos para pantallas de móvil */
+    @media (max-width: map-get($breakpoints, 'mobile')) {
+        .training-section {
+            padding: $padding-small;  // Padding aún más pequeño en móviles
+
+            .training-card {
+                padding: $padding-small;  // Padding más pequeño para las tarjetas
+
+                .section-title {
+                    font-size: $font-size-small;  // Títulos más pequeños
+                }
+
+                .training-table td {
+                    font-size: 0.8rem;  // Fuente más pequeña en la tabla
+                    padding: 0.4rem;  // Menor padding en las celdas
+                }
+
+                .add-btn {
+                    width: 2rem;  // Botón aún más pequeño
+                    height: 2rem;  // Botón más pequeño
+                    font-size: 1rem;  // Fuente más pequeña
+                }
+            }
+
+            .actions {
+                flex-direction: column;  // Cambia la dirección de los botones a columna en móviles
+                gap: $gap-small;  // Mantiene el espacio entre los botones
+
+                .action-btn {
+                    padding: 0.5rem;  // Botones más pequeños
+                    font-size: $font-size-small;  // Fuente más pequeña
+                }
+            }
+        }
+    }
+}

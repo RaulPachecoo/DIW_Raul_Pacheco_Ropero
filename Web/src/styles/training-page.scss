@@ -2,6 +2,7 @@
 @import 'mixins'; 
 
 // Herencia para estilos de contenedor flexible
+/* %flex-center: Estilo base que usa flexbox para centrar elementos tanto en el eje horizontal como vertical */
 %flex-center {
   display: flex;
   justify-content: center;
@@ -9,106 +10,119 @@
 }
 
 #training-page {
-  font-family: $primary-font-family;
-  color: $neutral-color3;
-  background-color: $main-color;
-  margin: 0;
-  padding: 0;
+  font-family: $primary-font-family;  // Establece la fuente principal
+  color: $neutral-color3;  // Color del texto en la página
+  background-color: $main-color;  // Fondo principal de la página
+  margin: 0;  // Elimina márgenes por defecto
+  padding: 0;  // Elimina padding por defecto
 
+  /* Estilos para la sección de la página de entrenamiento */
   .training-page {
-    padding: $padding-default;
+    padding: $padding-default;  // Padding por defecto para la página de entrenamiento
 
+    /* Estilos para los filtros */
     .filters {
-      @extend %flex-center;
-      gap: $gap-default;
-      margin-bottom: $spacing-medium;
+      @extend %flex-center;  // Usa el contenedor flexible de la herencia
+      gap: $gap-default;  // Espacio entre los filtros
+      margin-bottom: $spacing-medium;  // Espacio debajo de los filtros
 
+      /* Estilo de los botones de filtro */
       .filter-button {
-        @include button-style(lighten($main-color, 15%), $neutral-color3, $button-padding, $radius);
+        @include button-style(lighten($main-color, 15%), $neutral-color3, $button-padding, $radius); // Aplica los estilos de botones personalizados
       }
     }
 
+    /* Lista de entrenamientos */
     .training-list {
-      @include grid-list(4, $gap-default); // Predeterminado: Cuatro columnas
+      @include grid-list(4, $gap-default); // Usa el mixin grid-list para definir un grid de 4 columnas
 
+      /* Estilo de las tarjetas de entrenamiento */
       .training-card {
-        background-color: $neutral-color3;
-        color: $main-color;
-        border-radius: $radius;
-        text-align: center;
-        padding: 0;
-        box-shadow: $shadow-default;
-        overflow: hidden;
-        transition: $transition-default;
+        background-color: $neutral-color3;  // Fondo de las tarjetas
+        color: $main-color;  // Color del texto de las tarjetas
+        border-radius: $radius;  // Bordes redondeados
+        text-align: center;  // Centra el texto dentro de la tarjeta
+        padding: 0;  // Elimina el padding interno de la tarjeta
+        box-shadow: $shadow-default;  // Sombra por defecto de la tarjeta
+        overflow: hidden;  // Elimina el desbordamiento de contenido
+        transition: $transition-default;  // Transición de efectos (por ejemplo, hover)
 
+        /* Efectos al pasar el mouse sobre la tarjeta */
         &:hover {
-          transform: scale(1.05);
-          box-shadow: $shadow-hover;
+          transform: scale(1.05);  // Aumenta el tamaño de la tarjeta al pasar el mouse
+          box-shadow: $shadow-hover;  // Cambia la sombra de la tarjeta al pasar el mouse
         }
 
+        /* Estilos para las imágenes dentro de las tarjetas */
         img {
-          width: 100%;
-          height: auto;
-          display: block;
+          width: 100%;  // La imagen ocupa el 100% del ancho de la tarjeta
+          height: auto;  // La altura de la imagen se ajusta automáticamente
+          display: block;  // Evita el espacio debajo de la imagen (propiedad display: block)
         }
 
+        /* Estilos para el texto dentro de las tarjetas */
         p {
-          font-size: $font-size-medium;
-          font-weight: $font-weight-medium;
-          padding: $spacing-small;
+          font-size: $font-size-medium;  // Tamaño de fuente medio
+          font-weight: $font-weight-medium;  // Peso de fuente medio
+          padding: $spacing-small;  // Padding alrededor del texto
         }
       }
     }
 
+    /* Estilos para la paginación */
     .pagination {
-      @extend %flex-center;
-      margin-top: $spacing-medium;
+      @extend %flex-center;  // Usa el contenedor flexible para centrar los botones de paginación
+      margin-top: $spacing-medium;  // Espacio en la parte superior de la paginación
 
+      /* Estilo de los botones de paginación */
       .pagination-button {
-        @include button-style(lighten($main-color, 15%), $neutral-color3, $button-padding, $radius);
-        margin: 0 $gap-small;
+        @include button-style(lighten($main-color, 15%), $neutral-color3, $button-padding, $radius); // Aplica estilos personalizados al botón
+        margin: 0 $gap-small;  // Espacio a los lados de cada botón
       }
     }
   }
 
-  // Media Queries
+  // Media Queries: Cambios de diseño según el tamaño de la pantalla
   @include respond-to('small-screen') {
+    /* Estilo para pantallas pequeñas */
     .training-list {
-      @include grid-list(3, $gap-default); // Tres columnas
+      @include grid-list(3, $gap-default); // Ajusta a tres columnas
     }
   }
 
   @include respond-to('tablet') {
+    /* Estilo para tabletas */
     .training-page {
-      padding: $padding-medium;
+      padding: $padding-medium;  // Padding reducido en tabletas
 
       .filters {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: $gap-small;
+        justify-content: flex-start;  // Alinea los filtros al inicio
+        flex-wrap: wrap;  // Permite que los filtros se ajusten a varias líneas
+        gap: $gap-small;  // Espacio entre los filtros
 
         .filter-button {
-          padding: $button-padding-small;
+          padding: $button-padding-small;  // Padding más pequeño en los botones
         }
       }
 
       .training-list {
-        @include grid-list(2, $gap-default); // Dos columnas
+        @include grid-list(2, $gap-default); // Ajusta a dos columnas
       }
     }
   }
 
   @include respond-to('mobile') {
+    /* Estilo para móviles */
     .training-page {
-      padding: $padding-small;
+      padding: $padding-small;  // Padding más pequeño en móviles
 
       .filters {
-        flex-direction: column;
-        gap: $gap-small;
+        flex-direction: column;  // Organiza los filtros en una columna
+        gap: $gap-small;  // Espacio entre los filtros
       }
 
       .training-list {
-        @include grid-list(1, $gap-default); // Una columna
+        @include grid-list(1, $gap-default); // Ajusta a una sola columna
       }
     }
   }

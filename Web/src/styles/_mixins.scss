@@ -99,3 +99,103 @@
   grid-template-columns: repeat($columns, 1fr);
   gap: $gap;
 }
+
+// Mixin para el estilo de las tarjetas de logros
+@mixin card-style {
+  background-color: $neutral-color3;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px $black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@mixin button-style-training-tracking($bg-color, $text-color, $hover-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  //padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+      background-color: $hover-color;
+  }
+}
+
+@mixin table-cell-style {
+  padding: 0.75rem;
+  border: 1px solid $main-color;
+  text-align: left;
+  background-color: $neutral-color3;
+  font-size: 1rem;
+  cursor: text;
+
+  &:hover {
+      background-color: $neutral-color2;
+  }
+
+  &:focus {
+      outline: 2px solid $secondary-color;
+      background-color: lighten($secondary-color, 40%);
+  }
+}
+
+// Mixin para botones del carrusel
+@mixin carousel-btn-style {
+  color: $neutral-color3;
+  border: none;
+  background: none;
+  padding: 1rem;
+  font-size: $carousel-btn-size;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale($carousel-btn-hover-scale);
+  }
+
+  &:active {
+    transform: scale($carousel-btn-active-scale);
+  }
+}
+
+// Mixin para elementos del carrusel
+@mixin carousel-item-style {
+  flex: 0 0 auto;
+  width: $carousel-item-width;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $carousel-item-gap;
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+
+    img {
+      width: 100%;
+      border-radius: $carousel-border-radius;
+      display: block;
+    }
+
+    .carousel-text {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: $carousel-text-bg;
+      color: $neutral-color3;
+      font-size: $carousel-text-font-size;
+      padding: $carousel-text-padding;
+      text-align: center;
+      border-bottom-left-radius: $carousel-border-radius;
+      border-bottom-right-radius: $carousel-border-radius;
+    }
+  }
+}
+
+
