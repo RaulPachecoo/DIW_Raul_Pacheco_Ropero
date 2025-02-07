@@ -8,7 +8,7 @@
     "prefix-css": "postcss src/styles/style.css --use autoprefixer -o dist/styles/style.prefixed.css",
     "minify-css": "cleancss -o dist/styles/style.min.css dist/styles/style.prefixed.css",
     "build": "npm-run-all prefix-css minify-css",
-    "start": "parcel src/index.html --dist-dir dist --public-url ./",
+    "start": "parcel src/index.html --dist-dir dist",
     "clean": "rimraf dist",
     "serve": "npm-run-all clean build start"
   },
