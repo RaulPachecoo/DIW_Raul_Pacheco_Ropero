@@ -1,10 +1,8 @@
 @charset "UTF-8";
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 /*Estilos para el Header*/
@@ -158,7 +156,6 @@
 }
 
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 /* Estilos para la sección Hero*/
@@ -184,44 +181,38 @@
 }
 @media (max-width: 480px) {
   .hero {
-    background-image: url("../img/hero_image-480px.avif");
-    background-image: url("../img/hero_image-480px.webp");
-    background-image: url("../img/hero_image-480px.jpg");
+    background-image: url("../img/hero_image-480px.avif"); /* AVIF */
+    background-image: -webkit-image-set(url("../img/hero_image-480px.avif") 1x, url("../img/hero_image-480px.webp") 1x, url("../img/hero_image-480px.jpg") 1x); /* Fallback a WebP y JPG */
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 480px) and (max-width: 768px) {
   .hero {
-    background-image: url("../img/hero_image-768px.avif");
-    background-image: url("../img/hero_image-768px.webp");
-    background-image: url("../img/hero_image-768px.jpg");
+    background-image: url("../img/hero_image-768px.avif"); /* AVIF */
+    background-image: -webkit-image-set(url("../img/hero_image-768px.avif") 1x, url("../img/hero_image-768px.webp") 1x, url("../img/hero_image-768px.jpg") 1x); /* Fallback a WebP y JPG */
   }
 }
-@media (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .hero {
-    background-image: url("../img/hero_image-1200px.avif");
-    background-image: url("../img/hero_image-1200px.webp");
-    background-image: url("../img/hero_image-1200px.jpg");
+    background-image: url("../img/hero_image-1200px.avif"); /* AVIF */
+    background-image: -webkit-image-set(url("../img/hero_image-1200px.avif") 1x, url("../img/hero_image-1200px.webp") 1x, url("../img/hero_image-1200px.jpg") 1x); /* Fallback a WebP y JPG */
   }
 }
-@media (max-width: 1920px) {
+@media (min-width: 1200px) and (max-width: 1920px) {
   .hero {
-    background-image: url("../img/hero_image-1920px.avif");
-    background-image: url("../img/hero_image-1920px.webp");
-    background-image: url("../img/hero_image-1920px.jpg");
+    background-image: url("../img/hero_image-1920px.avif"); /* AVIF */
+    background-image: -webkit-image-set(url("../img/hero_image-1920px.avif") 1x, url("../img/hero_image-1920px.webp") 1x, url("../img/hero_image-1920px.jpg") 1x); /* Fallback a WebP y JPG */
   }
 }
-@media (max-width: 2560px) {
+@media (min-width: 1920px) and (max-width: 2560px) {
   .hero {
-    background-image: url("../img/hero_image-2560px.avif");
-    background-image: url("../img/hero_image-2560px.webp");
-    background-image: url("../img/hero_image-2560px.jpg");
+    background-image: url("../img/hero_image-2560px.avif"); /* AVIF */
+    background-image: -webkit-image-set(url("../img/hero_image-2560px.avif") 1x, url("../img/hero_image-2560px.webp") 1x, url("../img/hero_image-2560px.jpg") 1x); /* Fallback a WebP y JPG */
   }
 }
-@media (min-width: 2561px) {
+@media (min-width: 2560px) {
   .hero {
-    background-image: url("../img/hero_image-3820px.avif");
-    background-image: url("../img/hero_image-3820px.webp");
-    background-image: url("../img/hero_image-3820px.jpg");
+    background-image: url("../img/hero_image-3820px.avif"); /* AVIF */
+    background-image: -webkit-image-set(url("../img/hero_image-3820px.avif") 1x, url("../img/hero_image-3820px.webp") 1x, url("../img/hero_image-3820px.jpg") 1x); /* Fallback a WebP y JPG */
   }
 }
 .hero .hero-content {
@@ -298,7 +289,6 @@
 
 /* Importa las variables definidas en otro archivo, como colores, fuentes, etc. */
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 /* Importa los mixins definidos, como los para el tamaño responsivo, entre otros */
@@ -392,7 +382,6 @@
 
 /* Importa las variables de configuración (colores, tamaños, fuentes, etc.) */
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 /* Importa los mixins para reutilización de código en distintos lugares */
@@ -531,7 +520,6 @@
 
 /* Importa las variables de configuración, como colores, tamaños, fuentes, etc. */
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 /* Importa los mixins para reutilización de código en diferentes partes del proyecto */
@@ -770,7 +758,6 @@
 }
 
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 /* Estilos para el Footer */
@@ -963,7 +950,6 @@
 }
 
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 /* Estilos para la página del login */
@@ -1094,10 +1080,8 @@
 }
 
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
-/* %flex-center: Estilo base que usa flexbox para centrar elementos tanto en el eje horizontal como vertical */
 #TrainingTrackingPage .training-section .actions, #training-page .training-page .pagination, #training-page .training-page .filters {
   display: flex;
   justify-content: center;
@@ -1110,18 +1094,15 @@
   background-color: #3B4A60;
   margin: 0;
   padding: 0;
-  /* Estilos para la sección de la página de entrenamiento */
 }
 #training-page .training-page {
+  max-width: 1200px;
+  margin: auto;
   padding: 2rem;
-  /* Estilos para los filtros */
-  /* Lista de entrenamientos */
-  /* Estilos para la paginación */
 }
 #training-page .training-page .filters {
   gap: 1.5rem;
   margin-bottom: 40px;
-  /* Estilo de los botones de filtro */
 }
 #training-page .training-page .filters .filter-button {
   background-color: rgb(88.1193548387, 110.5225806452, 143.3806451613);
@@ -1138,7 +1119,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  /* Estilo de las tarjetas de entrenamiento */
 }
 #training-page .training-page .training-list .training-card {
   background-color: white;
@@ -1149,9 +1129,6 @@
   box-shadow: 0 4px 6px #000;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Efectos al pasar el mouse sobre la tarjeta */
-  /* Estilos para las imágenes dentro de las tarjetas */
-  /* Estilos para el texto dentro de las tarjetas */
 }
 #training-page .training-page .training-list .training-card:hover {
   transform: scale(1.05);
@@ -1160,16 +1137,19 @@
 #training-page .training-page .training-list .training-card img {
   width: 100%;
   height: auto;
+  min-height: 180px;
+  object-fit: cover;
   display: block;
 }
 #training-page .training-page .training-list .training-card p {
   font-size: 1.5rem;
   font-weight: 500;
   padding: 20px;
+  max-width: 90%;
+  margin: auto;
 }
 #training-page .training-page .pagination {
   margin-top: 40px;
-  /* Estilo de los botones de paginación */
 }
 #training-page .training-page .pagination .pagination-button {
   background-color: rgb(88.1193548387, 110.5225806452, 143.3806451613);
@@ -1183,41 +1163,38 @@
 #training-page .training-page .pagination .pagination-button:hover {
   background-color: rgb(114.0967741935, 136.1129032258, 168.4032258065);
 }
-@media (max-width: 1200px) {
-  #training-page {
-    /* Estilo para pantallas pequeñas */
-  }
-  #training-page .training-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-}
-@media (max-width: 768px) {
-  #training-page {
-    /* Estilo para tabletas */
-  }
+@media (max-width: 1000px) {
   #training-page .training-page {
     padding: 1.5rem;
   }
   #training-page .training-page .filters {
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1.5rem;
   }
-  #training-page .training-page .filters .filter-button {
-    padding: 0.5rem;
+  #training-page .training-page .training-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  #training-page .training-page {
+    padding: 1.5rem;
+    max-width: 1000px;
+  }
+  #training-page .training-page .filters {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
   #training-page .training-page .training-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 0.5rem;
   }
 }
 @media (max-width: 480px) {
-  #training-page {
-    /* Estilo para móviles */
-  }
   #training-page .training-page {
     padding: 1rem;
   }
@@ -1231,9 +1208,14 @@
     gap: 1.5rem;
   }
 }
+@media (min-width: 2000px) {
+  #training-page .training-page {
+    max-width: 1400px;
+    padding: 50px;
+  }
+}
 
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 #achievementsPage {
@@ -1345,7 +1327,6 @@
   }
 }
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 #shareResultsPage {
@@ -1591,7 +1572,6 @@
 }
 
 /* Función para escalar el tamaño de la fuente según un factor dado */
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
 /* Clase de estilo para centrar elementos usando flexbox */

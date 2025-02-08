@@ -67,14 +67,17 @@
                 <figure class="why-image">
                     <picture>
                         <!-- Formato AVIF -->
-                        <source srcset="/abdomen_equipo2-480px.72695c55.avif 480w, /abdomen_equipo2-768px.8a367bf3.avif 768w, /abdomen_equipo2-1200px.0835f704.avif 1200w, /abdomen_equipo2-1920px.c176e5fb.avif 1920w" type="image/avif">
-                        <!-- Formato WebP-->
-                        <source srcset="/abdomen_equipo2-480px.40c39e71.webp 480w, /abdomen_equipo2-768px.765ad888.webp 768w, /abdomen_equipo2-1200px.79facbd5.webp 1200w, /abdomen_equipo2-1920px.b87ee795.webp 1920w" type="image/webp">
-                        <!-- Fallback tradicional en JPEG -->
-                        <img src="/abdomen_equipo2-1920px.7d7ca773.jpg" srcset="/abdomen_equipo2-480px.df38421b.jpg 480w, /abdomen_equipo2-768px.4a046820.jpg 768w, /abdomen_equipo2-1200px.5062960e.jpg 1200w, /abdomen_equipo2-1920px.7d7ca773.jpg 1920w" sizes="(max-width: 480px) 100vw,
-                        (max-width: 768px) 100vw,
-                        (max-width: 1200px) 100vw,
-                        100vw" alt="Entrenamiento en equipo">
+                        <source srcset="/abdomen_equipo2-480px.72695c55.avif" media="(max-width: 480px)" type="image/avif">
+                        <source srcset="/abdomen_equipo2-768px.8a367bf3.avif" media="(max-width: 768px)" type="image/avif">
+                        <source srcset="/abdomen_equipo2-1920px.c176e5fb.avif" media="(max-width: 800px)" type="image/avif">
+
+                        <!-- Formato WebP -->
+                        <source srcset="/abdomen_equipo2-480px.40c39e71.webp" media="(max-width: 480px)" type="image/webp">
+                        <source srcset="/abdomen_equipo2-768px.765ad888.webp" media="(max-width: 768px)" type="image/webp">
+                        <source srcset="/abdomen_equipo2-1920px.b87ee795.webp" media="(max-width: 800px)" type="image/webp">
+
+                        <!-- Fallback en formato JPEG -->
+                        <img src="/abdomen_equipo2-1920px.7d7ca773.jpg" alt="Entrenamiento en equipo">
                     </picture>
                 </figure>
             </section>
@@ -86,9 +89,14 @@
                 <div class="testimonials-grid">
                     <article class="testimonial">
                         <picture>
-                            <source srcset="/progreso_hombre2-180px.f77d6c5c.avif" type="image/avif">
-                            <source srcset="/progreso_hombre2-180px.6ba27f12.webp" type="image/webp">
-                            <img src="/progreso_hombre2-180px.f5e53c6a.jpg" alt="Foto de Marcos">
+                            <!-- Formato AVIF -->
+                            <source srcset="/progreso_hombre2-480px.8e5b559f.avif" type="image/avif">
+            
+                            <!-- Formato WebP -->
+                            <source srcset="/progreso_hombre2-480px.26e6bfc9.webp" type="image/webp">
+            
+                            <!-- Fallback JPEG -->
+                            <img src="/progreso_hombre2-480px.f3e0dc42.jpg" alt="Foto de Marcos">
                         </picture>
                         <section class="testimonial-info">
                             <button class="play-button" aria-label="Reproducir testimonio de Marcos" data-audio="../audio/testimonio_hombre1-44,1khz.mp3">
@@ -97,12 +105,17 @@
                             <p>Marcos</p>
                         </section>
                     </article>
-
+            
                     <article class="testimonial">
                         <picture>
-                            <source srcset="/progreso_mujer1-180px.7745a13c.avif" type="image/avif">
-                            <source srcset="/progreso_mujer1-180px.44faafbd.webp" type="image/webp">
-                            <img src="/progreso_mujer1-180px.e4ce8fb8.jpg" alt="Foto de Laura">
+                            <!-- Formato AVIF -->
+                            <source srcset="/progreso_mujer1-480px.a553db5d.avif" type="image/avif">
+            
+                            <!-- Formato WebP -->
+                            <source srcset="/progreso_mujer1-480px.e94edf2e.webp" type="image/webp">
+            
+                            <!-- Fallback JPEG -->
+                            <img src="/progreso_mujer1-480px.3fd8919d.jpg" alt="Foto de Laura">
                         </picture>
                         <section class="testimonial-info">
                             <button class="play-button" aria-label="Reproducir testimonio de Laura" data-audio="../audio/testimonio_mujer1-44,1khz.mp3">
@@ -111,12 +124,17 @@
                             <p>Laura</p>
                         </section>
                     </article>
-
+            
                     <article class="testimonial">
                         <picture>
-                            <source srcset="/progreso_hombre1-180px.01903320.avif" type="image/avif">
-                            <source srcset="/progreso_hombre1-180px.1b9ff72b.webp" type="image/webp">
-                            <img src="/progreso_hombre1-180px.50ec5672.jpg" alt="Foto de Pepe">
+                            <!-- Formato AVIF -->
+                            <source srcset="/progreso_hombre1-480px.5264ef6a.avif" type="image/avif">
+            
+                            <!-- Formato WebP -->
+                            <source srcset="/progreso_hombre1-480px.0218a166.webp" type="image/webp">
+            
+                            <!-- Fallback JPEG -->
+                            <img src="/progreso_hombre1-480px.24403742.jpg" alt="Foto de Pepe">
                         </picture>
                         <section class="testimonial-info">
                             <button class="play-button" aria-label="Reproducir testimonio de Pepe" data-audio="../audio/testimonio_hombre2-44,1khz.mp3">
@@ -125,11 +143,16 @@
                             <p>Pepe</p>
                         </section>
                     </article>
-
+            
                     <article class="testimonial">
                         <picture>
+                            <!-- Formato AVIF -->
                             <source srcset="/progreso_mujer2-180px.346fb0e2.avif" type="image/avif">
+            
+                            <!-- Formato WebP -->
                             <source srcset="/progreso_mujer2-180px.27f28d38.webp" type="image/webp">
+            
+                            <!-- Fallback JPEG -->
                             <img src="/progreso_mujer2-180px.64887d0c.jpg" alt="Foto de María">
                         </picture>
                         <section class="testimonial-info">
@@ -141,6 +164,8 @@
                     </article>
                 </div>
             </section>
+            
+            
 
             <!-- Opiniones de usuarios -->
             <section class="user-reviews">

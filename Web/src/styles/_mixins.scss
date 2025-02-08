@@ -3,50 +3,46 @@
   @return $base-size * $factor; /* Retorna el tamaño base multiplicado por el factor */
 }
 
-/* Mixin para establecer un fondo responsivo que cambia según el tamaño de la pantalla */
 @mixin responsive-background($image) {
   /* Fondo para pantallas pequeñas (mobile) */
   @media (max-width: map-get($breakpoints, 'mobile')) {
-    background-image: url('../img/#{$image}-480px.avif'); 
-    background-image: url('../img/#{$image}-480px.webp'); 
-    background-image: url('../img/#{$image}-480px.jpg'); 
+    background-image: url('../img/#{$image}-480px.avif'); /* AVIF */
+    background-image: -webkit-image-set(url('../img/#{$image}-480px.avif') 1x, url('../img/#{$image}-480px.webp') 1x, url('../img/#{$image}-480px.jpg') 1x); /* Fallback a WebP y JPG */
   }
 
   /* Fondo para pantallas medianas (tablet) */
-  @media (max-width: map-get($breakpoints, 'tablet')) {
-    background-image: url('../img/#{$image}-768px.avif');
-    background-image: url('../img/#{$image}-768px.webp'); 
-    background-image: url('../img/#{$image}-768px.jpg');
+  @media (min-width: map-get($breakpoints, 'mobile')) and (max-width: map-get($breakpoints, 'tablet')) {
+    background-image: url('../img/#{$image}-768px.avif'); /* AVIF */
+    background-image: -webkit-image-set(url('../img/#{$image}-768px.avif') 1x, url('../img/#{$image}-768px.webp') 1x, url('../img/#{$image}-768px.jpg') 1x); /* Fallback a WebP y JPG */
   }
 
   /* Fondo para pantallas pequeñas grandes (small-screen) */
-  @media (max-width: map-get($breakpoints, 'small-screen')) {
-    background-image: url('../img/#{$image}-1200px.avif');
-    background-image: url('../img/#{$image}-1200px.webp');  
-    background-image: url('../img/#{$image}-1200px.jpg');
+  @media (min-width: map-get($breakpoints, 'tablet')) and (max-width: map-get($breakpoints, 'small-screen')) {
+    background-image: url('../img/#{$image}-1200px.avif'); /* AVIF */
+    background-image: -webkit-image-set(url('../img/#{$image}-1200px.avif') 1x, url('../img/#{$image}-1200px.webp') 1x, url('../img/#{$image}-1200px.jpg') 1x); /* Fallback a WebP y JPG */
   }
 
   /* Fondo para pantallas estándar (standard-screen) */
-  @media (max-width: map-get($breakpoints, 'standard-screen')) {
-    background-image: url('../img/#{$image}-1920px.avif');
-    background-image: url('../img/#{$image}-1920px.webp');  
-    background-image: url('../img/#{$image}-1920px.jpg');
+  @media (min-width: map-get($breakpoints, 'small-screen')) and (max-width: map-get($breakpoints, 'standard-screen')) {
+    background-image: url('../img/#{$image}-1920px.avif'); /* AVIF */
+    background-image: -webkit-image-set(url('../img/#{$image}-1920px.avif') 1x, url('../img/#{$image}-1920px.webp') 1x, url('../img/#{$image}-1920px.jpg') 1x); /* Fallback a WebP y JPG */
   }
 
   /* Fondo para pantallas grandes (large-screen) */
-  @media (max-width: map-get($breakpoints, 'large-screen')) {
-    background-image: url('../img/#{$image}-2560px.avif');
-    background-image: url('../img/#{$image}-2560px.webp'); 
-    background-image: url('../img/#{$image}-2560px.jpg');
+  @media (min-width: map-get($breakpoints, 'standard-screen')) and (max-width: map-get($breakpoints, 'large-screen')) {
+    background-image: url('../img/#{$image}-2560px.avif'); /* AVIF */
+    background-image: -webkit-image-set(url('../img/#{$image}-2560px.avif') 1x, url('../img/#{$image}-2560px.webp') 1x, url('../img/#{$image}-2560px.jpg') 1x); /* Fallback a WebP y JPG */
   }
 
   /* Fondo para pantallas extra grandes (extra-large-screen) */
-  @media (min-width: map-get($breakpoints, 'extra-large-screen')) {
-    background-image: url('../img/#{$image}-3820px.avif');
-    background-image: url('../img/#{$image}-3820px.webp'); 
-    background-image: url('../img/#{$image}-3820px.jpg');
+  @media (min-width: map-get($breakpoints, 'large-screen')) {
+    background-image: url('../img/#{$image}-3820px.avif'); /* AVIF */
+    background-image: -webkit-image-set(url('../img/#{$image}-3820px.avif') 1x, url('../img/#{$image}-3820px.webp') 1x, url('../img/#{$image}-3820px.jpg') 1x); /* Fallback a WebP y JPG */
   }
 }
+  
+
+
 
 
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
@@ -86,12 +82,7 @@
   }
 }
 
-// Mixin para media queries
-@mixin respond-to($breakpoint) {
-  @media (max-width: map-get($breakpoints, $breakpoint)) {
-    @content;
-  }
-}
+
 
 // Mixin para lista de entrenamiento
 @mixin grid-list($columns, $gap) {

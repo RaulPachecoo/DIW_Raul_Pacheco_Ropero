@@ -37,23 +37,19 @@ rightButton.addEventListener("click", () => {
     updateReviewsPosition();
 });
 
-// Script para adaptar imágenes de testimonios
-const testimonials = document.querySelectorAll(".testimonial picture");
+// Script para adaptar las imágenes en la sección "¿Por qué FitEssence?"
+const whyImages = document.querySelectorAll(".why-fitessence .why-image picture");
 
-testimonials.forEach(picture => {
+whyImages.forEach(picture => {
     const sourceAvif = picture.querySelector("source[type='image/avif']");
     const sourceWebp = picture.querySelector("source[type='image/webp']");
     const img = picture.querySelector("img");
 
     // Definir imágenes disponibles según tamaño
     const imagenes = [
-        { ancho: 3820, avif: img.src.replace("180px.jpg", "3820px.avif"), webp: img.src.replace("180px.jpg", "3820px.webp"), jpg: img.src.replace("180px.jpg", "3820px.jpg") },
-        { ancho: 2560, avif: img.src.replace("180px.jpg", "2560px.avif"), webp: img.src.replace("180px.jpg", "2560px.webp"), jpg: img.src.replace("180px.jpg", "2560px.jpg") },
-        { ancho: 1920, avif: img.src.replace("180px.jpg", "1920px.avif"), webp: img.src.replace("180px.jpg", "1920px.webp"), jpg: img.src.replace("180px.jpg", "1920px.jpg") },
-        { ancho: 1200, avif: img.src.replace("180px.jpg", "1200px.avif"), webp: img.src.replace("180px.jpg", "1200px.webp"), jpg: img.src.replace("180px.jpg", "1200px.jpg") },
-        { ancho: 768, avif: img.src.replace("180px.jpg", "768px.avif"), webp: img.src.replace("180px.jpg", "768px.webp"), jpg: img.src.replace("180px.jpg", "768px.jpg") },
-        { ancho: 480, avif: img.src.replace("180px.jpg", "480px.avif"), webp: img.src.replace("180px.jpg", "480px.webp"), jpg: img.src.replace("180px.jpg", "480px.jpg") },
-        { ancho: 0, avif: img.src.replace("180px.jpg", "180px.avif"), webp: img.src.replace("180px.jpg", "180px.webp"), jpg: img.src }
+        { ancho: 800, avif: img.src.replace("1920px.jpg", "1920px.avif"), webp: img.src.replace("1920px.jpg", "1920px.webp"), jpg: img.src.replace("1920px.jpg", "1920px.jpg") },
+        { ancho: 768, avif: img.src.replace("1920px.jpg", "768px.avif"), webp: img.src.replace("1920px.jpg", "768px.webp"), jpg: img.src.replace("1920px.jpg", "768px.jpg") },
+        { ancho: 480, avif: img.src.replace("1920px.jpg", "480px.avif"), webp: img.src.replace("1920px.jpg", "480px.webp"), jpg: img.src.replace("1920px.jpg", "480px.jpg") }
     ];
 
     // Función para cambiar la imagen según el tamaño del contenedor
@@ -75,7 +71,8 @@ testimonials.forEach(picture => {
 
     resizeObserver.observe(picture);
 });
-});
+
+}); 
 
 // Script para adaptar imágenes de entrenamientos
 document.addEventListener("DOMContentLoaded", () => {

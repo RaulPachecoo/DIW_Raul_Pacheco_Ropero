@@ -171,37 +171,37 @@
 
 @media (width <= 480px) {
   .hero {
-    background-image: url("hero_image-480px.f5b7fe12.jpg");
+    background-image: -webkit-image-set(url("hero_image-480px.d99af9a6.avif") 1x, url("hero_image-480px.29a2fb49.webp") 1x, url("hero_image-480px.f5b7fe12.jpg") 1x);
   }
 }
 
-@media (width <= 768px) {
+@media (width >= 480px) and (width <= 768px) {
   .hero {
-    background-image: url("hero_image-768px.a1b957ee.jpg");
+    background-image: -webkit-image-set(url("hero_image-768px.6042e8cd.avif") 1x, url("hero_image-768px.dd0c1f17.webp") 1x, url("hero_image-768px.a1b957ee.jpg") 1x);
   }
 }
 
-@media (width <= 1200px) {
+@media (width >= 768px) and (width <= 1200px) {
   .hero {
-    background-image: url("hero_image-1200px.2ac15d94.jpg");
+    background-image: -webkit-image-set(url("hero_image-1200px.a9fab82b.avif") 1x, url("hero_image-1200px.eaf90929.webp") 1x, url("hero_image-1200px.2ac15d94.jpg") 1x);
   }
 }
 
-@media (width <= 1920px) {
+@media (width >= 1200px) and (width <= 1920px) {
   .hero {
-    background-image: url("hero_image-1920px.c8206c0a.jpg");
+    background-image: -webkit-image-set(url("hero_image-1920px.0f6a5133.avif") 1x, url("hero_image-1920px.5ead7e2d.webp") 1x, url("hero_image-1920px.c8206c0a.jpg") 1x);
   }
 }
 
-@media (width <= 2560px) {
+@media (width >= 1920px) and (width <= 2560px) {
   .hero {
-    background-image: url("hero_image-2560px.748eebed.jpg");
+    background-image: -webkit-image-set(url("hero_image-2560px.febd3448.avif") 1x, url("hero_image-2560px.cd733200.webp") 1x, url("hero_image-2560px.748eebed.jpg") 1x);
   }
 }
 
-@media (width >= 2561px) {
+@media (width >= 2560px) {
   .hero {
-    background-image: url("hero_image-3820px.cd7a30f3.jpg");
+    background-image: -webkit-image-set(url("hero_image-3820px.9ab3804a.avif") 1x, url("hero_image-3820px.0a6476ff.webp") 1x, url("hero_image-3820px.cd7a30f3.jpg") 1x);
   }
 }
 
@@ -998,6 +998,8 @@
 }
 
 #training-page .training-page {
+  max-width: 1200px;
+  margin: auto;
   padding: 2rem;
 }
 
@@ -1042,12 +1044,16 @@
 }
 
 #training-page .training-page .training-list .training-card img {
+  object-fit: cover;
   width: 100%;
   height: auto;
+  min-height: 180px;
   display: block;
 }
 
 #training-page .training-page .training-list .training-card p {
+  max-width: 90%;
+  margin: auto;
   padding: 20px;
   font-size: 1.5rem;
   font-weight: 500;
@@ -1071,8 +1077,18 @@
   background-color: #7288a8;
 }
 
-@media (width <= 1200px) {
-  #training-page .training-list {
+@media (width <= 1000px) {
+  #training-page .training-page {
+    padding: 1.5rem;
+  }
+
+  #training-page .training-page .filters {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  #training-page .training-page .training-list {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     display: grid;
@@ -1081,6 +1097,7 @@
 
 @media (width <= 768px) {
   #training-page .training-page {
+    max-width: 1000px;
     padding: 1.5rem;
   }
 
@@ -1090,13 +1107,9 @@
     gap: .5rem;
   }
 
-  #training-page .training-page .filters .filter-button {
-    padding: .5rem;
-  }
-
   #training-page .training-page .training-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: .5rem;
     display: grid;
   }
 }
@@ -1115,6 +1128,13 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
     display: grid;
+  }
+}
+
+@media (width >= 2000px) {
+  #training-page .training-page {
+    max-width: 1400px;
+    padding: 50px;
   }
 }
 
