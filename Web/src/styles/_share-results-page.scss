@@ -1,9 +1,19 @@
-@import 'variables'; 
-@import 'mixins'; 
+@import 'variables';
+@import 'mixins';
+
+// Ensure the page occupies 100% of the viewport
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
 
 // Estilo general para la página de compartir resultados (#shareResultsPage)
 #shareResultsPage {
     background-color: $main-color; // Asigna el color de fondo principal a la página
+    width: 100%; // Ensure the page occupies 100% of the width
+    height: 100%; // Ensure the page occupies 100% of the height
 
     // Estilo para el contenedor de los resultados compartidos
     .share-results {
@@ -27,7 +37,7 @@
             // Estilo para cada grupo de formulario (inputs, textarea, etc.)
             .form-group {
                 margin-bottom: $share-gap-small; // Añade un margen pequeño entre los elementos
-                color: $neutral-color1; // Establece un color neutro para el texto
+                color: $neutral-color3; // Establece un color neutro para el texto
                 border: none; // Elimina el borde por defecto
 
                 // Estilo para las etiquetas de los formularios
@@ -51,7 +61,7 @@
 
                     // Estilo cuando el campo tiene el foco (cuando se hace clic)
                     &:focus {
-                        box-shadow: 0 0 0 2px $important-color; // Añade un borde de sombra cuando está enfocado
+                        box-shadow: 0 0 0 2px #E0340D; // Añade un borde de sombra cuando está enfocado
                     }
                 }
 
@@ -101,7 +111,7 @@
 
                 // Estilo cuando el botón es hover (cuando se pasa el ratón por encima)
                 &:hover {
-                    background-color: darken($important-color, 10%); // Cambia el color de fondo al pasar el ratón
+                    background-color: darken(#E0340D, 10%); // Cambia el color de fondo al pasar el ratón
                 }
             }
         }
@@ -121,7 +131,7 @@
 
         // Estilo cuando el área de contenido tiene el foco
         &:focus {
-            box-shadow: 0 0 0 2px $important-color; // Añade una sombra de foco
+            box-shadow: 0 0 0 2px #E0340D; // Añade una sombra de foco
         }
     }
 

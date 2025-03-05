@@ -71,6 +71,9 @@
           font-size: $font-size-small; /* Tamaño del ícono */
           cursor: pointer; /* Muestra un cursor tipo mano al pasar sobre el botón */
           transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+          padding: $touch-target-spacing;
+          min-width: $touch-target-size;
+          min-height: $touch-target-size;
           
           /* Estilo para cuando se pasa el cursor sobre el botón */
           &:hover {

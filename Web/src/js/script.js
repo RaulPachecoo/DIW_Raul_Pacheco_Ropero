@@ -197,6 +197,31 @@ addButtons.forEach((button) => {
     });
 });
 
+menuToggle = document.querySelector(".menu-toggle");
+menuToggle.addEventListener("click", () => {
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
+    menuToggle.setAttribute("aria-expanded", !expanded);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    menuToggle.addEventListener('click', function() {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+        menuToggle.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('active');
+    });
+
+    const playButtons = document.querySelectorAll('.play-button');
+    playButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const audioSrc = button.getAttribute('data-audio');
+            const audio = new Audio(audioSrc);
+            audio.play();
+        });
+    });
+});
 
 
 

@@ -7,33 +7,33 @@
 /* Mixin para los estilos de los botones */
 /*Estilos para el Header*/
 .header {
-  /* Establece el diseño del encabezado usando Flexbox */
   display: flex;
-  align-items: center; /* Centra verticalmente los elementos */
-  justify-content: space-between; /* Espacia el contenido de forma equitativa entre los extremos */
-  padding: 0 20px; /* Espaciado pequeño alrededor del encabezado */
-  background-color: white; /* Color de fondo del encabezado */
-  height: 60px; /* Altura del encabezado */
-  position: relative; /* Posicionamiento relativo para permitir el posicionamiento absoluto de elementos secundarios */
-  /* Estilos del botón de menú para dispositivos pequeños */
-  /* Estilos de las barras del menú */
-  /* Reducir el espacio entre líneas */
-  /* Mostrar solo en pantallas pequeñas */
-  /* Estilo del logo del encabezado */
-  /* Estilo para el icono de perfil */
-  /* Estilos para pantallas pequeñas, como tabletas */
-  /* Estilos cuando el menú está activo (desplegado) */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: white;
+  height: 60px;
+  position: relative;
+  /* Botón de menú para dispositivos pequeños */
+  /* Barras del menú hamburguesa */
+  /* Estilo del logo */
+  /* Icono de perfil */
+  /* Estilos de navegación */
+  /* Menú en pantallas pequeñas */
+  /* Animación del menú hamburguesa al activarse */
 }
 .header .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 36px;
-  height: 28px;
+  width: 48px;
+  height: 48px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 8px;
+  min-width: 48px;
+  min-height: 48px;
 }
 .header .menu-bar {
   display: block;
@@ -47,9 +47,6 @@
   margin-bottom: 4px;
 }
 @media (max-width: 768px) {
-  .header {
-    /* Cuando el menú esté activo, mostrarlo */
-  }
   .header .menu-toggle {
     display: flex;
   }
@@ -69,95 +66,114 @@
   }
 }
 .header .logo {
-  height: 40px; /* Altura del logo */
-  display: flex; /* Utiliza Flexbox para centrar el logo */
-  justify-content: center; /* Centra el logo horizontalmente */
-  margin: 0 auto; /* Centra el logo en el contenedor */
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 .header .profile-icon {
   display: flex;
-  align-items: center; /* Centra el icono verticalmente */
-  justify-content: center; /* Centra el icono horizontalmente */
-  width: 40px; /* Ancho del icono */
-  height: 40px; /* Alto del icono */
-  border-radius: 50%; /* Hace el icono redondo */
-  transition: background-color 0.3s ease; /* Transición para el cambio de color de fondo en hover */
-  /* Estilo del ícono dentro del icono de perfil */
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  padding: 8px;
+  min-width: 48px;
+  min-height: 48px;
 }
 .header .profile-icon:hover {
-  background-color: rgb(229.5, 229.5, 229.5); /* Oscurece el fondo al pasar el mouse */
+  background-color: rgb(229.5, 229.5, 229.5);
 }
 .header .profile-icon i {
-  font-size: 18px; /* Tamaño del ícono */
-  margin-right: 0; /* Elimina el margen derecho */
+  font-size: 18px;
+  margin-right: 0;
+}
+.header .logo-link, .header .profile-icon {
+  padding: 8px;
+  min-width: 48px;
+  min-height: 48px;
 }
 .header .nav {
-  display: flex; /* Muestra la barra de navegación como flexbox */
-  gap: 50px; /* Espaciado entre los elementos del menú */
+  display: flex;
+  gap: 50px;
 }
 .header .nav ul {
-  display: flex; /* Los elementos de la lista están en fila */
-  gap: 50px; /* Espaciado entre los elementos de la lista */
-  list-style: none; /* Elimina los puntos de la lista */
+  display: flex;
+  gap: 50px;
+  list-style: none;
 }
 .header .nav ul li a {
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-  color: #000; /* Color del texto del enlace */
-  font-size: 16px; /* Tamaño de fuente del enlace */
-  font-weight: 500; /* Peso de fuente del enlace */
-  font-family: "Montserrat", sans-serif; /* Fuente principal */
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  padding: 12px 16px;
+  min-width: 48px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
 }
 .header .nav ul li a:hover {
-  color: #0277BD; /* Cambia el color al pasar el mouse */
+  color: #0277BD;
 }
 @media (max-width: 768px) {
   .header .menu-toggle {
-    display: flex; /* Muestra el botón de menú hamburguesa */
+    display: flex;
   }
   .header .nav {
-    display: none; /* Oculta la barra de navegación por defecto */
-    position: absolute; /* Posiciona la barra de navegación debajo del encabezado */
-    top: 60px; /* Ajusta la posición de la barra debajo del encabezado */
-    left: 20px; /* Alinea la barra de navegación a la izquierda */
-    background-color: white; /* Color de fondo de la barra de navegación */
-    flex-direction: column; /* Muestra los elementos del menú en columna */
-    gap: 10px; /* Espaciado reducido entre los elementos */
-    width: 240px; /* Ancho del menú móvil */
-    padding: 20px; /* Espaciado alrededor de los elementos del menú */
-    border-radius: 8px; /* Bordes redondeados en la barra de navegación */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px; /* Sombra alrededor del menú */
-    z-index: 1000; /* Asegura que el menú se muestre por encima de otros elementos */
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background-color: white;
+    flex-direction: column;
+    gap: 12px;
+    width: 240px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+    z-index: 1000;
   }
   .header .nav ul {
-    flex-direction: column; /* Coloca los elementos del menú en columna */
-    gap: 10px; /* Espaciado entre los elementos de la lista */
+    flex-direction: column;
+    gap: 12px;
   }
   .header .nav ul li {
-    text-align: left; /* Alinea los enlaces a la izquierda */
+    text-align: left;
   }
   .header .nav ul li a {
-    font-size: 18px; /* Tamaño de fuente más pequeño para enlaces */
-    font-weight: 600; /* Peso de fuente más grueso */
+    font-size: 18px;
+    font-weight: 600;
   }
 }
 .header.active-menu .menu-toggle div:nth-child(1) {
-  transform: rotate(45deg); /* Rota la primera barra del menú para formar una "X" */
-  transform-origin: top left; /* Define el punto de origen para la rotación */
+  transform: rotate(45deg);
+  transform-origin: top left;
 }
 .header.active-menu .menu-toggle div:nth-child(2) {
-  opacity: 0; /* Hace invisible la barra del medio */
+  opacity: 0;
 }
 .header.active-menu .menu-toggle div:nth-child(3) {
-  transform: rotate(-45deg); /* Rota la tercera barra en la dirección opuesta */
-  transform-origin: bottom left; /* Define el punto de origen para la rotación */
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
 }
 .header.active-menu .nav {
-  display: flex; /* Muestra el menú desplegado */
+  display: flex;
 }
 
 /* Función para escalar el tamaño de la fuente según un factor dado */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Estilos para la sección Hero*/
 .hero {
   /* Fondo responsivo con la imagen proporcionada */
@@ -503,6 +519,9 @@
   font-size: 1rem; /* Tamaño del ícono */
   cursor: pointer; /* Muestra un cursor tipo mano al pasar sobre el botón */
   transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+  padding: 8px;
+  min-width: 48px;
+  min-height: 48px;
   /* Estilo para cuando se pasa el cursor sobre el botón */
 }
 .testimonials .testimonials-grid .testimonial .testimonial-info .play-button:hover {
@@ -541,7 +560,7 @@
 /* Estilo base para el texto de las reseñas */
 .user-reviews .reviews-container .reviews .review .review-text {
   font-size: 1rem; /* Tamaño de fuente pequeño */
-  color: #B0B4BC; /* Color del texto */
+  color: #3B4A60; /* Color del texto */
   margin-bottom: 20px; /* Espaciado en la parte inferior */
   line-height: 1.5; /* Espaciado entre líneas */
   font-family: "Nunito", sans-serif; /* Fuente secundaria */
@@ -766,10 +785,15 @@
 .footer .footer-contact ul li a,
 .footer .footer-legal ul li a {
   text-decoration: none; /* Elimina el subrayado de los enlaces */
-  color: #B0B4BC; /* Color base de los enlaces */
+  color: #E3E4E8; /* Color base de los enlaces */
   font-size: 14px; /* Tamaño de fuente para los enlaces */
   margin-bottom: 5px; /* Márgenes entre los elementos */
-  display: block; /* Los enlaces se comportan como bloques */
+  display: inline-flex; /* Mejora la accesibilidad */
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 8px;
 }
 .footer .footer-links ul li a:hover,
 .footer .footer-contact ul li a:hover,
@@ -790,17 +814,18 @@
 .footer nav ul li .social-icon {
   color: white; /* Color base de los iconos sociales */
   font-size: 24px; /* Tamaño de los iconos sociales */
-  display: inline-flex; /* Los iconos se muestran en línea como flex */
-  justify-content: center; /* Centra los iconos dentro de su contenedor */
-  align-items: center; /* Centra los iconos verticalmente */
-  width: 40px; /* Ancho de los iconos */
-  height: 40px; /* Alto de los iconos */
-  border-radius: 50%; /* Redondea los iconos para hacerlos circulares */
+  display: flex; /* Asegura alineación adecuada */
+  justify-content: center;
+  align-items: center;
+  width: 48px; /* Tamaño mínimo para accesibilidad */
+  height: 48px;
+  border-radius: 50%; /* Redondea los iconos */
   background-color: #3B4A60; /* Color de fondo de los iconos */
-  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+  transition: background-color 0.3s ease;
+  padding: 8px;
 }
 .footer nav ul li .social-icon:hover {
-  opacity: 0.8; /* Reduce la opacidad de los iconos cuando se pasa el mouse */
+  opacity: 0.8; /* Reduce la opacidad al pasar el mouse */
 }
 
 /* Estilos comunes para las secciones del pie de página */
@@ -818,134 +843,115 @@
 .footer .footer-links ul,
 .footer .footer-contact ul,
 .footer .footer-legal ul {
-  list-style-type: none; /* Elimina los puntos de la lista */
-  padding: 0; /* Elimina el padding por defecto */
-  margin: 0; /* Elimina el margen por defecto */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 .footer .footer-links ul li,
 .footer .footer-contact ul li,
 .footer .footer-legal ul li {
-  margin-bottom: 5px; /* Margen inferior de cada item */
+  margin-bottom: 5px;
 }
-.footer .footer-links ul li a,
-.footer .footer-contact ul li a,
-.footer .footer-legal ul li a {
-  /* Se extienden los estilos de los enlaces */
-}
-.footer .footer-links ul li a p,
-.footer .footer-contact ul li a p,
-.footer .footer-legal ul li a p {
-  margin: 5px 0; /* Márgenes de los párrafos */
-  font-size: 14px; /* Tamaño de fuente para los párrafos */
-}
-.footer .footer-links ul li a p a,
-.footer .footer-contact ul li a p a,
-.footer .footer-legal ul li a p a {
-  /* Se extienden los estilos de los enlaces */
-}
-
 .footer {
-  font-family: "Montserrat", sans-serif; /* Fuente principal para el pie de página */
-  background-color: #3B4A60; /* Color de fondo del pie de página */
-  color: #B0B4BC; /* Color del texto */
-  padding: 20px 40px; /* Espaciado alrededor del pie de página */
-  display: flex; /* Utiliza flexbox para el layout */
-  flex-wrap: wrap; /* Permite que las secciones se ajusten en varias líneas */
-  gap: 20px; /* Espacio entre las secciones */
-  /* Para pantallas pequeñas como tabletas */
-  /* Para pantallas más pequeñas, como teléfonos móviles */
+  font-family: "Montserrat", sans-serif;
+  background-color: #3B4A60;
+  color: #E3E4E8;
+  padding: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* Diseño responsivo */
+}
+.footer a {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 8px;
 }
 .footer .footer-logo {
-  display: flex; /* Flexbox para el logo */
-  flex-direction: column; /* Coloca el logo y el contenido de forma vertical */
-  align-items: center; /* Centra los elementos */
-  margin-bottom: 20px; /* Margen inferior del logo */
-  margin-right: 200px; /* Margen derecho en pantallas grandes */
-  /* Pantallas más pequeñas (como tabletas) */
-  /* Pantallas móviles */
-  /* Pantallas grandes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-right: 200px;
 }
 .footer .footer-logo img {
-  width: 80px; /* Tamaño del logo */
-  margin-bottom: 15px; /* Margen inferior del logo */
+  width: 80px;
+  margin-bottom: 15px;
 }
 @media (max-width: 768px) {
   .footer .footer-logo {
-    margin-right: 40px; /* Disminuye el margen derecho en pantallas más pequeñas */
+    margin-right: 40px;
   }
 }
 @media (max-width: 480px) {
   .footer .footer-logo {
-    margin-right: 40px; /* Disminuye aún más el margen derecho en pantallas móviles */
+    margin-right: 40px;
   }
 }
 @media (min-width: 2560px) {
   .footer .footer-logo {
-    margin-right: 400px; /* Aumenta el margen derecho en pantallas grandes */
+    margin-right: 400px;
   }
 }
 .footer nav ul {
-  list-style-type: none; /* Elimina los puntos de la lista */
-  padding: 0; /* Elimina el padding por defecto */
-  margin: 0; /* Elimina el margen por defecto */
-  display: block; /* Los elementos de la lista se comportan como bloques */
-  text-align: center; /* Centra el texto de los enlaces */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  text-align: center;
 }
 .footer nav ul li {
-  margin-bottom: 5px; /* Margen inferior de cada item */
+  margin-bottom: 5px;
 }
 .footer nav ul li .social-icon {
-  /* Se extienden los estilos de los iconos sociales */
-  /* Estilos personalizados para cada icono social */
+  min-width: 48px;
+  min-height: 48px;
+  padding: 8px;
 }
 .footer nav ul li .social-icon.instagram {
-  background-color: #e4405f; /* Color específico para Instagram */
+  background-color: #e4405f;
 }
 .footer nav ul li .social-icon.facebook {
-  background-color: #3b5998; /* Color específico para Facebook */
+  background-color: #3b5998;
 }
 .footer nav ul li .social-icon.linkedin {
-  background-color: #0077b5; /* Color específico para LinkedIn */
+  background-color: #0077b5;
 }
 .footer nav ul li .social-icon.twitter {
-  background-color: #1da1f2; /* Color específico para Twitter */
+  background-color: #1da1f2;
 }
 .footer nav a {
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-}
-.footer .footer-links,
-.footer .footer-contact,
-.footer .footer-legal {
-  /* Se extienden los estilos de las secciones del pie de página */
+  text-decoration: none;
 }
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column; /* Cambia la dirección del layout a columna */
-    text-align: center; /* Centra el texto */
-    gap: 10px; /* Reduce el espacio entre los elementos */
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
   }
   .footer .footer-logo,
   .footer .footer-links,
   .footer .footer-contact,
   .footer .footer-legal {
-    margin-bottom: 10px; /* Reduce el margen entre secciones */
+    margin-bottom: 10px;
   }
 }
 @media (max-width: 480px) {
   .footer .footer-logo img {
-    width: 60px; /* Ajusta el tamaño del logo */
+    width: 60px;
   }
   .footer .footer-links h3,
   .footer .footer-contact h3,
   .footer .footer-legal h3 {
-    font-size: 1rem; /* Tamaño de fuente de los títulos más pequeños */
+    font-size: 1rem;
   }
-  .footer .footer-links a, .footer .footer-links p,
+  .footer .footer-links a,
+  .footer .footer-links p,
   .footer .footer-contact a,
   .footer .footer-contact p,
   .footer .footer-legal a,
   .footer .footer-legal p {
-    font-size: 0.875rem; /* Tamaño de fuente de los enlaces más pequeños */
+    font-size: 0.875rem;
   }
 }
 
@@ -1218,11 +1224,20 @@
 /* Función para escalar el tamaño de la fuente según un factor dado */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 #achievementsPage {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   background-color: #3B4A60;
   color: #3B4A60;
+  width: 100%;
+  height: 100%;
 }
 
 #achievementsPage .achievement-actions {
@@ -1329,8 +1344,17 @@
 /* Función para escalar el tamaño de la fuente según un factor dado */
 /* Mixin para ajustar el tamaño de la fuente de manera responsiva según el tamaño de la pantalla */
 /* Mixin para los estilos de los botones */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 #shareResultsPage {
   background-color: #3B4A60;
+  width: 100%;
+  height: 100%;
   /* Media Queries para diferentes tamaños de pantalla */
 }
 #shareResultsPage .share-results {
@@ -1350,7 +1374,7 @@
 }
 #shareResultsPage .share-results .share-results-form .form-group {
   margin-bottom: 1rem;
-  color: #B0B4BC;
+  color: white;
   border: none;
 }
 #shareResultsPage .share-results .share-results-form .form-group label {
@@ -1372,7 +1396,7 @@
 #shareResultsPage .share-results .share-results-form .form-group input[type=text]:focus,
 #shareResultsPage .share-results .share-results-form .form-group textarea:focus,
 #shareResultsPage .share-results .share-results-form .form-group input[type=file]:focus {
-  box-shadow: 0 0 0 2px #FF6B3B;
+  box-shadow: 0 0 0 2px #E0340D;
 }
 #shareResultsPage .share-results .share-results-form .form-group .custom-file-input {
   display: none;
@@ -1409,7 +1433,7 @@
   transition: background-color 0.3s ease;
 }
 #shareResultsPage .share-results .share-results-form .share-button:hover {
-  background-color: rgb(255, 68.4897959184, 8);
+  background-color: rgb(175.7974683544, 40.8101265823, 10.2025316456);
 }
 #shareResultsPage #content {
   width: 100%;
@@ -1423,7 +1447,7 @@
   font-family: "Nunito", sans-serif;
 }
 #shareResultsPage #content:focus {
-  box-shadow: 0 0 0 2px #FF6B3B;
+  box-shadow: 0 0 0 2px #E0340D;
 }
 #shareResultsPage .image-carousel {
   text-align: center;
@@ -1656,7 +1680,7 @@
   background-color: rgb(141.2041884817, 211.6492146597, 253.7958115183);
 }
 #TrainingTrackingPage .training-section .training-card .add-btn {
-  background-color: #FF6B3B;
+  background-color: #E0340D;
   color: white;
   border: none;
   border-radius: 8px;
@@ -1670,7 +1694,7 @@
   transition: transform 0.3s ease;
 }
 #TrainingTrackingPage .training-section .training-card .add-btn:hover {
-  background-color: rgb(255, 68.4897959184, 8);
+  background-color: rgb(175.7974683544, 40.8101265823, 10.2025316456);
 }
 #TrainingTrackingPage .training-section .training-card .add-btn:hover {
   transform: scale(1.1);
@@ -1701,7 +1725,7 @@
   background-color: #0088cc;
 }
 #TrainingTrackingPage .training-section .actions .action-btn.excel {
-  background-color: #28a745;
+  background-color: #28A745;
   color: white;
   border: none;
   border-radius: 8px;
@@ -1713,7 +1737,7 @@
   background-color: rgb(30.1449275362, 125.8550724638, 52);
 }
 #TrainingTrackingPage .training-section .actions .action-btn.save {
-  background-color: #FF6B3B;
+  background-color: #E0340D;
   color: white;
   border: none;
   border-radius: 8px;
@@ -1722,7 +1746,7 @@
   transition: background-color 0.3s ease;
 }
 #TrainingTrackingPage .training-section .actions .action-btn.save:hover {
-  background-color: rgb(255, 68.4897959184, 8);
+  background-color: rgb(175.7974683544, 40.8101265823, 10.2025316456);
 }
 #TrainingTrackingPage .training-section .actions .action-btn:hover {
   background-color: #0088cc;

@@ -2,179 +2,187 @@
 @import 'mixins';
 
 /*Estilos para el Header*/
-
 .header {
-  /* Establece el diseño del encabezado usando Flexbox */
   display: flex;
-  align-items: center; /* Centra verticalmente los elementos */
-  justify-content: space-between; /* Espacia el contenido de forma equitativa entre los extremos */
-  padding: 0 $spacing-small; /* Espaciado pequeño alrededor del encabezado */
-  background-color: $neutral-color3; /* Color de fondo del encabezado */
-  height: $header-height; /* Altura del encabezado */
-  position: relative; /* Posicionamiento relativo para permitir el posicionamiento absoluto de elementos secundarios */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacing-small;
+  background-color: $neutral-color3;
+  height: $header-height;
+  position: relative;
 
-  /* Estilos del botón de menú para dispositivos pequeños */
+  /* Botón de menú para dispositivos pequeños */
   .menu-toggle {
-    display: none; // Ocultar en pantallas grandes
+    display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 36px; // Ajusta el ancho del botón
-    height: 28px; // Ajusta la altura total
+    width: 48px; // Asegura un tamaño táctil adecuado
+    height: 48px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-}
+    padding: 8px;
+    min-width: 48px;
+    min-height: 48px;
+  }
 
-/* Estilos de las barras del menú */
-.menu-bar {
+  /* Barras del menú hamburguesa */
+  .menu-bar {
     display: block;
-    width: 100%; // Que ocupe todo el ancho del botón
-    height: 5px; // Más gruesas
+    width: 100%;
+    height: 5px;
     background-color: black;
-    border-radius: 3px; // Bordes más redondeados
+    border-radius: 3px;
     transition: all 0.3s ease;
-}
+  }
 
-/* Reducir el espacio entre líneas */
-.menu-toggle .menu-bar:not(:last-child) {
-    margin-bottom: 4px; // Reduce el espacio entre las líneas
-}
+  .menu-toggle .menu-bar:not(:last-child) {
+    margin-bottom: 4px;
+  }
 
-/* Mostrar solo en pantallas pequeñas */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .menu-toggle {
-        display: flex; // Aparece en pantallas pequeñas
+      display: flex;
     }
 
     .nav {
-        display: none; // Ocultar menú por defecto
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: white;
-        width: 100%;
-        padding: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: white;
+      width: 100%;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* Cuando el menú esté activo, mostrarlo */
     .nav.active {
-        display: flex;
+      display: flex;
     }
-}
-
-
-
-  /* Estilo del logo del encabezado */
-  .logo {
-    height: $logo-height; /* Altura del logo */
-    display: flex; /* Utiliza Flexbox para centrar el logo */
-    justify-content: center; /* Centra el logo horizontalmente */
-    margin: 0 auto; /* Centra el logo en el contenedor */
   }
 
-  /* Estilo para el icono de perfil */
+  /* Estilo del logo */
+  .logo {
+    height: $logo-height;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  /* Icono de perfil */
   .profile-icon {
     display: flex;
-    align-items: center; /* Centra el icono verticalmente */
-    justify-content: center; /* Centra el icono horizontalmente */
-    width: $profile-icon-size; /* Ancho del icono */
-    height: $profile-icon-size; /* Alto del icono */
-    border-radius: 50%; /* Hace el icono redondo */
-    transition: background-color 0.3s ease; /* Transición para el cambio de color de fondo en hover */
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    padding: 8px;
+    min-width: 48px;
+    min-height: 48px;
 
     &:hover {
-      background-color: darken($neutral-color3, $hover-darken-percentage); /* Oscurece el fondo al pasar el mouse */
+      background-color: darken($neutral-color3, $hover-darken-percentage);
     }
 
-    /* Estilo del ícono dentro del icono de perfil */
     i {
-      font-size: $profile-icon-font-size; /* Tamaño del ícono */
-      margin-right: 0; /* Elimina el margen derecho */
+      font-size: $profile-icon-font-size;
+      margin-right: 0;
     }
   }
 
+  .logo-link, .profile-icon {
+    padding: 8px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  /* Estilos de navegación */
   .nav {
-    display: flex; /* Muestra la barra de navegación como flexbox */
-    gap: $nav-gap; /* Espaciado entre los elementos del menú */
+    display: flex;
+    gap: $nav-gap;
 
     ul {
-      display: flex; /* Los elementos de la lista están en fila */
-      gap: $nav-gap; /* Espaciado entre los elementos de la lista */
-      list-style: none; /* Elimina los puntos de la lista */
+      display: flex;
+      gap: $nav-gap;
+      list-style: none;
 
       li {
         a {
-          text-decoration: none; /* Elimina el subrayado de los enlaces */
-          color: $black; /* Color del texto del enlace */
-          font-size: $font-size-nav; /* Tamaño de fuente del enlace */
-          font-weight: $font-weight-medium; /* Peso de fuente del enlace */
-          font-family: $primary-font-family; /* Fuente principal */
+          text-decoration: none;
+          color: $black;
+          font-size: $font-size-nav;
+          font-weight: $font-weight-medium;
+          font-family: $primary-font-family;
+          padding: 12px 16px; // Asegura suficiente área táctil
+          min-width: 48px;
+          min-height: 48px;
+          display: inline-flex;
+          align-items: center;
 
           &:hover {
-            color: $secondary-color; /* Cambia el color al pasar el mouse */
+            color: $secondary-color;
           }
         }
       }
     }
   }
 
-  /* Estilos para pantallas pequeñas, como tabletas */
+  /* Menú en pantallas pequeñas */
   @media (max-width: map-get($breakpoints, 'tablet')) {
     .menu-toggle {
-      display: flex; /* Muestra el botón de menú hamburguesa */
+      display: flex;
     }
 
     .nav {
-      display: none; /* Oculta la barra de navegación por defecto */
-      position: absolute; /* Posiciona la barra de navegación debajo del encabezado */
-      top: $header-height; /* Ajusta la posición de la barra debajo del encabezado */
-      left: $spacing-small; /* Alinea la barra de navegación a la izquierda */
-      background-color: $neutral-color3; /* Color de fondo de la barra de navegación */
-      flex-direction: column; /* Muestra los elementos del menú en columna */
-      gap: $nav-small-gap; /* Espaciado reducido entre los elementos */
-      width: $nav-mobile-width; /* Ancho del menú móvil */
-      padding: $nav-mobile-padding; /* Espaciado alrededor de los elementos del menú */
-      border-radius: $border-radius-medium; /* Bordes redondeados en la barra de navegación */
-      box-shadow: $box-shadow; /* Sombra alrededor del menú */
-      z-index: 1000; /* Asegura que el menú se muestre por encima de otros elementos */
-      
+      display: none;
+      position: absolute;
+      top: $header-height;
+      left: $spacing-small;
+      background-color: $neutral-color3;
+      flex-direction: column;
+      gap: 12px; // Mayor separación entre elementos
+      width: $nav-mobile-width;
+      padding: $nav-mobile-padding;
+      border-radius: $border-radius-medium;
+      box-shadow: $box-shadow;
+      z-index: 1000;
+
       ul {
-        flex-direction: column; /* Coloca los elementos del menú en columna */
-        gap: $nav-small-gap; /* Espaciado entre los elementos de la lista */
-        
+        flex-direction: column;
+        gap: 12px; // Más espacio entre elementos
         li {
-          text-align: left; /* Alinea los enlaces a la izquierda */
+          text-align: left;
 
           a {
-            font-size: $font-size-nav-small; /* Tamaño de fuente más pequeño para enlaces */
-            font-weight: $font-weight-semibold; /* Peso de fuente más grueso */
+            font-size: $font-size-nav-small;
+            font-weight: $font-weight-semibold;
           }
         }
       }
     }
   }
 
-  /* Estilos cuando el menú está activo (desplegado) */
+  /* Animación del menú hamburguesa al activarse */
   &.active-menu {
     .menu-toggle div:nth-child(1) {
-      transform: rotate(45deg); /* Rota la primera barra del menú para formar una "X" */
-      transform-origin: top left; /* Define el punto de origen para la rotación */
+      transform: rotate(45deg);
+      transform-origin: top left;
     }
 
     .menu-toggle div:nth-child(2) {
-      opacity: 0; /* Hace invisible la barra del medio */
+      opacity: 0;
     }
 
     .menu-toggle div:nth-child(3) {
-      transform: rotate(-45deg); /* Rota la tercera barra en la dirección opuesta */
-      transform-origin: bottom left; /* Define el punto de origen para la rotación */
+      transform: rotate(-45deg);
+      transform-origin: bottom left;
     }
 
     .nav {
-      display: flex; /* Muestra el menú desplegado */
+      display: flex;
     }
   }
 }

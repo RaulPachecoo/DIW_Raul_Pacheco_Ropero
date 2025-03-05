@@ -65,7 +65,7 @@
 
             /* Estilo del botón de añadir */
             .add-btn {
-                @include button-style-training-tracking($important-color, $neutral-color3, darken($important-color, 10%));  // Estilo de botón
+                @include button-style-training-tracking(#E0340D, $neutral-color3, darken(#E0340D, 10%));  // Estilo de botón
                 width: 3rem;  // Ancho del botón
                 height: 3rem;  // Alto del botón
                 border-radius: 50%;  // Botón redondeado
@@ -97,12 +97,12 @@
 
                 /* Estilo específico para el botón Excel */
                 &.excel {
-                    @include button-style-training-tracking($excel-color, $neutral-color3, darken($excel-color, $hover-darken-percentage));
+                    @include button-style-training-tracking(#28A745, $neutral-color3, darken(#28A745, $hover-darken-percentage));
                 }
 
                 /* Estilo específico para el botón Guardar */
                 &.save {
-                    @include button-style-training-tracking($important-color, $neutral-color3, darken($important-color, $hover-darken-percentage));
+                    @include button-style-training-tracking(#E0340D, $neutral-color3, darken(#E0340D, $hover-darken-percentage));
                 }
 
                 &:hover {

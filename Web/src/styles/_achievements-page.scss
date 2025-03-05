@@ -1,5 +1,13 @@
-@import 'variables'; 
-@import 'mixins'; 
+@import 'variables';
+@import 'mixins';
+
+// Ensure the page occupies 100% of the viewport
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
 
 // Estilos generales para la página de logros (#achievementsPage)
 #achievementsPage {
@@ -7,6 +15,8 @@
   line-height: $line-height-base; // Configura la altura de línea base
   background-color: $main-color; // Asigna el color de fondo principal
   color: $main-color; // Asigna el color de texto principal
+  width: 100%; // Ensure the page occupies 100% of the width
+  height: 100%; // Ensure the page occupies 100% of the height
 }
 
 // Estilo para los iconos en la sección de acciones de logros
