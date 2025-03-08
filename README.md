@@ -65,3 +65,47 @@ Una vez corregidos todos realizamos otra prueba de accesibilidad usando **Lighth
 
 ![Imagen 6](https://files.catbox.moe/18bo6m.png "Imagen 6")
 
+# Usabilidad
+
+## 1\. Descripción de los Usuarios Simulados
+
+Para esta prueba de usabilidad, he seleccionado cinco usuarios potenciales de mi web FitEssence, que ofrece entrenamientos personales.
+
+1. **María, 28 años, principiante en el entrenamiento**  
+   * María busca empezar una rutina de entrenamiento para mejorar su condición física y perder peso. Es una usuaria que podría beneficiarse de la sección de entrenamientos y de la sección de seguimiento de entrenamientos.  
+2. **Carlos, 35 años, entusiasta del fitness y futuro culturista**  
+   * Carlos tiene experiencia en entrenamiento de fuerza y musculación, pero su objetivo a largo plazo es convertirse en culturista. Evaluará las rutinas de hipertrofia y control de progresos.  
+3. **Ana, 40 años, busca motivación y comunidad**  
+   * Ana busca apoyo de una comunidad para mantenerse motivada. Usará especialmente la página de compartir resultados y ver los diferentes logros compartidos por otros usuarios.  
+4. **Javier, 22 años, quiere especializarse en powerlifting**  
+   * Javier está enfocado en mejorar su rendimiento en los tres levantamientos básicos como sentadilla, press de banca y peso muerto. Evaluará la efectividad de la web para un entrenamiento orientado a la fuerza máxima y en un futuro próximo llegar a divisiones de powerlifting como la EP3 y EP3.  
+5. **Laura, 50 años, busca mejorar su salud**  
+   * Laura quiere entrenar para mejorar su salud general. Evaluará la accesibilidad y facilidad de uso de la web para personas que no están familiarizadas con plataformas digitales.
+
+## 2\. Tareas a Realizar
+
+Cada usuario llevará a cabo las siguientes tareas:
+
+1. **Explorar la página principal** y revisar la sección de testimonios y reseñas.  
+2. **Navegar a la página de entrenamientos** y seleccionar un entrenamiento adecuado a sus necesidades.  
+3. **Acceder a la sección de seguimiento de entrenamientos** e introducir datos de una sesión de entrenamiento incluido el calentamiento.  
+4. **Publicar un logro en la sección de compartir resultados**, añadiendo un título, contenido y una imagen.  
+5. **Explorar la página de logros de otros usuarios** y comentar o dar "me gusta" en una publicación.
+
+## 3\. Resultados de las Pruebas
+
+* **María (Principiante):** Tuvo algunas dificultades para entender los diferentes tipos de entrenamientos. Sugirió añadir descripciones más detalladas sobre cada categoría.  
+* **Carlos (Futuro culturista):** Encontró la web útil para su entrenamiento, pero mencionó que le gustaría una opción para estructurar su rutina a largo plazo con fases de volumen y definición, es decir un entrenamiento más personalizado y enfocado incluso que los que se ofrecen.  
+* **Ana (Busca comunidad):** Disfrutó la sección de compartir logros, pero notó que la interacción con otros usuarios podría mejorar con opciones como etiquetar a personas y poder hablar con gente a través de la web.  
+* **Javier (Powerlifting):** Consideró que la plataforma debería incluir más detalles sobre progresión de cargas y métricas de fuerza.  
+* **Laura (Salud y bienestar):** Tuvo problemas con la interfaz, mencionando que los textos deberían ser más grandes y claros para una mejor accesibilidad, y que quizás el menú no era demasiado claro.
+
+## 4\. Aspectos a Mejorar
+
+1. **Claridad en los entrenamientos**: Añadir descripciones detalladas sobre cada tipo de entrenamiento.  
+2. **Personalización**: Implementar una opción para que los usuarios puedan ajustar sus entrenamientos.  
+3. **Interacción social**: Mejorar la comunidad con opciones como etiquetar amigos o enviar mensajes.  
+4. **Mejoras en la interfaz de seguimiento**: Hacer que la introducción de datos sea más sencilla e intuitiva.  
+5. **Accesibilidad**: Optimizar la interfaz para usuarios con menos experiencia digital, aumentando el tamaño de textos, incluyendo “migas de pan” para guiar al usuario en todo momento, e incluso llegar a incluir una guía de uso para la página.  
+6. **Soporte para objetivos específicos**: Incluir más contenido para entrenamientos de powerlifting y culturismo, como programación avanzada y gestión de fases de entrenamiento.
+
