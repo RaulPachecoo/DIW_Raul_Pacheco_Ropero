@@ -65,7 +65,7 @@ Una vez corregidos todos realizamos otra prueba de accesibilidad usando **Lighth
 
 ![Imagen 6](https://files.catbox.moe/18bo6m.png "Imagen 6")
 
-# Usabilidad
+# Actividad 15. Usabilidad
 
 ## 1\. Descripción de los Usuarios Simulados
 
